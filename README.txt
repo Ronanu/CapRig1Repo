@@ -1,1 +1,1 @@
-initial commit. Repo Regeln todo
+BME communication basic
