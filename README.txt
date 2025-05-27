@@ -1,1 +1,1 @@
-initial commit. Repo Regeln todo
+In diesem Branch ist nur die Software für die ADC Kommunikation.
