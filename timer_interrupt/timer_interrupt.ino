@@ -13,7 +13,7 @@ void setup() {
   Serial.begin(115200);
   while (!Serial) delay(10);
 
-  if (!myTimer.begin(300.0f)) {
+  if (!myTimer.begin(10000.0f)) {
     Serial.println("Timerstart fehlgeschlagen");
     while (true);
   }
