@@ -1,8 +1,5 @@
 #include "TimerCallback.h"
 
-void (*TimerCallback::_userCallback)(void*) = nullptr;
-void* TimerCallback::_userContext = nullptr;
-
 TimerCallback::TimerCallback() {}
 
 bool TimerCallback::begin(float frequency) {
@@ -16,7 +13,8 @@ bool TimerCallback::begin(float frequency) {
 
     FspTimer::force_use_of_pwm_reserved_timer();
 
-    if (!_timer.begin(TIMER_MODE_PERIODIC, timer_type, tindex, frequency, 0.0f, trampoline)) return false;
+    // Übergabe des Kontexts hier
+    if (!_timer.begin(TIMER_MODE_PERIODIC, timer_type, tindex, frequency, 0.0f, trampoline, this)) return false;
     if (!_timer.setup_overflow_irq()) return false;
     if (!_timer.open()) return false;
     if (!_timer.start()) return false;
@@ -29,8 +27,12 @@ void TimerCallback::attachCallback(void (*callback)(void*), void* context) {
     _userContext = context;
 }
 
-void TimerCallback::trampoline(timer_callback_args_t* /*args*/) {
-    if (_userCallback) {
-        _userCallback(_userContext);
+void TimerCallback::trampoline(timer_callback_args_t* args) {
+    if (args && args->p_context) {
+        // korrekter Cast mit const_cast
+        TimerCallback* self = const_cast<TimerCallback*>(static_cast<const TimerCallback*>(args->p_context));
+        if (self->_userCallback) {
+            self->_userCallback(self->_userContext);
+        }
     }
 }

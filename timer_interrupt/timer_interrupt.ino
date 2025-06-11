@@ -1,25 +1,40 @@
 #include "TimerCallback.h"
 
-TimerCallback myTimer;
+// Drei Timer-Objekte
+TimerCallback timer10kHz;
+TimerCallback timer1kHz;
+TimerCallback timer100Hz;
 
-volatile uint32_t counter = 0;
+// Drei Counter
+volatile uint32_t count10kHz = 0;
+volatile uint32_t count1kHz  = 0;
+volatile uint32_t count100Hz = 0;
 
-void mySensorCallback(void* /*context*/) {
-  // KEIN Serial.print() hier – nur zählen
-  counter++;
-}
+// Drei Callbacks
+void callback10kHz(void*) { count10kHz++; }
+void callback1kHz(void*)  { count1kHz++; }
+void callback100Hz(void*) { count100Hz++; }
 
 void setup() {
   Serial.begin(115200);
   while (!Serial) delay(10);
 
-  if (!myTimer.begin(10000.0f)) {
-    Serial.println("Timerstart fehlgeschlagen");
+  bool ok = true;
+
+  ok &= timer10kHz.begin(10000.0f);  // 10 kHz
+  ok &= timer1kHz.begin(1000.0f);    // 1 kHz
+  ok &= timer100Hz.begin(100.0f);    // 100 Hz
+
+  if (!ok) {
+    Serial.println("Ein oder mehrere Timer konnten nicht gestartet werden.");
     while (true);
   }
 
-  myTimer.attachCallback(mySensorCallback, nullptr);
-  Serial.println("Timer läuft, Callback zählt...");
+  timer10kHz.attachCallback(callback10kHz, nullptr);
+  timer1kHz.attachCallback(callback1kHz, nullptr);
+  timer100Hz.attachCallback(callback100Hz, nullptr);
+
+  Serial.println("Alle Timer gestartet.");
 }
 
 void loop() {
@@ -28,12 +43,19 @@ void loop() {
   if (millis() - lastMillis >= 1000) {
     lastMillis = millis();
 
+    // Sicheres Auslesen mit Interrupt-Schutz
     noInterrupts();
-    uint32_t copy = counter;
-    counter = 0;
+    uint32_t c10 = count10kHz;
+    uint32_t c1  = count1kHz;
+    uint32_t c100 = count100Hz;
+    count10kHz = count1kHz = count100Hz = 0;
     interrupts();
 
-    Serial.print("Sensor-Callbacks pro Sekunde: ");
-    Serial.println(copy);
+    Serial.print("10kHz-Callbacks/s: ");
+    Serial.print(c10);
+    Serial.print(" | 1kHz: ");
+    Serial.print(c1);
+    Serial.print(" | 100Hz: ");
+    Serial.println(c100);
   }
 }

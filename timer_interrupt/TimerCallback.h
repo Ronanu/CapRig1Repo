@@ -11,10 +11,11 @@ public:
 
 private:
     FspTimer _timer;
-    static void trampoline(timer_callback_args_t* args);
 
-    static void (*_userCallback)(void*);
-    static void* _userContext;
+    void (*_userCallback)(void*) = nullptr;
+    void* _userContext = nullptr;
+
+    static void trampoline(timer_callback_args_t* args);
 };
 
 #endif
