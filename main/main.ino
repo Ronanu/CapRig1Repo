@@ -18,8 +18,6 @@ void loop() {
     Serial.print(adc.buildControlByte(ch), BIN);
     Serial.print("\t");
     Serial.println(value * 5 / 4095.0);
-
-
   }
 
   Serial.println("------");
