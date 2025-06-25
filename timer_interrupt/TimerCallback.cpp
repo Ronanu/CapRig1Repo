@@ -13,13 +13,20 @@ bool TimerCallback::begin(float frequency) {
 
     FspTimer::force_use_of_pwm_reserved_timer();
 
-    // Übergabe des Kontexts hier
+    // Timer initialisieren, aber NICHT starten
     if (!_timer.begin(TIMER_MODE_PERIODIC, timer_type, tindex, frequency, 0.0f, trampoline, this)) return false;
     if (!_timer.setup_overflow_irq()) return false;
     if (!_timer.open()) return false;
-    if (!_timer.start()) return false;
 
     return true;
+}
+
+bool TimerCallback::start() {
+    return _timer.start();
+}
+
+bool TimerCallback::stop() {
+    return _timer.stop();
 }
 
 void TimerCallback::attachCallback(void (*callback)(void*), void* context) {
@@ -29,7 +36,6 @@ void TimerCallback::attachCallback(void (*callback)(void*), void* context) {
 
 void TimerCallback::trampoline(timer_callback_args_t* args) {
     if (args && args->p_context) {
-        // korrekter Cast mit const_cast
         TimerCallback* self = const_cast<TimerCallback*>(static_cast<const TimerCallback*>(args->p_context));
         if (self->_userCallback) {
             self->_userCallback(self->_userContext);

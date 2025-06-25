@@ -35,9 +35,10 @@
 class TimerCallback {
 public:
     TimerCallback();
-    bool begin(float frequency);
+    bool begin(float frequency);                 // Initialisiert, aber startet NICHT den Timer
+    bool start();                                // Startet den Timer (Interrupts aktiv)
+    bool stop();                                 // Stoppt den Timer (Interrupts inaktiv)
     void attachCallback(void (*callback)(void*), void* context);
-
 private:
     FspTimer _timer;
 

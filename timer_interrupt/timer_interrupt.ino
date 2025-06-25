@@ -1,5 +1,7 @@
 #include "TimerCallback.h"
 
+ static uint32_t starttime = 0; // Startzeit für die Messung
+
 // Drei Timer-Objekte
 TimerCallback timer10kHz;
 TimerCallback timer1kHz;
@@ -26,6 +28,15 @@ void setup() {
   ok &= timer100Hz.begin(100.0f);    // 100 Hz
 
   if (!ok) {
+    Serial.println("Ein oder mehrere Timer konnten nicht initialisiert werden.");
+    while (true);
+  }
+
+  ok = timer10kHz.start();
+  ok &= timer1kHz.start();
+  ok &= timer100Hz.start();
+
+  if (!ok) {
     Serial.println("Ein oder mehrere Timer konnten nicht gestartet werden.");
     while (true);
   }
@@ -35,6 +46,7 @@ void setup() {
   timer100Hz.attachCallback(callback100Hz, nullptr);
 
   Serial.println("Alle Timer gestartet.");
+  starttime = millis();
 }
 
 void loop() {
@@ -49,6 +61,20 @@ void loop() {
     uint32_t c1  = count1kHz;
     uint32_t c100 = count100Hz;
     count10kHz = count1kHz = count100Hz = 0;
+
+    if (millis() - starttime > 5000) { // Nach 5 Sekunden stoppen
+      timer10kHz.stop();
+      timer1kHz.stop();
+      timer100Hz.stop();
+    }
+
+    if (millis() - starttime > 10000) { // Nach 10 Sekunden wieder starten
+      timer10kHz.start();
+      timer1kHz.start();
+      timer100Hz.start();
+      starttime = millis(); // Reset der Startzeit
+    }
+
     interrupts();
 
     Serial.print("10kHz-Callbacks/s: ");
