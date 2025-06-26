@@ -7,10 +7,8 @@ public:
     BME280Wrapper(uint8_t csPin);
     bool begin();
     void read();
-    void printChipModel(Stream* client);
 
     float getTemperature() const;
-    float getHumidity() const;
     float getPressure() const;
 
 private:
@@ -19,6 +17,5 @@ private:
     BME280Spi bme;
 
     float temperature = NAN;
-    float humidity = NAN;
     float pressure = NAN;
 };

@@ -24,23 +24,18 @@ void loop() {
     bme.read();  // 1x pro Loop aktualisieren
 
     float temp = bme.getTemperature();
-    float hum = bme.getHumidity();
     float pres = bme.getPressure();
 
     Serial.print("Temperature: ");
     Serial.print(temp);
     Serial.println(" °C");
 
-    Serial.print("Humidity: ");
-    Serial.print(hum);
-    Serial.println(" %");
-
     Serial.print("Pressure: ");
     Serial.print(pres);
     Serial.println(" Pa");
 
     // Debug: Check for NaN values
-    if (isnan(temp) || isnan(hum) || isnan(pres)) {
+    if (isnan(temp) || isnan(pres)) {
         Serial.println("WARNING: Some readings are invalid (NaN)");
     }
 
