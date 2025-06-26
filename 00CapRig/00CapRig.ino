@@ -7,7 +7,7 @@
   Verwendet die LEDMatrixDisplay Klasse aus dem Nachbarordner
 */
 
-#include "../BME_280_Spi_Test/led_matrix/LEDMatrixDisplay.h"
+#include "LEDMatrixDisplay.h"
 
 // Erstelle ein Objekt der LEDMatrixDisplay Klasse
 LEDMatrixDisplay ledDisplay;
