@@ -42,14 +42,6 @@ void loop() {
   ledDisplay.displayScrollingText("SENSOR_DATA.CSV");
   delay(4000);
   
-  Serial.println("Zeige: CONFIG.INI");
-  ledDisplay.displayScrollingText("CONFIG.INI");
-  delay(4000);
-  
-  Serial.println("Zeige: SYSTEM_STATUS.LOG");
-  ledDisplay.displayScrollingText("SYSTEM_STATUS.LOG");
-  delay(4000);
-  
   // Ändere die Geschwindigkeit für Abwechslung
   Serial.println("Ändere Geschwindigkeit auf 30 (schneller)");
   ledDisplay.setScrollSpeed(30);  // Schneller
