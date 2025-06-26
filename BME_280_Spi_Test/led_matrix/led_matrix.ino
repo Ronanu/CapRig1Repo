@@ -1,52 +1,81 @@
 /*
-  LED Matrix Running Text für Arduino Uno R4 WiFi
+  led_matrix.ino
   
-  Einfache Funktion um einen String als scrollenden Text anzuzeigen.
-  Basiert auf den offiziellen Arduino Beispielen.
+  Hauptprogramm für LED Matrix Text Display
+  Arduino Uno R4 WiFi
+  
+  Verwendet die LEDMatrixDisplay Klasse
 */
 
-// WICHTIG: ArduinoGraphics MUSS vor Arduino_LED_Matrix eingebunden werden
-#include "ArduinoGraphics.h"
-#include "Arduino_LED_Matrix.h"
+#include "LEDMatrixDisplay.h"
 
-ArduinoLEDMatrix matrix;
+// Erstelle ein Objekt der LEDMatrixDisplay Klasse
+LEDMatrixDisplay ledDisplay;
 
 void setup() {
   Serial.begin(115200);
-  matrix.begin();
+  delay(1000);
   
-  Serial.println("LED Matrix Text Display gestartet!");
+  Serial.println("=== LED Matrix Text Display ===");
+  Serial.println("Starte Initialisierung...");
   
-  // Teste die Funktion mit einem Dateinamen
-  displayScrollingText("DATA_LOG_2025_06_26.TXT");
+  // Initialisiere die LED Matrix
+  if (ledDisplay.begin()) {
+    Serial.println("LED Matrix erfolgreich initialisiert!");
+    Serial.println("Setup erfolgreich abgeschlossen!");
+    
+    // Teste die Klasse mit einem Dateinamen
+    Serial.println("Zeige ersten Text...");
+    ledDisplay.displayScrollingText("DATA_LOG_2025_06_26.TXT");
+  } else {
+    Serial.println("Fehler beim Initialisieren der LED Matrix!");
+  }
 }
 
 void loop() {
-  // Zeige verschiedene Texte
-  displayScrollingText("DATA_LOG_2025_06_26.TXT");
+  // Zeige verschiedene Dateinamen mit Serial-Ausgabe
+  Serial.println("Zeige: DATA_LOG_2025_06_26.TXT");
+  ledDisplay.displayScrollingText("DATA_LOG_2025_06_26.TXT");
+  delay(4000);
+  
+  Serial.println("Zeige: SENSOR_DATA.CSV");
+  ledDisplay.displayScrollingText("SENSOR_DATA.CSV");
+  delay(4000);
+  
+  Serial.println("Zeige: CONFIG.INI");
+  ledDisplay.displayScrollingText("CONFIG.INI");
+  delay(4000);
+  
+  Serial.println("Zeige: SYSTEM_STATUS.LOG");
+  ledDisplay.displayScrollingText("SYSTEM_STATUS.LOG");
+  delay(4000);
+  
+  // Ändere die Geschwindigkeit für Abwechslung
+  Serial.println("Ändere Geschwindigkeit auf 30 (schneller)");
+  ledDisplay.setScrollSpeed(30);  // Schneller
+  Serial.println("Zeige: SCHNELLER TEXT!");
+  ledDisplay.displayScrollingText("SCHNELLER TEXT!");
   delay(3000);
   
-  displayScrollingText("SENSOR_DATA.CSV");
+  Serial.println("Ändere Geschwindigkeit auf 100 (langsamer)");
+  ledDisplay.setScrollSpeed(100); // Langsamer
+  Serial.println("Zeige: LANGSAMER TEXT...");
+  ledDisplay.displayScrollingText("LANGSAMER TEXT...");
   delay(3000);
   
-  displayScrollingText("CONFIG.INI");
-  delay(3000);
+  // Zurück zur normalen Geschwindigkeit
+  Serial.println("Zurück zur normalen Geschwindigkeit (60)");
+  ledDisplay.setScrollSpeed(60);
 }
 
-// Hauptfunktion: Zeigt einen String als scrollenden Text an
-void displayScrollingText(String text) {
-  Serial.println("Zeige Text: " + text);
-  
-  matrix.beginDraw();
-  matrix.stroke(0xFFFFFFFF);
-  matrix.textScrollSpeed(60);  // Scroll-Geschwindigkeit
-  
-  // Verwende Font 5x7 für bessere Lesbarkeit
-  matrix.textFont(Font_5x7);
-  matrix.beginText(0, 1, 0xFFFFFF);
-  matrix.println("   " + text + "   ");  // Leerzeichen für besseres Scrolling
-  matrix.endText(SCROLL_LEFT);
-  
-  matrix.endDraw();
+// Hilfsfunktion um einzelne Texte zu testen
+void displaySingleText(String text) {
+  if (ledDisplay.isReady()) {
+    Serial.println("Zeige Text: " + text);
+    ledDisplay.displayScrollingText(text);
+    delay(3000);
+  } else {
+    Serial.println("LED Matrix nicht bereit!");
+  }
 }
 
