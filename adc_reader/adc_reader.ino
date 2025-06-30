@@ -17,7 +17,7 @@ void setup() {
 
     // Wir wollen Kanäle 1, 2 und 5 lesen
     std::vector<uint8_t> channels = {5, 6, 7};
-    reader.begin(channels, 100.0f); // max Gesamtsampling-Rate
+    reader.begin(channels, 20000.0f); // max Gesamtsampling-Rate
 }
 
 void loop() {
