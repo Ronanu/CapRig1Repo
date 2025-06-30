@@ -16,8 +16,8 @@ void setup() {
     adc.begin();
 
     // Wir wollen Kanäle 1, 2 und 5 lesen
-    std::vector<uint8_t> channels = {1, 2, 5};
-    reader.begin(channels, 50000.0f); // max Gesamtsampling-Rate
+    std::vector<uint8_t> channels = {1, 6, 7};
+    reader.begin(channels, 100.0f); // max Gesamtsampling-Rate
 }
 
 void loop() {
@@ -25,7 +25,7 @@ void loop() {
     if (millis() - lastPrint > 100) {
         lastPrint = millis();
 
-        for (uint8_t ch : {1, 2, 5}) {
+        for (uint8_t ch : {1, 6, 7}) {
             const auto& buf = reader.getChannelBuffer(ch);
             size_t lastIndex = (buf.head + buf.buffer.size() - 1) % buf.buffer.size();
             const auto& m = buf.buffer[lastIndex];
