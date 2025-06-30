@@ -3,7 +3,7 @@
 #include "ADCReader.h"
 
 // Pinout je nach Board
-#define CS_PIN 00
+#define CS_PIN A1
 
 ADC78H89 adc(CS_PIN);
 TimerCallback timer;
