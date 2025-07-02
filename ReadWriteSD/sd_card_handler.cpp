@@ -13,6 +13,7 @@ bool SDCardHandler::isCardInserted() {
 
 bool SDCardHandler::init() {
     _initialized = SD.begin(_chipSelectPin);
+    delay(10);
     if (!_initialized) {
         Serial.println("SD-Initialisierung fehlgeschlagen!");
     }
