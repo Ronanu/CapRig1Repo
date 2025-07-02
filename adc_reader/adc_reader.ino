@@ -15,28 +15,36 @@ void setup() {
 
     adc.begin();
 
-    // Wir wollen Kanäle 1, 2 und 5 lesen
+    // Wir wollen Kanäle 5, 6 und 7 lesen
     std::vector<uint8_t> channels = {5, 6, 7};
-    reader.begin(channels, 40000.0f); // max Gesamtsampling-Rate
+    reader.begin(channels, 1.0f); // Gesamt-Sampling-Rate
 }
 
 void loop() {
     static uint32_t lastPrint = 0;
-    if (millis() - lastPrint > 100) {
+    if (millis() - lastPrint > 1000) { // langsamer für bessere Lesbarkeit
         lastPrint = millis();
 
         for (uint8_t ch : {5, 6, 7}) {
-            const auto& buf = reader.getChannelBuffer(ch);
-            size_t lastIndex = (buf.head + buf.buffer.size() - 1) % buf.buffer.size();
-            const auto& m = buf.buffer[lastIndex];
-
             Serial.print("Ch");
             Serial.print(ch);
             Serial.print(": ");
-            Serial.print(m.value);
-            Serial.print(" @ ");
-            Serial.print(m.timestamp);
-            Serial.print(" us | ");
+
+            const auto& buf = reader.getChannelBuffer(ch);
+
+            // letze 10 Werte, rückwärts vom aktuellen head
+            for (int i = 4; i > 0; --i) {
+                size_t index = (buf.head + buf.buffer.size() - i) % buf.buffer.size();
+                const auto& m = buf.buffer[index];
+
+                Serial.print("[");
+                Serial.print(m.value);
+                Serial.print("@");
+                Serial.print(m.timestamp);
+                Serial.print("]");
+                Serial.print(" ");
+            }
+            Serial.println();
         }
         Serial.println();
     }
