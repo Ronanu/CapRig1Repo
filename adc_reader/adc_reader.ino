@@ -32,11 +32,12 @@ void loop() {
 
             const auto& buf = reader.getChannelBuffer(ch);
 
-            // letze 10 Werte, rückwärts vom aktuellen head
-            for (int i = 4; i > 0; --i) {
-                size_t index = (buf.head + buf.buffer.size() - i) % buf.buffer.size();
-                const auto& m = buf.buffer[index];
-
+            // Letzte 4 Werte ausgeben
+            size_t bufSize = buf.size();
+            size_t startIdx = bufSize > 4 ? bufSize - 4 : 0;
+            
+            for (size_t i = startIdx; i < bufSize; ++i) {
+                const auto& m = buf[i];
                 Serial.print("[");
                 Serial.print(m.value);
                 Serial.print("@");
@@ -44,6 +45,12 @@ void loop() {
                 Serial.print("]");
                 Serial.print(" ");
             }
+            
+            Serial.print("(");
+            Serial.print(buf.size());
+            Serial.print("/");
+            Serial.print(buf.capacity());
+            Serial.print(")");
             Serial.println();
         }
         Serial.println();
