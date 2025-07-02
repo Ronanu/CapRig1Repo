@@ -1,11 +1,11 @@
 #include <SPI.h>
 
 // Pin-Definitionen für MicroSD Breakout Board
-const int chipSelect = A5;    // CS Pin für SD-Karte
+const int chipSelect = 10;    // CS Pin für SD-Karte
 bool testExecuted = false;
 
 void setup() {
-    Serial.begin(9600);
+    Serial.begin(115200);
     delay(2000);
     Serial.println("=== GRUNDLEGENDER SPI TEST (OHNE SD LIBRARY) ===");
     
