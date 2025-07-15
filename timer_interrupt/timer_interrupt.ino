@@ -19,51 +19,28 @@ void IRAM_ATTR onTimer100Hz() { timer100Hz.handleInterrupt(); }
 void setup() {
   Serial.begin(115200);
   delay(1000);
-  
   Serial.println("ESP32 Timer-Test...");
 
-  // Timer einzeln initialisieren mit Debug-Ausgaben
-  Serial.print("Initialisiere 100Hz Timer... ");
-  bool ok1 = timer100Hz.begin(100.0f, onTimer100Hz);
-  Serial.println(ok1 ? "OK" : "FEHLER");
-  
-  Serial.print("Initialisiere 1kHz Timer... ");
-  bool ok2 = timer1kHz.begin(1000.0f, onTimer1kHz);
-  Serial.println(ok2 ? "OK" : "FEHLER");
-  
-  Serial.print("Initialisiere 10kHz Timer... ");
-  bool ok3 = timer10kHz.begin(10000.0f, onTimer10kHz);
-  Serial.println(ok3 ? "OK" : "FEHLER");
-
-  if (ok1 && ok2 && ok3) {
-    Serial.println("Alle Timer initialisiert!");
+  // Timer initialisieren
+  if (timer100Hz.begin(100.0f, onTimer100Hz) && 
+      timer1kHz.begin(1000.0f, onTimer1kHz) && 
+      timer10kHz.begin(10000.0f, onTimer10kHz)) {
     
     // Callbacks anhängen
-    Serial.print("Callbacks anhängen... ");
-    timer100Hz.attachCallback(callback100Hz, nullptr);
-    timer1kHz.attachCallback(callback1kHz, nullptr);
-    timer10kHz.attachCallback(callback10kHz, nullptr);
-    Serial.println("OK");
+    timer100Hz.attachCallback(callback100Hz);
+    timer1kHz.attachCallback(callback1kHz);
+    timer10kHz.attachCallback(callback10kHz);
     
-    // Starten
-    Serial.print("Timer starten... ");
-    bool start1 = timer100Hz.start();
-    bool start2 = timer1kHz.start();
-    bool start3 = timer10kHz.start();
-    Serial.printf("100Hz:%s 1kHz:%s 10kHz:%s\n", 
-                  start1?"OK":"FEHLER", start2?"OK":"FEHLER", start3?"OK":"FEHLER");
-    
-    if (start1 && start2 && start3) {
+    // Timer starten
+    if (timer100Hz.start() && timer1kHz.start() && timer10kHz.start()) {
       Serial.println("Alle Timer gestartet!");
     } else {
       Serial.println("Start-Fehler!");
-      while(1) delay(1000);
+      while(1);
     }
   } else {
-    Serial.println("Initialisierungs-Fehler!");
-    Serial.printf("Details: 100Hz=%s, 1kHz=%s, 10kHz=%s\n", 
-                  ok1?"OK":"FEHLER", ok2?"OK":"FEHLER", ok3?"OK":"FEHLER");
-    while(1) delay(1000);
+    Serial.println("Init-Fehler!");
+    while(1);
   }
 }
 
@@ -73,13 +50,12 @@ void loop() {
   if (millis() - lastMillis >= 1000) {
     lastMillis = millis();
     
-    // Sichere Werte lesen
+    // Counts lesen und zurücksetzen
     noInterrupts();
     uint32_t c10 = count10kHz, c1 = count1kHz, c100 = count100Hz;
     count10kHz = count1kHz = count100Hz = 0;
     interrupts();
     
-    // Ausgabe
     Serial.printf("10kHz:%lu | 1kHz:%lu | 100Hz:%lu\n", c10, c1, c100);
   }
 }
