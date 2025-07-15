@@ -35,7 +35,7 @@ int8_t TimerCallback::getAvailableTimer() {
     return -1;  // Keine Timer verfügbar
 }
 
-bool TimerCallback::begin(float frequency) {
+bool TimerCallback::begin(float frequency, void (*interruptHandler)()) {
     if (_initialized) {
         return false;  // Bereits initialisiert
     }
@@ -68,10 +68,8 @@ bool TimerCallback::begin(float frequency) {
     // Timer konfigurieren (aber noch nicht starten)
     timerAlarmWrite(_timer, alarmValue, true);  // Timer, Alarm-Wert, Auto-Reload
     
-    // Interrupt-Handler setzen
-    timerAttachInterrupt(_timer, reinterpret_cast<void(*)()>([this]() {
-        TimerCallback::onTimer(this);
-    }), true);  // Edge-triggered
+    // Externe Interrupt-Handler setzen
+    timerAttachInterrupt(_timer, interruptHandler, true);  // Edge-triggered
     
     _initialized = true;
     return true;
@@ -102,8 +100,8 @@ void TimerCallback::attachCallback(void (*callback)(void*), void* context) {
     _userContext = context;
 }
 
-void IRAM_ATTR TimerCallback::onTimer(TimerCallback* instance) {
-    if (instance && instance->_userCallback) {
-        instance->_userCallback(instance->_userContext);
+void TimerCallback::handleInterrupt() {
+    if (_userCallback) {
+        _userCallback(_userContext);
     }
 }

@@ -17,6 +17,19 @@ void IRAM_ATTR callback10kHz(void*) { count10kHz++; }
 void IRAM_ATTR callback1kHz(void*)  { count1kHz++; }
 void IRAM_ATTR callback100Hz(void*) { count100Hz++; }
 
+// Interrupt-Handler in der .ino-Datei definiert
+void IRAM_ATTR onTimer10kHz() {
+    timer10kHz.handleInterrupt();
+}
+
+void IRAM_ATTR onTimer1kHz() {
+    timer1kHz.handleInterrupt();
+}
+
+void IRAM_ATTR onTimer100Hz() {
+    timer100Hz.handleInterrupt();
+}
+
 void setup() {
   Serial.begin(115200);
   delay(1000);  // ESP32 braucht etwas Zeit zum Starten
@@ -25,10 +38,10 @@ void setup() {
 
   bool ok = true;
 
-  // Timer initialisieren (aber noch nicht starten)
-  ok &= timer100Hz.begin(100.0f);    // 100 Hz (niedrigste Frequenz zuerst)
-  ok &= timer1kHz.begin(1000.0f);    // 1 kHz
-  ok &= timer10kHz.begin(10000.0f);  // 10 kHz (höchste Frequenz zuletzt)
+  // Timer initialisieren mit externen Interrupt-Handlern
+  ok &= timer100Hz.begin(100.0f, onTimer100Hz);    // 100 Hz
+  ok &= timer1kHz.begin(1000.0f, onTimer1kHz);     // 1 kHz  
+  ok &= timer10kHz.begin(10000.0f, onTimer10kHz);  // 10 kHz
 
   if (!ok) {
     Serial.println("Ein oder mehrere Timer konnten nicht initialisiert werden.");

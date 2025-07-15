@@ -23,8 +23,13 @@
  *
  * Verwendung:
  * 
+ * // Interrupt-Handler in .ino definieren
+ * void IRAM_ATTR onMyTimer() {
+ *     myTimer.handleInterrupt();
+ * }
+ * 
  * TimerCallback myTimer;
- * myTimer.begin(1000.0f);  // 1 kHz Timer
+ * myTimer.begin(1000.0f, onMyTimer);  // 1 kHz Timer mit Handler
  * myTimer.attachCallback(myFunction, contextPointer);
  * myTimer.start();
  *
@@ -37,10 +42,13 @@ class TimerCallback {
 public:
     TimerCallback();
     ~TimerCallback();
-    bool begin(float frequency);                 // Initialisiert, aber startet NICHT den Timer
+    bool begin(float frequency, void (*interruptHandler)());  // Externe Interrupt-Funktion übergeben
     bool start();                                // Startet den Timer (Interrupts aktiv)
     bool stop();                                 // Stoppt den Timer (Interrupts inaktiv)
     void attachCallback(void (*callback)(void*), void* context);
+    
+    // Öffentliche Methode für externe Interrupt-Handler
+    void handleInterrupt();
     
 private:
     hw_timer_t* _timer;
@@ -52,7 +60,6 @@ private:
     void (*_userCallback)(void*);
     void* _userContext;
     
-    static void IRAM_ATTR onTimer(TimerCallback* instance);
     static bool timerUsed[4];  // Track which timers are in use
     static int8_t getAvailableTimer();
 };
