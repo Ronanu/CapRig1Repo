@@ -1,6 +1,6 @@
 #include "ADC78H89.h"
 
-ADC78H89 adc(34);  // CS-Pin auf A1 gesetzt
+ADC78H89 adc(15);  // CS-Pin auf A1 gesetzt
 
 void setup() {
   Serial.begin(115200);
@@ -21,5 +21,5 @@ void loop() {
   }
 
   Serial.println("------");
-  delay(100);  // 1 Sekunde Pause zwischen den Zyklen
+  delay(1000);  // 1 Sekunde Pause zwischen den Zyklen
 }
