@@ -1,7 +1,7 @@
 #include "sd_card_handler.h"
 
 // SD-Karten Handler mit CS Pin 5 und Card Detect Pin 16
-SDCardHandler sdCard(5, 16); // CS auf Pin 5, Card Detect auf Pin 16
+SDCardHandler sdCard(5, 17); // CS auf Pin 5, Card Detect auf Pin 17
 
 // Globale Variablen für die Callback-Funktion
 float currentTemp, currentHumidity, currentVoltage;
@@ -24,16 +24,16 @@ void setup() {
     Serial.println("=== Simple SD Card Test ===");
     Serial.println("Initialisiere SD-Karten Handler...");
     
-    // Handler initialisieren
-    sdCard.begin();
+    // Handler und SD-Karte initialisieren
+    if (!sdCard.init()) {
+        Serial.println("SD-Karten Handler konnte nicht initialisiert werden!");
+        return;
+    }
     
     // Prüfe ob Karte eingesteckt ist
     if (sdCard.isCardInserted()) {
         Serial.println("SD-Karte erkannt!");
-        
-        // SD-Karte initialisieren
-        if (sdCard.init()) {
-            Serial.println("SD-Karte erfolgreich initialisiert!");
+        Serial.println("SD-Karte erfolgreich initialisiert!");
             
             // Teste einfachen String-Write
             if (sdCard.writeStringLine("test.txt", "Hallo SD-Karte!")) {
@@ -60,9 +60,6 @@ void setup() {
                 Serial.println("Fehler beim Schreiben der Sensordaten!");
             }
             
-        } else {
-            Serial.println("Fehler bei der SD-Karten Initialisierung!");
-        }
     } else {
         Serial.println("Keine SD-Karte erkannt!");
         Serial.println("Bitte SD-Karte einsetzen und neustarten.");
