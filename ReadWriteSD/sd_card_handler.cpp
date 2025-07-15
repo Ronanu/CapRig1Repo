@@ -8,7 +8,7 @@ void SDCardHandler::begin() {
 }
 
 bool SDCardHandler::isCardInserted() {
-    return digitalRead(_cardDetectPin) == HIGH;
+    return digitalRead(_cardDetectPin) == LOW;
 }
 
 bool SDCardHandler::init() {
