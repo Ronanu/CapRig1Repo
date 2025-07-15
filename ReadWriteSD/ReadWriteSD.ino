@@ -1,8 +1,6 @@
-
-
 #include "sd_card_handler.h"
 
-SDCardHandler sdCard(16, 17); // CS auf Pin 16, Card Detect auf Pin 17
+SDCardHandler sdCard(5, 16); // CS auf Pin 16, Card Detect auf Pin 17
 
 bool hasRun = false;
 unsigned long lastPrintTime = 0;
@@ -34,17 +32,41 @@ void printFileContents(const char* filename) {
     }
 }
 
+// Alternative: Teste SD-Karte direkt ohne Card Detect
+void testSDCardDirect() {
+    Serial.println("DEBUG: Teste SD-Karte direkt ohne Card Detect...");
+    if (SD.begin(16)) {
+        Serial.println("DEBUG: SD-Karte direkt initialisiert!");
+        
+        // Teste Schreibvorgang
+        File testFile = SD.open("test.txt", FILE_WRITE);
+        if (testFile) {
+            testFile.println("Test erfolgreich");
+            testFile.close();
+            Serial.println("DEBUG: Test-Datei geschrieben");
+        } else {
+            Serial.println("DEBUG: Konnte Test-Datei nicht erstellen");
+        }
+    } else {
+        Serial.println("DEBUG: SD-Karte direkt-Initialisierung fehlgeschlagen");
+    }
+}
+
 void setup() {
-    Serial.begin(9600);
-    delay(2000);
+    Serial.begin(115200);
+    delay(1000);
     Serial.println("DEBUG: Start setup()");
+    Serial.println("DEBUG: ESP32 SD-Karten Test");
+    Serial.println("DEBUG: CS Pin: 16, Card Detect Pin: 17");
     sdCard.begin();
+    Serial.println("DEBUG: SDCardHandler.begin() abgeschlossen");
 }
 
 void loop() {
     if (!hasRun) {
         Serial.println("DEBUG: Im loop(), einmaliger Ablauf");
 
+        Serial.println("DEBUG: Prüfe Card Detect Status...");
         if (sdCard.isCardInserted()) {
             Serial.println("DEBUG: Karte erkannt");
             if (sdCard.init()) {
@@ -71,6 +93,8 @@ void loop() {
             }
         } else {
             Serial.println("DEBUG: Keine Karte erkannt");
+            Serial.println("DEBUG: Versuche SD-Karte direkt...");
+            testSDCardDirect();
         }
 
         hasRun = true;
