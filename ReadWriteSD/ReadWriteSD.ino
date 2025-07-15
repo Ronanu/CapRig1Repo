@@ -1,115 +1,255 @@
-#include "sd_card_handler.h"
+/*
+  Rui Santos
+  Complete project details at https://RandomNerdTutorials.com/esp32-microsd-card-arduino/
+  
+  This sketch can be found at: Examples > SD(esp32) > SD_Test
+*/
 
-// SD-Karten Handler mit CS Pin 5 und Card Detect Pin 16
-SDCardHandler sdCard(5, 17); // CS auf Pin 5, Card Detect auf Pin 17
+#include "FS.h"
+#include "SD.h"
+#include "SPI.h"
 
-// Globale Variablen für die Callback-Funktion
-float currentTemp, currentHumidity, currentVoltage;
+void listDir(fs::FS &fs, const char * dirname, uint8_t levels){
+  Serial.printf("Listing directory: %s\n", dirname);
 
-// Callback-Funktion für das Schreiben der Sensordaten
-void writeSensorData(File& file) {
-    file.print(millis());
-    file.print(",");
-    file.print(currentTemp, 1);
-    file.print(",");
-    file.print(currentHumidity, 1);
-    file.print(",");
-    file.println(currentVoltage, 2);
-}
+  File root = fs.open(dirname);
+  if(!root){
+    Serial.println("Failed to open directory");
+    return;
+  }
+  if(!root.isDirectory()){
+    Serial.println("Not a directory");
+    return;
+  }
 
-void setup() {
-    Serial.begin(115200);
-    delay(1000);
-    
-    Serial.println("=== SD Card Test ===");
-    
-    // Hardware-Setup (Pin-Konfiguration)
-    Serial.println("Init...");
-    sdCard.init();
-    Serial.println("Init OK");
-    
-    // SD-Karte initialisieren
-    Serial.println("Begin...");
-    if (!sdCard.begin()) {
-        Serial.println("Begin FEHLER!");
-        return;
-    }
-    Serial.println("Begin OK");
-    
-    // Prüfe ob Karte eingesteckt ist
-    if (sdCard.isCardInserted()) {
-        Serial.println("SD-Karte erkannt!");
-        Serial.println("SD-Karte erfolgreich initialisiert!");
-            
-            // Teste einfachen String-Write
-            if (sdCard.writeStringLine("test.txt", "Hallo SD-Karte!")) {
-                Serial.println("Test-String erfolgreich geschrieben!");
-            } else {
-                Serial.println("Fehler beim Schreiben des Test-Strings!");
-            }
-            
-            // Teste CSV-Header schreiben
-            if (sdCard.writeStringLine("sensordaten.csv", "Zeit,Temperatur,Luftfeuchtigkeit,Spannung")) {
-                Serial.println("CSV-Header erfolgreich geschrieben!");
-            }
-            
-            // Teste Custom-Write mit Callback-Funktion
-            currentTemp = 25.4;
-            currentHumidity = 60.2;
-            currentVoltage = 3.3;
-            
-            bool success = sdCard.writeCustomLine("sensordaten.csv", writeSensorData);
-            
-            if (success) {
-                Serial.println("Sensordaten erfolgreich geschrieben!");
-            } else {
-                Serial.println("Fehler beim Schreiben der Sensordaten!");
-            }
-            
+  File file = root.openNextFile();
+  while(file){
+    if(file.isDirectory()){
+      Serial.print("  DIR : ");
+      Serial.println(file.name());
+      if(levels){
+        listDir(fs, file.name(), levels -1);
+      }
     } else {
-        Serial.println("Keine SD-Karte erkannt!");
-        Serial.println("Bitte SD-Karte einsetzen und neustarten.");
+      Serial.print("  FILE: ");
+      Serial.print(file.name());
+      Serial.print("  SIZE: ");
+      Serial.println(file.size());
     }
-    
-    Serial.println("Setup abgeschlossen!");
+    file = root.openNextFile();
+  }
 }
 
-void loop() {
-    // Alle 10 Sekunden neue Sensordaten schreiben
-    static unsigned long lastWrite = 0;
-    
-    if (millis() - lastWrite >= 10000) {
-        
-        // Nur schreiben wenn SD-Karte verfügbar ist
-        if (sdCard.isCardInserted()) {
-            
-            // Simuliere Sensordaten
-            currentTemp = 20.0 + random(0, 100) / 10.0;     // 20.0 - 30.0°C
-            currentHumidity = 40.0 + random(0, 400) / 10.0; // 40.0 - 80.0%
-            currentVoltage = 3.0 + random(0, 60) / 100.0;   // 3.0 - 3.6V
-            
-            // Schreibe neue Datenzeile mit Callback-Funktion
-            bool success = sdCard.writeCustomLine("sensordaten.csv", writeSensorData);
-            
-            if (success) {
-                Serial.print("Neue Daten geschrieben: ");
-                Serial.print(currentTemp);
-                Serial.print("°C, ");
-                Serial.print(currentHumidity);
-                Serial.print("%, ");
-                Serial.print(currentVoltage);
-                Serial.println("V");
-            } else {
-                Serial.println("Fehler beim Schreiben der Daten!");
-            }
-            
-        } else {
-            Serial.println("SD-Karte nicht verfügbar!");
-        }
-        
-        lastWrite = millis();
+void createDir(fs::FS &fs, const char * path){
+  Serial.printf("Creating Dir: %s\n", path);
+  if(fs.mkdir(path)){
+    Serial.println("Dir created");
+  } else {
+    Serial.println("mkdir failed");
+  }
+}
+
+void removeDir(fs::FS &fs, const char * path){
+  Serial.printf("Removing Dir: %s\n", path);
+  if(fs.rmdir(path)){
+    Serial.println("Dir removed");
+  } else {
+    Serial.println("rmdir failed");
+  }
+}
+
+void readFile(fs::FS &fs, const char * path){
+  Serial.printf("Reading file: %s\n", path);
+
+  File file = fs.open(path);
+  if(!file){
+    Serial.println("Failed to open file for reading");
+    return;
+  }
+
+  Serial.print("Read from file: ");
+  while(file.available()){
+    Serial.write(file.read());
+  }
+  file.close();
+}
+
+void writeFile(fs::FS &fs, const char * path, const char * message){
+  Serial.printf("Writing file: %s\n", path);
+
+  File file = fs.open(path, FILE_WRITE);
+  if(!file){
+    Serial.println("Failed to open file for writing");
+    return;
+  }
+  if(file.print(message)){
+    Serial.println("File written");
+  } else {
+    Serial.println("Write failed");
+  }
+  file.close();
+}
+
+void appendFile(fs::FS &fs, const char * path, const char * message){
+  Serial.printf("Appending to file: %s\n", path);
+
+  File file = fs.open(path, FILE_APPEND);
+  if(!file){
+    Serial.println("Failed to open file for appending");
+    return;
+  }
+  if(file.print(message)){
+      Serial.println("Message appended");
+  } else {
+    Serial.println("Append failed");
+  }
+  file.close();
+}
+
+void renameFile(fs::FS &fs, const char * path1, const char * path2){
+  Serial.printf("Renaming file %s to %s\n", path1, path2);
+  if (fs.rename(path1, path2)) {
+    Serial.println("File renamed");
+  } else {
+    Serial.println("Rename failed");
+  }
+}
+
+void deleteFile(fs::FS &fs, const char * path){
+  Serial.printf("Deleting file: %s\n", path);
+  if(fs.remove(path)){
+    Serial.println("File deleted");
+  } else {
+    Serial.println("Delete failed");
+  }
+}
+
+void testFileIO(fs::FS &fs, const char * path){
+  File file = fs.open(path);
+  static uint8_t buf[512];
+  size_t len = 0;
+  uint32_t start = millis();
+  uint32_t end = start;
+  if(file){
+    len = file.size();
+    size_t flen = len;
+    start = millis();
+    while(len){
+      size_t toRead = len;
+      if(toRead > 512){
+        toRead = 512;
+      }
+      file.read(buf, toRead);
+      len -= toRead;
     }
+    end = millis() - start;
+    Serial.printf("%u bytes read for %u ms\n", flen, end);
+    file.close();
+  } else {
+    Serial.println("Failed to open file for reading");
+  }
+
+
+  file = fs.open(path, FILE_WRITE);
+  if(!file){
+    Serial.println("Failed to open file for writing");
+    return;
+  }
+
+  size_t i;
+  start = millis();
+  for(i=0; i<2048; i++){
+    file.write(buf, 512);
+  }
+  end = millis() - start;
+  Serial.printf("%u bytes written for %u ms\n", 2048 * 512, end);
+  file.close();
+}
+
+void setup(){
+  Serial.begin(115200);
+  delay(1000);
+  
+  Serial.println("=== SD Card Test ===");
+  Serial.println("Initializing SD card...");
+  
+  // SPI explizit initialisieren für Stabilität
+  SPI.begin();
+  delay(100);
+  
+  // Mehrere Versuche für SD.begin() (wichtig nach Reset)
+  bool sd_initialized = false;
+  for(int attempt = 1; attempt <= 5; attempt++) {
+    Serial.printf("Attempt %d: ", attempt);
     
-    // Kurze Pause
-    delay(100);
+    if(SD.begin(5, SPI, 4000000)) { // 4MHz SPI frequency
+      sd_initialized = true;
+      Serial.println("SUCCESS!");
+      break;
+    } else {
+      Serial.println("Failed");
+      delay(500);
+      
+      // Bei Fehlschlag: SPI reset und niedrigere Frequenz versuchen
+      if(attempt >= 3) {
+        SPI.end();
+        delay(100);
+        SPI.begin();
+        delay(100);
+        Serial.printf("Attempt %d (low freq): ", attempt);
+        if(SD.begin(5, SPI, 400000)) { // 400kHz fallback
+          sd_initialized = true;
+          Serial.println("SUCCESS with low frequency!");
+          break;
+        } else {
+          Serial.println("Failed even with low frequency");
+        }
+      }
+    }
+  }
+  
+  if(!sd_initialized) {
+    Serial.println("All attempts failed!");
+    Serial.println("Try removing and reinserting the SD card");
+    return;
+  }
+  uint8_t cardType = SD.cardType();
+
+  if(cardType == CARD_NONE){
+    Serial.println("No SD card attached");
+    return;
+  }
+
+  Serial.print("SD Card Type: ");
+  if(cardType == CARD_MMC){
+    Serial.println("MMC");
+  } else if(cardType == CARD_SD){
+    Serial.println("SDSC");
+  } else if(cardType == CARD_SDHC){
+    Serial.println("SDHC");
+  } else {
+    Serial.println("UNKNOWN");
+  }
+
+  uint64_t cardSize = SD.cardSize() / (1024 * 1024);
+  Serial.printf("SD Card Size: %lluMB\n", cardSize);
+
+  listDir(SD, "/", 0);
+  createDir(SD, "/mydir");
+  listDir(SD, "/", 0);
+  removeDir(SD, "/mydir");
+  listDir(SD, "/", 2);
+  writeFile(SD, "/hello.txt", "Hello ");
+  appendFile(SD, "/hello.txt", "World!\n");
+  readFile(SD, "/hello.txt");
+  deleteFile(SD, "/foo.txt");
+  renameFile(SD, "/hello.txt", "/foo.txt");
+  readFile(SD, "/foo.txt");
+  testFileIO(SD, "/test.txt");
+  Serial.printf("Total space: %lluMB\n", SD.totalBytes() / (1024 * 1024));
+  Serial.printf("Used space: %lluMB\n", SD.usedBytes() / (1024 * 1024));
+}
+
+void loop(){
+
 }
