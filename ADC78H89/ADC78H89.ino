@@ -1,6 +1,6 @@
 #include "ADC78H89.h"
 
-ADC78H89 adc(A1);  // CS-Pin auf A1 gesetzt
+ADC78H89 adc(34);  // CS-Pin auf A1 gesetzt
 
 void setup() {
   Serial.begin(115200);

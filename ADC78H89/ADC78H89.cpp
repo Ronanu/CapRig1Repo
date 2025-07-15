@@ -1,4 +1,5 @@
 #include "ADC78H89.h"
+#include <Arduino.h>
 
 ADC78H89::ADC78H89(uint8_t csPin) : _csPin(csPin) {}
 
@@ -14,7 +15,7 @@ uint8_t ADC78H89::buildControlByte(uint8_t channel) {
 
 uint16_t ADC78H89::readChannel(uint8_t channel) {
   uint8_t controlByte = buildControlByte(channel);
-  SPI.beginTransaction(SPISettings(8000000, MSBFIRST, SPI_MODE0));
+  SPI.beginTransaction(SPISettings(8000000, SPI_MSBFIRST, SPI_MODE0));
   delayMicroseconds(1);  
   digitalWrite(_csPin, LOW);
   delayMicroseconds(2);
