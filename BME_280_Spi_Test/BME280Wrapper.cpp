@@ -13,19 +13,13 @@ bool BME280Wrapper::begin() {
 }
 
 void BME280Wrapper::read() {
-    // Temporarily disable Serial to avoid pin conflict
-    Serial.end();
-    delay(100);
+    delayMicroseconds(500); // Give Serial time to disable
     
     BME280::TempUnit tempUnit(BME280::TempUnit_Celsius);
     BME280::PresUnit presUnit(BME280::PresUnit_Pa);
     float dummyHumidity;
     bme.read(pressure, temperature, dummyHumidity, tempUnit, presUnit);
-    
-    delay(100);
-    // Re-enable Serial
-    Serial.begin(115200);
-    delay(100); // Give Serial time to reinitialize
+    delayMicroseconds(500); // Give Serial time to reinitialize
 }
 
 float BME280Wrapper::getTemperature() const {

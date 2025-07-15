@@ -1,7 +1,7 @@
 #include "BME280Wrapper.h"
 
 #define SERIAL_BAUD 115200
-#define DEVICE_PIN 1
+#define DEVICE_PIN 2
 
 BME280Wrapper bme(DEVICE_PIN);
 
