@@ -3,37 +3,7 @@
 
 /**
  * @class TimerCallback
- * @brief Verwaltet einen Hardware-Timer auf dem ESP32 Dev Kit.
- *
- * Diese Klasse kapselt die Verwendung eines Hardware-Timers mithilfe der ESP32-Timer-API.
- * Ein Benutzer kann eine Callback-Funktion mit Kontext registrieren, die mit einer 
- * festen Frequenz durch Timer-Interrupts aufgerufen wird.
- *
- * Merkmale:
- * - Nutzt die ESP32 Hardware-Timer (4 Timer verfügbar: Timer 0-3).
- * - Unterstützt Frequenzen bis zu mehreren MHz (abhängig von Interrupt-Dauer).
- * - Automatische Timer-Zuweisung mit get_available_timer().
- * - Übergabe von benutzerdefinierter Callback-Funktion mit optionalem Kontext.
- *
- * Einschränkungen:
- * - ESP32 hat 4 Hardware-Timer (Timer 0-3), die zwischen allen Anwendungen geteilt werden.
- * - Timer 0 wird oft vom WiFi-Stack verwendet.
- * - Callback-Funktionen sollten **kurz und effizient** sein – keine Serial.prints oder Delays im Interrupt.
- * - Bei sehr hohen Frequenzen (>50kHz) kann es zu Timing-Problemen kommen.
- *
- * Verwendung:
- * 
- * // Interrupt-Handler in .ino definieren
- * void IRAM_ATTR onMyTimer() {
- *     myTimer.handleInterrupt();
- * }
- * 
- * TimerCallback myTimer;
- * myTimer.begin(1000.0f, onMyTimer);  // 1 kHz Timer mit Handler
- * myTimer.attachCallback(myFunction, contextPointer);
- * myTimer.start();
- *
- * Kompatibel mit ESP32 Arduino Core.
+ * @brief Einfacher Hardware-Timer für ESP32 (v3.x kompatibel).
  */
 
 #include <Arduino.h>
@@ -42,26 +12,18 @@ class TimerCallback {
 public:
     TimerCallback();
     ~TimerCallback();
-    bool begin(float frequency, void (*interruptHandler)());  // Externe Interrupt-Funktion übergeben
-    bool start();                                // Startet den Timer (Interrupts aktiv)
-    bool stop();                                 // Stoppt den Timer (Interrupts inaktiv)
+    bool begin(float frequency, void (*interruptHandler)());
+    bool start();
+    bool stop();
     void attachCallback(void (*callback)(void*), void* context);
-    
-    // Öffentliche Methode für externe Interrupt-Handler
     void handleInterrupt();
     
 private:
     hw_timer_t* _timer;
-    uint8_t _timerNum;
     float _frequency;
-    bool _initialized;
-    bool _running;
-    
     void (*_userCallback)(void*);
     void* _userContext;
-    
-    static bool timerUsed[4];  // Track which timers are in use
-    static int8_t getAvailableTimer();
+    bool _running;
 };
 
 #endif
