@@ -21,14 +21,20 @@ void setup() {
     Serial.begin(115200);
     delay(1000);
     
-    Serial.println("=== Simple SD Card Test ===");
-    Serial.println("Initialisiere SD-Karten Handler...");
+    Serial.println("=== SD Card Test ===");
     
-    // Handler und SD-Karte initialisieren
-    if (!sdCard.init()) {
-        Serial.println("SD-Karten Handler konnte nicht initialisiert werden!");
+    // Hardware-Setup (Pin-Konfiguration)
+    Serial.println("Init...");
+    sdCard.init();
+    Serial.println("Init OK");
+    
+    // SD-Karte initialisieren
+    Serial.println("Begin...");
+    if (!sdCard.begin()) {
+        Serial.println("Begin FEHLER!");
         return;
     }
+    Serial.println("Begin OK");
     
     // Prüfe ob Karte eingesteckt ist
     if (sdCard.isCardInserted()) {

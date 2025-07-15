@@ -5,43 +5,48 @@ SDCardHandler::SDCardHandler(int chipSelectPin, int cardDetectPin)
 
 
 bool SDCardHandler::isCardInserted() {
-    return true; //digitalRead(_cardDetectPin) == HIGH;
+    return digitalRead(_cardDetectPin) == HIGH;
 }
 
-bool SDCardHandler::init() {
+void SDCardHandler::init() {
     // Pin-Konfiguration (Hardware-Setup)
     pinMode(_cardDetectPin, INPUT);
-    pinMode(_chipSelectPin, OUTPUT);
-    digitalWrite(_chipSelectPin, HIGH); // CS initial deaktiviert
-    
+}
+
+bool SDCardHandler::begin() {
     // SD-Karte initialisieren
+    Serial.print("CS Pin: ");
+    Serial.println(_chipSelectPin);
+    Serial.print("Card Detect: ");
+    Serial.println(digitalRead(_cardDetectPin));
+    
+    // SPI explizit initialisieren
+    SPI.begin();
+    
     _initialized = SD.begin(_chipSelectPin);
+    Serial.print("SD.begin result: ");
+    Serial.println(_initialized);
+    
     delay(100);
     return _initialized;
 }
 
 bool SDCardHandler::writeStringLine(const char* filename, const char* line) {
-    digitalWrite(_chipSelectPin, LOW);  // CS aktivieren
     File file = SD.open(filename, FILE_WRITE);
     if (file) {
-        file.println("hallo");
+        file.println(line);
         file.close();
-        digitalWrite(_chipSelectPin, HIGH); // CS deaktivieren
         return true;
     }
-    digitalWrite(_chipSelectPin, HIGH); // CS deaktivieren bei Fehler
     return false;
 }
 
 bool SDCardHandler::writeCustomLine(const char* filename, SDWriteCallback callback) {
-    digitalWrite(_chipSelectPin, LOW);  // CS aktivieren
     File file = SD.open(filename, FILE_WRITE);
     if (file) {
         callback(file);
         file.close();
-        digitalWrite(_chipSelectPin, HIGH); // CS deaktivieren
         return true;
     }
-    digitalWrite(_chipSelectPin, HIGH); // CS deaktivieren bei Fehler
     return false;
 }
