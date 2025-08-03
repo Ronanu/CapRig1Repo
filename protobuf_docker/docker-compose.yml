@@ -4,9 +4,9 @@ services:
   protobuf:
     build: .
     volumes:
-      - ./protobuf_msgs:/workspace/protobuf_msgs:ro
-      - ./protobuf_generated:/workspace/protobuf_generated
-      - ./workspace:/workspace/workspace
+      - ./protobuf_msgs:/rig/protobuf_msgs:ro
+      - ./protobuf_generated:/rig/protobuf_generated
+      - ./workspace:/rig/workspace
     working_dir: /workspace
     stdin_open: true
     tty: true

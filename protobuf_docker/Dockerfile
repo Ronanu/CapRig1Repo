@@ -26,7 +26,6 @@ RUN git clone https://github.com/nanopb/nanopb.git /nanopb && \
 
 ENV PATH="/nanopb/generator:${PATH}"
 
-
 COPY run_and_stay.sh /run_and_stay.sh
 RUN chmod +x /run_and_stay.sh
 CMD ["/run_and_stay.sh"]
