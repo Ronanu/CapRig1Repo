@@ -1,7 +1,7 @@
 #!/bin/bash
-echo "Running generate.py..."
-python3 /generate.py
+set -e
 
-echo "Done. Dropping into shell..."
+python3 /workspace/protobuf_msgs/generate.py || echo "generate.py nicht gefunden oder fehlgeschlagen"
+
+echo "✔️ Done. Dropping into shell..."
 exec bash
-
