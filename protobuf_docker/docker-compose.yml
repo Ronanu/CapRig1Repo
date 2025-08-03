@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  protobuf:
+    build: .
+    volumes:
+      - ./protos:/workspace/protos
+      - ./output:/workspace/output
+    command: ["python", "generate.py"]
