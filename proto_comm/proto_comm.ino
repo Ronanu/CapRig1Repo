@@ -1,7 +1,9 @@
 #include "pb.h"
+#include "pb_common.h"
 #include "pb_encode.h"
 #include "pb_decode.h"
 #include "messages.pb.h"
+
 
 FromEsp32 fromMsg;
 ToEsp32 toMsg;

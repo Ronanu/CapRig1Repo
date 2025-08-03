@@ -7,4 +7,6 @@ services:
       - ./protobuf_msgs:/workspace/protobuf_msgs:ro
       - ./protobuf_generated:/workspace/protobuf_generated
       - ./workspace:/workspace/workspace
-    command: ["python", "/workspace/protobuf_msgs/generate.py"]
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
