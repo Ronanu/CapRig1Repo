@@ -4,6 +4,8 @@ services:
   protobuf:
     build: .
     volumes:
-      - ./protos:/workspace/protos
-      - ./output:/workspace/output
+      - ./protos:/workspace/protobuf_msgs
+      - ./output:/workspace/protobuf_gnerated
+      - ./workspace:/workspace/workspace
+
     command: ["python", "generate.py"]

@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     autoconf \
     libtool \
+    cmake \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v25.3/protoc-25.3-linux-x86_64.zip && \
