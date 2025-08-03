@@ -2,10 +2,16 @@ import os
 import subprocess
 import shutil
 
-proto_file = "protobuf_msgs/messages.proto"
+# Konfiguration
+proto_dir = "protobuf_msgs"
 out_dir = "protobuf_generated"
 nanopb_src_dir = "/nanopb"
 
+# Pfade zu Protobuf-Dateien
+proto_python = os.path.join(proto_dir, "messages.proto")
+proto_nanopb = os.path.join(proto_dir, "messages_nanopb.proto")
+
+# Nanopb-Basiskomponenten
 nanopb_files = [
     "pb_common.c",
     "pb_common.h",
@@ -18,33 +24,34 @@ nanopb_files = [
 
 os.makedirs(out_dir, exist_ok=True)
 
-print("Starting protobuf generation...")
+print("🔁 Starte Protobuf-Generierung...")
 
-# Generate Python bindings
+# 1. Python-Dateien generieren
+print("🐍 Generiere Python-Protobuf-Bindings...")
 subprocess.run([
     "protoc",
-    f"--proto_path=protobuf_msgs",
+    f"--proto_path={proto_dir}",
     f"--python_out={out_dir}",
-    proto_file
+    proto_python
 ], check=True)
+print("✅ Python-Generierung abgeschlossen.")
 
-print("Python generation completed.")
-
-# Generate Nanopb C files
+# 2. Nanopb-C-Dateien generieren
+print("⚙️  Generiere Nanopb-C-Dateien...")
 subprocess.run([
     "protoc",
-    f"--proto_path=protobuf_msgs",
+    f"--proto_path={proto_dir}",
     f"--nanopb_out={out_dir}",
-    proto_file
+    proto_nanopb
 ], check=True)
+print("✅ Nanopb-Generierung abgeschlossen.")
 
-print("Nanopb generation completed.")
-
-# Copy nanopb core files
-print("Copying nanopb core files...")
+# 3. Kopiere Nanopb-Kernbibliothek
+print("📦 Kopiere Nanopb-Core-Dateien...")
 for filename in nanopb_files:
     src = os.path.join(nanopb_src_dir, filename)
     dst = os.path.join(out_dir, filename)
     shutil.copyfile(src, dst)
+print("✅ Nanopb-Core-Dateien kopiert.")
 
-print("Nanopb core files copied.")
+print("🏁 Fertig.")
