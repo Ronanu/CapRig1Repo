@@ -1,3 +1,4 @@
+import "nanopb.proto";
 syntax = "proto3";
 
 message ToEsp32 {

@@ -7,5 +7,4 @@ services:
       - ./protos:/workspace/protobuf_msgs
       - ./output:/workspace/protobuf_gnerated
       - ./workspace:/workspace/workspace
-
-    command: ["python", "generate.py"]
+    command: ["python", "/workspace/protobuf_msgs/generate.py"]
