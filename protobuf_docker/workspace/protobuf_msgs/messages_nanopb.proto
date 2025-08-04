@@ -1,18 +1,58 @@
 syntax = "proto3";
 
 import "nanopb.proto";
+message SensorSample {
+  uint32 sensor_id = 1;
+  float value = 2;
+  uint32 timestamp = 3;
+}
+
+message StatusMessage {
+  repeated SensorSample samples = 1 [(nanopb).max_count = 8];
+}
+
+message CommandRequestStatus {}
+message CommandSetPwm {
+  uint32 channel = 1;
+  float value = 2;
+}
+message CommandControlOutput {
+  uint32 pin = 1;
+  bool state = 2;
+}
+message CommandSetConfig {
+  string key = 1 [(nanopb).max_size = 32];
+  string value = 2 [(nanopb).max_size = 32];
+}
+
+message ResponseAck {
+  string message = 1 [(nanopb).max_size = 64];
+}
+message ResponseError {
+  string error = 1 [(nanopb).max_size = 64];
+}
 
 message ToEsp32 {
   uint64 timestamp = 1;
-  string command = 2 [(nanopb).max_size = 32];
-  string payload = 3 [(nanopb).max_size = 64];
-  uint32 hash = 4;
+
+  oneof payload {
+    CommandRequestStatus request_status = 10;
+    CommandSetPwm set_pwm = 11;
+    CommandControlOutput control_output = 12;
+    CommandSetConfig set_config = 13;
+  }
+
+  uint32 hash = 100;
 }
 
 message FromEsp32 {
   uint64 timestamp = 1;
-  float temperature = 2;
-  float humidity = 3;
-  string status = 4 [(nanopb).max_size = 32];
-  uint32 hash = 5;
+
+  oneof payload {
+    StatusMessage status = 10;
+    ResponseAck ack = 11;
+    ResponseError error = 12;
+  }
+
+  uint32 hash = 100;
 }
