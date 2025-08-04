@@ -29,7 +29,7 @@ def read_message(ser):
     return msg
 
 def main():
-    with serial.Serial(PORT, BAUDRATE, timeout=2) as ser:
+    with serial.Serial(PORT, BAUDRATE, timeout=0.1) as ser:
         print("⏳ Warte auf ESP32...")
 
         # Nachricht vorbereiten
