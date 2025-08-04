@@ -3,16 +3,27 @@ import struct
 import time
 from messages_pb2 import ToEsp32, FromEsp32
 
-PORT = 'COM7'  # dein ESP32 ist hier angeschlossen
+PORT = 'COM7'
 BAUDRATE = 115200
 
+def calculate_hash(data: bytes) -> int:
+    hash_ = 2166136261
+    for byte in data:
+        hash_ ^= byte
+        hash_ *= 16777619
+        hash_ &= 0xFFFFFFFF  # simulate 32-bit overflow
+    return hash_
+
 def send_message(ser, msg_obj):
-    data = msg_obj.SerializeToString()
-    length = len(data)
+    msg_obj.hash = 0  # reset before hashing
+    raw = msg_obj.SerializeToString()
+    msg_obj.hash = calculate_hash(raw)
+    final_data = msg_obj.SerializeToString()
+    length = len(final_data)
     if length > 128:
         raise ValueError("Message too long")
     header = struct.pack('>H', length)
-    ser.write(header + data)
+    ser.write(header + final_data)
 
 def read_message(ser):
     header = ser.read(2)
@@ -26,13 +37,23 @@ def read_message(ser):
         return None
     msg = FromEsp32()
     msg.ParseFromString(data)
+
+    received_hash = msg.hash
+    msg.hash = 0
+    recalculated = msg.SerializeToString()
+    expected_hash = calculate_hash(recalculated)
+
+    if received_hash != expected_hash:
+        print("⚠️ Ungültiger Hash! Nachricht manipuliert oder beschädigt.")
+        return None
+
+    msg.hash = received_hash  # Restore for display
     return msg
 
 def main():
-    with serial.Serial(PORT, BAUDRATE, timeout=0.1) as ser:
+    with serial.Serial(PORT, BAUDRATE, timeout=0.5) as ser:
         print("⏳ Warte auf ESP32...")
 
-        # Nachricht vorbereiten
         to_esp = ToEsp32()
         to_esp.timestamp = int(time.time() * 1000)
         to_esp.command = "get_status"

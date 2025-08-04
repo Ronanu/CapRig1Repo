@@ -5,14 +5,16 @@
 #include <pb_decode.h>
 #include <messages.pb.h>
 
-// Globale Nachrichten
 FromEsp32 fromMsg;
 ToEsp32 toMsg;
 
-void setup() {
-  Serial.begin(115200);
-  delay(100);
-  Serial.println("ESP32 Protobuf ready.");
+uint32_t calculateHash(const uint8_t* data, size_t length) {
+  uint32_t hash = 2166136261u;
+  for (size_t i = 0; i < length; i++) {
+    hash ^= data[i];
+    hash *= 16777619u;
+  }
+  return hash;
 }
 
 void sendStatus() {
@@ -20,8 +22,8 @@ void sendStatus() {
   fromMsg.temperature = 22.5f;
   fromMsg.humidity = 55.5f;
   strncpy(fromMsg.status, "OK", sizeof(fromMsg.status));
-  fromMsg.status[sizeof(fromMsg.status) - 1] = '\0'; // Sicherheit
-  fromMsg.hash = 0; // optional berechnen
+  fromMsg.status[sizeof(fromMsg.status) - 1] = '\0';
+  fromMsg.hash = 0;
 
   uint8_t buffer[128];
   pb_ostream_t stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
@@ -30,18 +32,29 @@ void sendStatus() {
     return;
   }
 
-  // Länge senden
+  fromMsg.hash = calculateHash(buffer, stream.bytes_written);
+
+  stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
+  if (!pb_encode(&stream, FromEsp32_fields, &fromMsg)) {
+    Serial.println("Encoding failed after hash set!");
+    return;
+  }
+
   Serial.write((uint8_t)(stream.bytes_written >> 8));
   Serial.write((uint8_t)(stream.bytes_written & 0xFF));
   Serial.write(buffer, stream.bytes_written);
 }
 
+void setup() {
+  Serial.begin(115200);
+  delay(100);
+  Serial.println("ESP32 Protobuf ready.");
+}
+
 void loop() {
-  // Warte auf 2 Bytes für die Länge
   if (Serial.available() >= 2) {
     uint16_t len = ((uint16_t)Serial.read()) << 8;
     len |= Serial.read();
-
     if (len > 128) return;
 
     uint8_t buffer[128];
