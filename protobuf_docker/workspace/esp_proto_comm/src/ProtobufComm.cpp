@@ -49,10 +49,10 @@ void ProtobufComm::sendStatus() {
   sendMessage(msg);
 }
 
-void ProtobufComm::receiveAndHandle() {
-  if (serial.available() < 2) return;
+bool ProtobufComm::receive(ToEsp32& out) {
+  if (serial.available() < 2) return false;
   uint16_t len = ((uint16_t)serial.read() << 8) | serial.read();
-  if (len > 128) return;
+  if (len > 128) return false;
 
   uint8_t buffer[128];
   size_t i = 0;
@@ -60,11 +60,12 @@ void ProtobufComm::receiveAndHandle() {
     if (serial.available()) buffer[i++] = serial.read();
   }
 
-  ToEsp32 msg = ToEsp32_init_zero;
   pb_istream_t stream = pb_istream_from_buffer(buffer, len);
-  if (!pb_decode(&stream, ToEsp32_fields, &msg)) return;
+  return pb_decode(&stream, ToEsp32_fields, &out);
+}
 
-  // Später: Kommandos auswerten
+void ProtobufComm::handle(const ToEsp32& msg) {
+  // Placeholder: Aktuell nur get_status
   if (strcmp(msg.command, "get_status") == 0) {
     sendStatus();
   }

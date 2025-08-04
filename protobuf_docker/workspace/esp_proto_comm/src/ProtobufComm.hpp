@@ -7,7 +7,8 @@ class ProtobufComm {
 public:
   ProtobufComm(Stream& stream, SampleManager& sm);
   void sendStatus();
-  void receiveAndHandle();
+  bool receive(ToEsp32& out);
+  void handle(const ToEsp32& msg);
 
 private:
   Stream& serial;
