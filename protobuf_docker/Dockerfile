@@ -32,3 +32,9 @@ CMD ["/run_and_stay.sh"]
 
 WORKDIR /workspace
 
+
+# when Docker is running in the same folder:
+# docker-compose up --build 
+
+# to get into a already running container:
+# docker exec -it protobuf_docker-protobuf-1 bash

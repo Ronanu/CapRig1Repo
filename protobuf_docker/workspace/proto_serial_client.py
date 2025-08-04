@@ -81,7 +81,7 @@ class ProtoSerialClient:
         msg.set_mux.toggle = True  # oder False, wenn nötig
         self.send_message(msg)
 
-    def send_get_data_1000x(self):
+    def send_get_data_1000x(self):  # todo checksum testen, testen, ob verbindung successful, no print
         """Sendet 1000 mal get_data und misst die Sendefrequenz"""
         print("🚀 Starte 1000x get_data Test...")
         
