@@ -6,34 +6,31 @@
 #error Regenerate this file with the current version of nanopb generator.
 #endif
 
+PB_BIND(ToEsp32, ToEsp32, AUTO)
+
+
+PB_BIND(FromEsp32, FromEsp32, AUTO)
+
+
+PB_BIND(AliveCommand, AliveCommand, AUTO)
+
+
+PB_BIND(GetDataCommand, GetDataCommand, AUTO)
+
+
+PB_BIND(SetMuxCommand, SetMuxCommand, AUTO)
+
+
+PB_BIND(Ack, Ack, AUTO)
+
+
 PB_BIND(SensorSample, SensorSample, AUTO)
 
 
-PB_BIND(StatusMessage, StatusMessage, AUTO)
+PB_BIND(Error, Error, AUTO)
 
 
-PB_BIND(CommandRequestStatus, CommandRequestStatus, AUTO)
-
-
-PB_BIND(CommandSetPwm, CommandSetPwm, AUTO)
-
-
-PB_BIND(CommandControlOutput, CommandControlOutput, AUTO)
-
-
-PB_BIND(CommandSetConfig, CommandSetConfig, AUTO)
-
-
-PB_BIND(ResponseAck, ResponseAck, AUTO)
-
-
-PB_BIND(ResponseError, ResponseError, AUTO)
-
-
-PB_BIND(ToEsp32, ToEsp32, 2)
-
-
-PB_BIND(FromEsp32, FromEsp32, 2)
+PB_BIND(Debug, Debug, AUTO)
 
 
 

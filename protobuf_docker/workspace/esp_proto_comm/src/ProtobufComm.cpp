@@ -2,17 +2,8 @@
 #include <pb_encode.h>
 #include <pb_decode.h>
 
-ProtobufComm::ProtobufComm(Stream& stream, SampleManager& sm)
-  : serial(stream), sampleManager(sm) {}
-
-uint32_t ProtobufComm::calculateHash(const uint8_t* data, size_t length) {
-  uint32_t hash = 2166136261u;
-  for (size_t i = 0; i < length; i++) {
-    hash ^= data[i];
-    hash *= 16777619u;
-  }
-  return hash;
-}
+ProtobufComm::ProtobufComm(Stream& stream)
+  : serial(stream) {}
 
 bool ProtobufComm::receive(ToEsp32& out) {
   if (serial.available() < 2) return false;
@@ -23,7 +14,9 @@ bool ProtobufComm::receive(ToEsp32& out) {
   size_t i = 0;
   unsigned long start = millis();
   while (i < len && (millis() - start) < 50) {
-    if (serial.available()) buffer[i++] = serial.read();
+    if (serial.available()) {
+      buffer[i++] = serial.read();
+    }
   }
 
   if (i < len) return false;
@@ -32,19 +25,27 @@ bool ProtobufComm::receive(ToEsp32& out) {
   return pb_decode(&stream, ToEsp32_fields, &out);
 }
 
-void ProtobufComm::send(const FromEsp32& msgIn) {
-  FromEsp32 msg = msgIn;
-  msg.hash = 0;
-
+void ProtobufComm::send(const FromEsp32& msg) {
   uint8_t buffer[128];
-  pb_ostream_t tempStream = pb_ostream_from_buffer(buffer, sizeof(buffer));
-  if (!pb_encode(&tempStream, FromEsp32_fields, &msg)) return;
-
-  msg.hash = calculateHash(buffer, tempStream.bytes_written);
   pb_ostream_t stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
   if (!pb_encode(&stream, FromEsp32_fields, &msg)) return;
 
   serial.write((uint8_t)(stream.bytes_written >> 8));
   serial.write((uint8_t)(stream.bytes_written & 0xFF));
   serial.write(buffer, stream.bytes_written);
+}
+
+void ProtobufComm::sendDebug(const char* text) {
+  FromEsp32 msg = FromEsp32_init_zero;
+  msg.timestamp = millis();
+  msg.which_response = FromEsp32_debug_tag;
+  strncpy(msg.response.debug.text, text, sizeof(msg.response.debug.text) - 1);
+  msg.response.debug.text[sizeof(msg.response.debug.text) - 1] = '\0';
+  send(msg);
+}
+
+uint32_t ProtobufComm::calculateChecksum(uint32_t sensor_id, float value) {
+  // Simple XOR-based checksum
+  union { float f; uint32_t u; } conv = { value };
+  return sensor_id ^ conv.u;
 }

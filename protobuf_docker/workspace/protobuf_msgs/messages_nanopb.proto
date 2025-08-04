@@ -1,58 +1,49 @@
 syntax = "proto3";
 
 import "nanopb.proto";
-message SensorSample {
-  uint32 sensor_id = 1;
-  float value = 2;
-  uint32 timestamp = 3;
-}
-
-message StatusMessage {
-  repeated SensorSample samples = 1 [(nanopb).max_count = 8];
-}
-
-message CommandRequestStatus {}
-message CommandSetPwm {
-  uint32 channel = 1;
-  float value = 2;
-}
-message CommandControlOutput {
-  uint32 pin = 1;
-  bool state = 2;
-}
-message CommandSetConfig {
-  string key = 1 [(nanopb).max_size = 32];
-  string value = 2 [(nanopb).max_size = 32];
-}
-
-message ResponseAck {
-  string message = 1 [(nanopb).max_size = 64];
-}
-message ResponseError {
-  string error = 1 [(nanopb).max_size = 64];
-}
 
 message ToEsp32 {
-  uint64 timestamp = 1;
-
-  oneof payload {
-    CommandRequestStatus request_status = 10;
-    CommandSetPwm set_pwm = 11;
-    CommandControlOutput control_output = 12;
-    CommandSetConfig set_config = 13;
+  oneof command {
+    AliveCommand alive = 1;
+    GetDataCommand get_data = 2;
+    SetMuxCommand set_mux = 3;
   }
-
-  uint32 hash = 100;
 }
 
 message FromEsp32 {
-  uint64 timestamp = 1;
-
-  oneof payload {
-    StatusMessage status = 10;
-    ResponseAck ack = 11;
-    ResponseError error = 12;
+  uint32 timestamp = 1;
+  oneof response {
+    Ack ack = 2;
+    SensorSample sample = 3;
+    Error error = 4;
+    Debug debug = 5;
   }
+}
 
-  uint32 hash = 100;
+message AliveCommand {
+}
+
+message GetDataCommand {
+}
+
+message SetMuxCommand {
+  bool toggle = 1;
+}
+
+message Ack {
+  string message = 1 [(nanopb).max_size = 64];
+}
+
+message SensorSample {
+  uint32 sensor_id = 1;
+  float value = 2;
+  uint32 checksum = 3;
+}
+
+message Error {
+  string error = 1 [(nanopb).max_size = 64];
+}
+
+message Debug {
+  string text = 1 [(nanopb).max_size = 128];
 }
