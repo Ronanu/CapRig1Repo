@@ -5,8 +5,7 @@ SampleManager::SampleManager() : head(0) {
 }
 
 void SampleManager::addSample(uint8_t id, float value) {
-  uint32_t now = millis();
-  buffer[head] = {id, value, now};
+  buffer[head] = {id, value, millis()};
   head = (head + 1) % BUFFER_SIZE;
 }
 
