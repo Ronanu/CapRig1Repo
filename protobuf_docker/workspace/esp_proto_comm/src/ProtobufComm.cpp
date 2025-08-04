@@ -12,8 +12,8 @@ bool ProtobufComm::receive(ToEsp32& out) {
 
   uint8_t buffer[128];
   size_t i = 0;
-  unsigned long start = millis();
-  while (i < len && (millis() - start) < 50) {
+  unsigned long start = micros();
+  while (i < len && (micros() - start) < 50000) {
     if (serial.available()) {
       buffer[i++] = serial.read();
     }
@@ -37,7 +37,7 @@ void ProtobufComm::send(const FromEsp32& msg) {
 
 void ProtobufComm::sendDebug(const char* text) {
   FromEsp32 msg = FromEsp32_init_zero;
-  msg.timestamp = millis();
+  msg.timestamp = micros();
   msg.which_response = FromEsp32_debug_tag;
   strncpy(msg.response.debug.text, text, sizeof(msg.response.debug.text) - 1);
   msg.response.debug.text[sizeof(msg.response.debug.text) - 1] = '\0';
