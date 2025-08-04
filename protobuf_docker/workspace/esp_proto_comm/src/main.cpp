@@ -1,8 +1,10 @@
 #include <Arduino.h>
 #include "SampleManager.hpp"
 #include "ProtobufComm.hpp"
+#include "CommandHandler.hpp"
 
 // Globale Instanzen
+CommandHandler commandHandler(sampleManager, protoComm);
 SampleManager sampleManager;
 ProtobufComm protoComm(Serial, sampleManager);
 
@@ -32,6 +34,7 @@ void TaskReceive(void* pvParameters) {
 }
 
 void setup() {
+  protoComm.setDispatcher(&commandHandler);
   Serial.begin(115200);
   delay(100);
 

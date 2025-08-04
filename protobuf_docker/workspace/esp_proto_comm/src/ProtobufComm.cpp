@@ -65,8 +65,15 @@ bool ProtobufComm::receive(ToEsp32& out) {
 }
 
 void ProtobufComm::handle(const ToEsp32& msg) {
+  if (dispatcher) dispatcher->dispatch(msg);
   // Placeholder: Aktuell nur get_status
   if (strcmp(msg.command, "get_status") == 0) {
     sendStatus();
   }
 }
+
+
+void ProtobufComm::setDispatcher(CommandHandler* handler) {
+  dispatcher = handler;
+}
+
