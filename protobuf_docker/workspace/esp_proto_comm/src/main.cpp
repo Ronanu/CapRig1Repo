@@ -4,9 +4,9 @@
 #include "CommandHandler.hpp"
 
 // Globale Instanzen
-CommandHandler commandHandler(sampleManager, protoComm);
 SampleManager sampleManager;
 ProtobufComm protoComm(Serial, sampleManager);
+CommandHandler commandHandler(sampleManager, Serial);
 
 // Timer und Tasks
 hw_timer_t* spiTimer = nullptr;
@@ -19,19 +19,16 @@ void IRAM_ATTR onSpiTimer() {
   sampleManager.addSample(toggle ? 1 : 0, dummyValue); // Sensor ID aus toggle ableiten
 }
 
-void TaskSend(void* pvParameters) {
-  for (;;) {
-    protoComm.sendStatus();
-    vTaskDelay(pdMS_TO_TICKS(1)); // 1 kHz
-  }
-}
-
 void TaskReceive(void* pvParameters) {
   for (;;) {
-    protoComm.receiveAndHandle();
+    ToEsp32 msg = ToEsp32_init_zero;
+    if (protoComm.receive(msg)) {
+      commandHandler.dispatch(msg);
+    }
     vTaskDelay(pdMS_TO_TICKS(1));
   }
 }
+
 
 void setup() {
   protoComm.setDispatcher(&commandHandler);
@@ -46,7 +43,6 @@ void setup() {
 
   // Tasks starten
   xTaskCreatePinnedToCore(TaskReceive, "Receive", 4096, NULL, 1, NULL, 0);
-  xTaskCreatePinnedToCore(TaskSend, "Send", 4096, NULL, 1, NULL, 1);
 }
 
 void loop() {

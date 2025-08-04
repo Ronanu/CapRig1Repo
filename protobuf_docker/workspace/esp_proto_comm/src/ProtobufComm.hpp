@@ -8,7 +8,6 @@
 class ProtobufComm {
 public:
   ProtobufComm(Stream& stream, SampleManager& sm);
-  void sendStatus();
   bool receive(ToEsp32& out);
   void handle(const ToEsp32& msg);
 

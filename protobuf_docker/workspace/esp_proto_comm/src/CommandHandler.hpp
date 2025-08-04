@@ -1,14 +1,14 @@
 #pragma once
 #include "messages.pb.h"
 #include "SampleManager.hpp"
-#include "ProtobufComm.hpp"
+#include <Arduino.h>
 
 class CommandHandler {
 public:
-  CommandHandler(SampleManager& sm, ProtobufComm& pc);
+  CommandHandler(SampleManager& sm, Stream& serial);
   void dispatch(const ToEsp32& msg);
 
 private:
   SampleManager& sampleManager;
-  ProtobufComm& protoComm;
+  Stream& serial;
 };
