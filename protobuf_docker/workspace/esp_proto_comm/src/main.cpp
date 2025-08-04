@@ -9,7 +9,7 @@ ProtobufComm protoComm(Serial);
 
 void sendAck(const char* msg) {
   FromEsp32 response = FromEsp32_init_zero;
-  response.timestamp = millis();
+  response.timestamp = micros();
   response.which_response = FromEsp32_ack_tag;
   strncpy(response.response.ack.message, msg, sizeof(response.response.ack.message) - 1);
   response.response.ack.message[sizeof(response.response.ack.message) - 1] = '\0';
@@ -18,7 +18,7 @@ void sendAck(const char* msg) {
 
 void sendError(const char* msg) {
   FromEsp32 response = FromEsp32_init_zero;
-  response.timestamp = millis();
+  response.timestamp = micros();
   response.which_response = FromEsp32_error_tag;
   strncpy(response.response.error.error, msg, sizeof(response.response.error.error) - 1);
   response.response.error.error[sizeof(response.response.error.error) - 1] = '\0';
@@ -27,7 +27,7 @@ void sendError(const char* msg) {
 
 void sendDummySample() {
   FromEsp32 response = FromEsp32_init_zero;
-  response.timestamp = millis();
+  response.timestamp = micros();
   response.which_response = FromEsp32_sample_tag;
   response.response.sample.sensor_id = 1;
   response.response.sample.value = 42.0f;

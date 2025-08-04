@@ -61,25 +61,49 @@ class ProtoSerialClient:
         elif msg.HasField("error"):
             print(f"  ❌ ERROR: {msg.error.error}")
         elif msg.HasField("sample"):
-            print(f"  📊 Sample → Sensor: {msg.sample.sensor_id}, Wert: {msg.sample.value}, Checksumme: {msg.sample.checksum}")
+            pass
+            #print(f"  📊 Sample → Sensor: {msg.sample.sensor_id}, Wert: {msg.sample.value}, Checksumme: {msg.sample.checksum}")
         else:
             print("  ❓ Unbekannte Antwort")
 
     def send_alive(self):
         msg = ToEsp32()
-        msg.timestamp = int(time.time() * 1000)
         msg.alive.SetInParent()
         self.send_message(msg)
 
-
     def send_get_data(self):
         msg = ToEsp32()
-        msg.timestamp = int(time.time() * 1000)
         msg.get_data.SetInParent()
         self.send_message(msg)
 
     def send_set_mux(self):
         msg = ToEsp32()
-        msg.timestamp = int(time.time() * 1000)
-        msg.set_mux.SetInParent()
+        msg.set_mux.toggle = True  # oder False, wenn nötig
         self.send_message(msg)
+
+    def send_get_data_1000x(self):
+        """Sendet 1000 mal get_data und misst die Sendefrequenz"""
+        print("🚀 Starte 1000x get_data Test...")
+        
+        start_time = time.time()
+        
+        for i in range(1000):
+            msg = ToEsp32()
+            msg.get_data.SetInParent()
+            self.send_message(msg)
+            
+            # Fortschritt alle 100 Nachrichten anzeigen
+            if (i + 1) % 100 == 0:
+                elapsed = time.time() - start_time
+                current_freq = (i + 1) / elapsed
+                print(f"  📈 {i + 1}/1000 gesendet - Aktuelle Frequenz: {current_freq:.2f} Hz")
+        
+        end_time = time.time()
+        total_time = end_time - start_time
+        frequency = 1000 / total_time
+        
+        print(f"\n✅ Test abgeschlossen:")
+        print(f"  📊 1000 Nachrichten in {total_time:.3f} Sekunden gesendet")
+        print(f"  🎯 Durchschnittliche Sendefrequenz: {frequency:.2f} Hz")
+        print(f"  ⏱️ Zeit pro Nachricht: {total_time/1000*1000:.3f} ms")
+
