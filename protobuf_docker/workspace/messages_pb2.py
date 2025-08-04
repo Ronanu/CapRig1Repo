@@ -14,15 +14,31 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0emessages.proto\"L\n\x07ToEsp32\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12\x0f\n\x07\x63ommand\x18\x02 \x01(\t\x12\x0f\n\x07payload\x18\x03 \x01(\t\x12\x0c\n\x04hash\x18\x04 \x01(\r\"c\n\tFromEsp32\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12\x13\n\x0btemperature\x18\x02 \x01(\x02\x12\x10\n\x08humidity\x18\x03 \x01(\x02\x12\x0e\n\x06status\x18\x04 \x01(\t\x12\x0c\n\x04hash\x18\x05 \x01(\rb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0emessages.proto\"C\n\x0cSensorSample\x12\x11\n\tsensor_id\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x11\n\ttimestamp\x18\x03 \x01(\r\"/\n\rStatusMessage\x12\x1e\n\x07samples\x18\x01 \x03(\x0b\x32\r.SensorSample\"\x16\n\x14\x43ommandRequestStatus\"/\n\rCommandSetPwm\x12\x0f\n\x07\x63hannel\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x02\"2\n\x14\x43ommandControlOutput\x12\x0b\n\x03pin\x18\x01 \x01(\r\x12\r\n\x05state\x18\x02 \x01(\x08\".\n\x10\x43ommandSetConfig\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\x1e\n\x0bResponseAck\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1e\n\rResponseError\x12\r\n\x05\x65rror\x18\x01 \x01(\t\"\xe3\x01\n\x07ToEsp32\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12/\n\x0erequest_status\x18\n \x01(\x0b\x32\x15.CommandRequestStatusH\x00\x12!\n\x07set_pwm\x18\x0b \x01(\x0b\x32\x0e.CommandSetPwmH\x00\x12/\n\x0e\x63ontrol_output\x18\x0c \x01(\x0b\x32\x15.CommandControlOutputH\x00\x12\'\n\nset_config\x18\r \x01(\x0b\x32\x11.CommandSetConfigH\x00\x12\x0c\n\x04hash\x18\x64 \x01(\rB\t\n\x07payload\"\x97\x01\n\tFromEsp32\x12\x11\n\ttimestamp\x18\x01 \x01(\x04\x12 \n\x06status\x18\n \x01(\x0b\x32\x0e.StatusMessageH\x00\x12\x1b\n\x03\x61\x63k\x18\x0b \x01(\x0b\x32\x0c.ResponseAckH\x00\x12\x1f\n\x05\x65rror\x18\x0c \x01(\x0b\x32\x0e.ResponseErrorH\x00\x12\x0c\n\x04hash\x18\x64 \x01(\rB\t\n\x07payloadb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'messages_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
-  _globals['_TOESP32']._serialized_start=18
-  _globals['_TOESP32']._serialized_end=94
-  _globals['_FROMESP32']._serialized_start=96
-  _globals['_FROMESP32']._serialized_end=195
+  _globals['_SENSORSAMPLE']._serialized_start=18
+  _globals['_SENSORSAMPLE']._serialized_end=85
+  _globals['_STATUSMESSAGE']._serialized_start=87
+  _globals['_STATUSMESSAGE']._serialized_end=134
+  _globals['_COMMANDREQUESTSTATUS']._serialized_start=136
+  _globals['_COMMANDREQUESTSTATUS']._serialized_end=158
+  _globals['_COMMANDSETPWM']._serialized_start=160
+  _globals['_COMMANDSETPWM']._serialized_end=207
+  _globals['_COMMANDCONTROLOUTPUT']._serialized_start=209
+  _globals['_COMMANDCONTROLOUTPUT']._serialized_end=259
+  _globals['_COMMANDSETCONFIG']._serialized_start=261
+  _globals['_COMMANDSETCONFIG']._serialized_end=307
+  _globals['_RESPONSEACK']._serialized_start=309
+  _globals['_RESPONSEACK']._serialized_end=339
+  _globals['_RESPONSEERROR']._serialized_start=341
+  _globals['_RESPONSEERROR']._serialized_end=371
+  _globals['_TOESP32']._serialized_start=374
+  _globals['_TOESP32']._serialized_end=601
+  _globals['_FROMESP32']._serialized_start=604
+  _globals['_FROMESP32']._serialized_end=755
 # @@protoc_insertion_point(module_scope)

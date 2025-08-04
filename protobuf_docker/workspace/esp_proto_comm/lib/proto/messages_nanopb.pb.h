@@ -10,18 +10,64 @@
 #endif
 
 /* Struct definitions */
+typedef struct _SensorSample {
+    uint32_t sensor_id;
+    float value;
+    uint32_t timestamp;
+} SensorSample;
+
+typedef struct _StatusMessage {
+    pb_size_t samples_count;
+    SensorSample samples[8];
+} StatusMessage;
+
+typedef struct _CommandRequestStatus {
+    char dummy_field;
+} CommandRequestStatus;
+
+typedef struct _CommandSetPwm {
+    uint32_t channel;
+    float value;
+} CommandSetPwm;
+
+typedef struct _CommandControlOutput {
+    uint32_t pin;
+    bool state;
+} CommandControlOutput;
+
+typedef struct _CommandSetConfig {
+    char key[32];
+    char value[32];
+} CommandSetConfig;
+
+typedef struct _ResponseAck {
+    char message[64];
+} ResponseAck;
+
+typedef struct _ResponseError {
+    char error[64];
+} ResponseError;
+
 typedef struct _ToEsp32 {
     uint64_t timestamp;
-    char command[32];
-    char payload[64];
+    pb_size_t which_payload;
+    union _ToEsp32_payload {
+        CommandRequestStatus request_status;
+        CommandSetPwm set_pwm;
+        CommandControlOutput control_output;
+        CommandSetConfig set_config;
+    } payload;
     uint32_t hash;
 } ToEsp32;
 
 typedef struct _FromEsp32 {
     uint64_t timestamp;
-    float temperature;
-    float humidity;
-    char status[32];
+    pb_size_t which_payload;
+    union _FromEsp32_payload {
+        StatusMessage status;
+        ResponseAck ack;
+        ResponseError error;
+    } payload;
     uint32_t hash;
 } FromEsp32;
 
@@ -31,51 +77,160 @@ extern "C" {
 #endif
 
 /* Initializer values for message structs */
-#define ToEsp32_init_default                     {0, "", "", 0}
-#define FromEsp32_init_default                   {0, 0, 0, "", 0}
-#define ToEsp32_init_zero                        {0, "", "", 0}
-#define FromEsp32_init_zero                      {0, 0, 0, "", 0}
+#define SensorSample_init_default                {0, 0, 0}
+#define StatusMessage_init_default               {0, {SensorSample_init_default, SensorSample_init_default, SensorSample_init_default, SensorSample_init_default, SensorSample_init_default, SensorSample_init_default, SensorSample_init_default, SensorSample_init_default}}
+#define CommandRequestStatus_init_default        {0}
+#define CommandSetPwm_init_default               {0, 0}
+#define CommandControlOutput_init_default        {0, 0}
+#define CommandSetConfig_init_default            {"", ""}
+#define ResponseAck_init_default                 {""}
+#define ResponseError_init_default               {""}
+#define ToEsp32_init_default                     {0, 0, {CommandRequestStatus_init_default}, 0}
+#define FromEsp32_init_default                   {0, 0, {StatusMessage_init_default}, 0}
+#define SensorSample_init_zero                   {0, 0, 0}
+#define StatusMessage_init_zero                  {0, {SensorSample_init_zero, SensorSample_init_zero, SensorSample_init_zero, SensorSample_init_zero, SensorSample_init_zero, SensorSample_init_zero, SensorSample_init_zero, SensorSample_init_zero}}
+#define CommandRequestStatus_init_zero           {0}
+#define CommandSetPwm_init_zero                  {0, 0}
+#define CommandControlOutput_init_zero           {0, 0}
+#define CommandSetConfig_init_zero               {"", ""}
+#define ResponseAck_init_zero                    {""}
+#define ResponseError_init_zero                  {""}
+#define ToEsp32_init_zero                        {0, 0, {CommandRequestStatus_init_zero}, 0}
+#define FromEsp32_init_zero                      {0, 0, {StatusMessage_init_zero}, 0}
 
 /* Field tags (for use in manual encoding/decoding) */
+#define SensorSample_sensor_id_tag               1
+#define SensorSample_value_tag                   2
+#define SensorSample_timestamp_tag               3
+#define StatusMessage_samples_tag                1
+#define CommandSetPwm_channel_tag                1
+#define CommandSetPwm_value_tag                  2
+#define CommandControlOutput_pin_tag             1
+#define CommandControlOutput_state_tag           2
+#define CommandSetConfig_key_tag                 1
+#define CommandSetConfig_value_tag               2
+#define ResponseAck_message_tag                  1
+#define ResponseError_error_tag                  1
 #define ToEsp32_timestamp_tag                    1
-#define ToEsp32_command_tag                      2
-#define ToEsp32_payload_tag                      3
-#define ToEsp32_hash_tag                         4
+#define ToEsp32_request_status_tag               10
+#define ToEsp32_set_pwm_tag                      11
+#define ToEsp32_control_output_tag               12
+#define ToEsp32_set_config_tag                   13
+#define ToEsp32_hash_tag                         100
 #define FromEsp32_timestamp_tag                  1
-#define FromEsp32_temperature_tag                2
-#define FromEsp32_humidity_tag                   3
-#define FromEsp32_status_tag                     4
-#define FromEsp32_hash_tag                       5
+#define FromEsp32_status_tag                     10
+#define FromEsp32_ack_tag                        11
+#define FromEsp32_error_tag                      12
+#define FromEsp32_hash_tag                       100
 
 /* Struct field encoding specification for nanopb */
+#define SensorSample_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   sensor_id,         1) \
+X(a, STATIC,   SINGULAR, FLOAT,    value,             2) \
+X(a, STATIC,   SINGULAR, UINT32,   timestamp,         3)
+#define SensorSample_CALLBACK NULL
+#define SensorSample_DEFAULT NULL
+
+#define StatusMessage_FIELDLIST(X, a) \
+X(a, STATIC,   REPEATED, MESSAGE,  samples,           1)
+#define StatusMessage_CALLBACK NULL
+#define StatusMessage_DEFAULT NULL
+#define StatusMessage_samples_MSGTYPE SensorSample
+
+#define CommandRequestStatus_FIELDLIST(X, a) \
+
+#define CommandRequestStatus_CALLBACK NULL
+#define CommandRequestStatus_DEFAULT NULL
+
+#define CommandSetPwm_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   channel,           1) \
+X(a, STATIC,   SINGULAR, FLOAT,    value,             2)
+#define CommandSetPwm_CALLBACK NULL
+#define CommandSetPwm_DEFAULT NULL
+
+#define CommandControlOutput_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   pin,               1) \
+X(a, STATIC,   SINGULAR, BOOL,     state,             2)
+#define CommandControlOutput_CALLBACK NULL
+#define CommandControlOutput_DEFAULT NULL
+
+#define CommandSetConfig_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, STRING,   key,               1) \
+X(a, STATIC,   SINGULAR, STRING,   value,             2)
+#define CommandSetConfig_CALLBACK NULL
+#define CommandSetConfig_DEFAULT NULL
+
+#define ResponseAck_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, STRING,   message,           1)
+#define ResponseAck_CALLBACK NULL
+#define ResponseAck_DEFAULT NULL
+
+#define ResponseError_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, STRING,   error,             1)
+#define ResponseError_CALLBACK NULL
+#define ResponseError_DEFAULT NULL
+
 #define ToEsp32_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, UINT64,   timestamp,         1) \
-X(a, STATIC,   SINGULAR, STRING,   command,           2) \
-X(a, STATIC,   SINGULAR, STRING,   payload,           3) \
-X(a, STATIC,   SINGULAR, UINT32,   hash,              4)
+X(a, STATIC,   ONEOF,    MESSAGE,  (payload,request_status,payload.request_status),  10) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (payload,set_pwm,payload.set_pwm),  11) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (payload,control_output,payload.control_output),  12) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (payload,set_config,payload.set_config),  13) \
+X(a, STATIC,   SINGULAR, UINT32,   hash,            100)
 #define ToEsp32_CALLBACK NULL
 #define ToEsp32_DEFAULT NULL
+#define ToEsp32_payload_request_status_MSGTYPE CommandRequestStatus
+#define ToEsp32_payload_set_pwm_MSGTYPE CommandSetPwm
+#define ToEsp32_payload_control_output_MSGTYPE CommandControlOutput
+#define ToEsp32_payload_set_config_MSGTYPE CommandSetConfig
 
 #define FromEsp32_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, UINT64,   timestamp,         1) \
-X(a, STATIC,   SINGULAR, FLOAT,    temperature,       2) \
-X(a, STATIC,   SINGULAR, FLOAT,    humidity,          3) \
-X(a, STATIC,   SINGULAR, STRING,   status,            4) \
-X(a, STATIC,   SINGULAR, UINT32,   hash,              5)
+X(a, STATIC,   ONEOF,    MESSAGE,  (payload,status,payload.status),  10) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (payload,ack,payload.ack),  11) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (payload,error,payload.error),  12) \
+X(a, STATIC,   SINGULAR, UINT32,   hash,            100)
 #define FromEsp32_CALLBACK NULL
 #define FromEsp32_DEFAULT NULL
+#define FromEsp32_payload_status_MSGTYPE StatusMessage
+#define FromEsp32_payload_ack_MSGTYPE ResponseAck
+#define FromEsp32_payload_error_MSGTYPE ResponseError
 
+extern const pb_msgdesc_t SensorSample_msg;
+extern const pb_msgdesc_t StatusMessage_msg;
+extern const pb_msgdesc_t CommandRequestStatus_msg;
+extern const pb_msgdesc_t CommandSetPwm_msg;
+extern const pb_msgdesc_t CommandControlOutput_msg;
+extern const pb_msgdesc_t CommandSetConfig_msg;
+extern const pb_msgdesc_t ResponseAck_msg;
+extern const pb_msgdesc_t ResponseError_msg;
 extern const pb_msgdesc_t ToEsp32_msg;
 extern const pb_msgdesc_t FromEsp32_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
+#define SensorSample_fields &SensorSample_msg
+#define StatusMessage_fields &StatusMessage_msg
+#define CommandRequestStatus_fields &CommandRequestStatus_msg
+#define CommandSetPwm_fields &CommandSetPwm_msg
+#define CommandControlOutput_fields &CommandControlOutput_msg
+#define CommandSetConfig_fields &CommandSetConfig_msg
+#define ResponseAck_fields &ResponseAck_msg
+#define ResponseError_fields &ResponseError_msg
 #define ToEsp32_fields &ToEsp32_msg
 #define FromEsp32_fields &FromEsp32_msg
 
 /* Maximum encoded size of messages (where known) */
-#define FromEsp32_size                           60
-#define MESSAGES_NANOPB_PB_H_MAX_SIZE            ToEsp32_size
-#define ToEsp32_size                             115
+#define CommandControlOutput_size                8
+#define CommandRequestStatus_size                0
+#define CommandSetConfig_size                    66
+#define CommandSetPwm_size                       11
+#define FromEsp32_size                           173
+#define MESSAGES_NANOPB_PB_H_MAX_SIZE            FromEsp32_size
+#define ResponseAck_size                         65
+#define ResponseError_size                       65
+#define SensorSample_size                        17
+#define StatusMessage_size                       152
+#define ToEsp32_size                             86
 
 #ifdef __cplusplus
 } /* extern "C" */
