@@ -3,7 +3,7 @@ import struct
 import time
 from messages_pb2 import ToEsp32, FromEsp32
 
-PORT = 'COM7'
+PORT = 'COM4'
 BAUDRATE = 115200
 
 def calculate_hash(data: bytes) -> int:
@@ -55,8 +55,7 @@ def main():
         print("⏳ Warte auf ESP32...")
 
         to_esp = ToEsp32()
-        to_esp.timestamp = int(time.time() * 1000)
-        to_esp.command = "get_status"
+        to_esp.command = "get_data"
         to_esp.payload = ""
         to_esp.hash = 0
 

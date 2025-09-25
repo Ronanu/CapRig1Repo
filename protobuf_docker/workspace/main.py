@@ -1,7 +1,7 @@
 import time
 from proto_serial_client import ProtoSerialClient
 
-PORT = 'COM7'  # Passe an deinen Port an
+PORT = 'COM4'  # Passe an deinen Port an
 BAUDRATE = 115200
 
 def main():
