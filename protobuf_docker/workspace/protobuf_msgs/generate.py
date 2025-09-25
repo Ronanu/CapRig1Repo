@@ -34,31 +34,31 @@ os.makedirs(out_dir_esp, exist_ok=True)
 print("🔁 Starte Protobuf-Generierung...")
 
 # 1. Python-Dateien generieren
-print("🐍 Generiere Python-Protobuf-Bindings...")
+print("Generiere Python-Protobuf-Bindings...")
 subprocess.run([
     "protoc",
     f"--proto_path={proto_dir}",
     f"--python_out={out_dir_py}",
     proto_python
 ], check=True)
-print("✅ Python-Generierung abgeschlossen.")
+print("Python-Generierung abgeschlossen.")
 
 # 2. Nanopb-C-Dateien generieren
-print("⚙️  Generiere Nanopb-C-Dateien...")
+print("Generiere Nanopb-C-Dateien...")
 subprocess.run([
     "protoc",
     f"--proto_path={proto_dir}",
     f"--nanopb_out={out_dir_esp}",
     proto_nanopb
 ], check=True)
-print("✅ Nanopb-Generierung abgeschlossen.")
+print("Nanopb-Generierung abgeschlossen.")
 
 # 3. Kopiere Nanopb-Kernbibliothek
-print("📦 Kopiere Nanopb-Core-Dateien...")
+print("Kopiere Nanopb-Core-Dateien...")
 for filename in nanopb_files:
     src = os.path.join(nanopb_src_dir, filename)
     dst = os.path.join(out_dir_esp, filename)
     shutil.copyfile(src, dst)
-print("✅ Nanopb-Core-Dateien kopiert.")
+print("Nanopb-Core-Dateien kopiert.")
 
-print("🏁 Fertig.")
+print("Fertig.")

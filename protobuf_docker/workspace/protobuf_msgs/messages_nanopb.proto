@@ -10,15 +10,6 @@ message ToEsp32 {
   }
 }
 
-message FromEsp32 {
-  uint32 timestamp = 1;
-  oneof response {
-    Ack ack = 2;
-    SensorSample sample = 3;
-    Error error = 4;
-    Debug debug = 5;
-  }
-}
 
 message AliveCommand {
 }
@@ -28,6 +19,17 @@ message GetDataCommand {
 
 message SetMuxCommand {
   bool toggle = 1;
+}
+// ##########################################
+
+message FromEsp32 {
+  uint32 timestamp = 1;
+  oneof response {
+    Ack ack = 2;
+    SensorSample sample = 3;
+    Error error = 4;
+    Debug debug = 5;
+  }
 }
 
 message Ack {
