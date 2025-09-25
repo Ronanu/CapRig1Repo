@@ -67,19 +67,19 @@ extern "C" {
 
 /* Initializer values for message structs */
 #define ToEsp32_init_default                     {0, {AliveCommand_init_default}}
-#define FromEsp32_init_default                   {0, 0, {Ack_init_default}}
 #define AliveCommand_init_default                {0}
 #define GetDataCommand_init_default              {0}
 #define SetMuxCommand_init_default               {0}
+#define FromEsp32_init_default                   {0, 0, {Ack_init_default}}
 #define Ack_init_default                         {""}
 #define SensorSample_init_default                {0, 0, 0}
 #define Error_init_default                       {""}
 #define Debug_init_default                       {""}
 #define ToEsp32_init_zero                        {0, {AliveCommand_init_zero}}
-#define FromEsp32_init_zero                      {0, 0, {Ack_init_zero}}
 #define AliveCommand_init_zero                   {0}
 #define GetDataCommand_init_zero                 {0}
 #define SetMuxCommand_init_zero                  {0}
+#define FromEsp32_init_zero                      {0, 0, {Ack_init_zero}}
 #define Ack_init_zero                            {""}
 #define SensorSample_init_zero                   {0, 0, 0}
 #define Error_init_zero                          {""}
@@ -113,19 +113,6 @@ X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_mux,command.set_mux),   3)
 #define ToEsp32_command_get_data_MSGTYPE GetDataCommand
 #define ToEsp32_command_set_mux_MSGTYPE SetMuxCommand
 
-#define FromEsp32_FIELDLIST(X, a) \
-X(a, STATIC,   SINGULAR, UINT32,   timestamp,         1) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,ack,response.ack),   2) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,sample,response.sample),   3) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,error,response.error),   4) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,debug,response.debug),   5)
-#define FromEsp32_CALLBACK NULL
-#define FromEsp32_DEFAULT NULL
-#define FromEsp32_response_ack_MSGTYPE Ack
-#define FromEsp32_response_sample_MSGTYPE SensorSample
-#define FromEsp32_response_error_MSGTYPE Error
-#define FromEsp32_response_debug_MSGTYPE Debug
-
 #define AliveCommand_FIELDLIST(X, a) \
 
 #define AliveCommand_CALLBACK NULL
@@ -140,6 +127,19 @@ X(a, STATIC,   ONEOF,    MESSAGE,  (response,debug,response.debug),   5)
 X(a, STATIC,   SINGULAR, BOOL,     toggle,            1)
 #define SetMuxCommand_CALLBACK NULL
 #define SetMuxCommand_DEFAULT NULL
+
+#define FromEsp32_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   timestamp,         1) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,ack,response.ack),   2) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,sample,response.sample),   3) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,error,response.error),   4) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,debug,response.debug),   5)
+#define FromEsp32_CALLBACK NULL
+#define FromEsp32_DEFAULT NULL
+#define FromEsp32_response_ack_MSGTYPE Ack
+#define FromEsp32_response_sample_MSGTYPE SensorSample
+#define FromEsp32_response_error_MSGTYPE Error
+#define FromEsp32_response_debug_MSGTYPE Debug
 
 #define Ack_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, STRING,   message,           1)
@@ -164,10 +164,10 @@ X(a, STATIC,   SINGULAR, STRING,   text,              1)
 #define Debug_DEFAULT NULL
 
 extern const pb_msgdesc_t ToEsp32_msg;
-extern const pb_msgdesc_t FromEsp32_msg;
 extern const pb_msgdesc_t AliveCommand_msg;
 extern const pb_msgdesc_t GetDataCommand_msg;
 extern const pb_msgdesc_t SetMuxCommand_msg;
+extern const pb_msgdesc_t FromEsp32_msg;
 extern const pb_msgdesc_t Ack_msg;
 extern const pb_msgdesc_t SensorSample_msg;
 extern const pb_msgdesc_t Error_msg;
@@ -175,10 +175,10 @@ extern const pb_msgdesc_t Debug_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define ToEsp32_fields &ToEsp32_msg
-#define FromEsp32_fields &FromEsp32_msg
 #define AliveCommand_fields &AliveCommand_msg
 #define GetDataCommand_fields &GetDataCommand_msg
 #define SetMuxCommand_fields &SetMuxCommand_msg
+#define FromEsp32_fields &FromEsp32_msg
 #define Ack_fields &Ack_msg
 #define SensorSample_fields &SensorSample_msg
 #define Error_fields &Error_msg

@@ -9,9 +9,6 @@
 PB_BIND(ToEsp32, ToEsp32, AUTO)
 
 
-PB_BIND(FromEsp32, FromEsp32, AUTO)
-
-
 PB_BIND(AliveCommand, AliveCommand, AUTO)
 
 
@@ -19,6 +16,9 @@ PB_BIND(GetDataCommand, GetDataCommand, AUTO)
 
 
 PB_BIND(SetMuxCommand, SetMuxCommand, AUTO)
+
+
+PB_BIND(FromEsp32, FromEsp32, AUTO)
 
 
 PB_BIND(Ack, Ack, AUTO)

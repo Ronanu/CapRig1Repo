@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0emessages.proto\"|\n\x07ToEsp32\x12\x1e\n\x05\x61live\x18\x01 \x01(\x0b\x32\r.AliveCommandH\x00\x12#\n\x08get_data\x18\x02 \x01(\x0b\x32\x0f.GetDataCommandH\x00\x12!\n\x07set_mux\x18\x03 \x01(\x0b\x32\x0e.SetMuxCommandH\x00\x42\t\n\x07\x63ommand\"\x92\x01\n\tFromEsp32\x12\x11\n\ttimestamp\x18\x01 \x01(\r\x12\x13\n\x03\x61\x63k\x18\x02 \x01(\x0b\x32\x04.AckH\x00\x12\x1f\n\x06sample\x18\x03 \x01(\x0b\x32\r.SensorSampleH\x00\x12\x17\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x06.ErrorH\x00\x12\x17\n\x05\x64\x65\x62ug\x18\x05 \x01(\x0b\x32\x06.DebugH\x00\x42\n\n\x08response\"\x0e\n\x0c\x41liveCommand\"\x10\n\x0eGetDataCommand\"\x1f\n\rSetMuxCommand\x12\x0e\n\x06toggle\x18\x01 \x01(\x08\"\x16\n\x03\x41\x63k\x12\x0f\n\x07message\x18\x01 \x01(\t\"B\n\x0cSensorSample\x12\x11\n\tsensor_id\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\"\x16\n\x05\x45rror\x12\r\n\x05\x65rror\x18\x01 \x01(\t\"\x15\n\x05\x44\x65\x62ug\x12\x0c\n\x04text\x18\x01 \x01(\tb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0emessages.proto\"|\n\x07ToEsp32\x12\x1e\n\x05\x61live\x18\x01 \x01(\x0b\x32\r.AliveCommandH\x00\x12#\n\x08get_data\x18\x02 \x01(\x0b\x32\x0f.GetDataCommandH\x00\x12!\n\x07set_mux\x18\x03 \x01(\x0b\x32\x0e.SetMuxCommandH\x00\x42\t\n\x07\x63ommand\"\x0e\n\x0c\x41liveCommand\"\x10\n\x0eGetDataCommand\"\x1f\n\rSetMuxCommand\x12\x0e\n\x06toggle\x18\x01 \x01(\x08\"\x92\x01\n\tFromEsp32\x12\x11\n\ttimestamp\x18\x01 \x01(\r\x12\x13\n\x03\x61\x63k\x18\x02 \x01(\x0b\x32\x04.AckH\x00\x12\x1f\n\x06sample\x18\x03 \x01(\x0b\x32\r.SensorSampleH\x00\x12\x17\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x06.ErrorH\x00\x12\x17\n\x05\x64\x65\x62ug\x18\x05 \x01(\x0b\x32\x06.DebugH\x00\x42\n\n\x08response\"\x16\n\x03\x41\x63k\x12\x0f\n\x07message\x18\x01 \x01(\t\"B\n\x0cSensorSample\x12\x11\n\tsensor_id\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\"\x16\n\x05\x45rror\x12\r\n\x05\x65rror\x18\x01 \x01(\t\"\x15\n\x05\x44\x65\x62ug\x12\x0c\n\x04text\x18\x01 \x01(\tb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,14 +23,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   _globals['_TOESP32']._serialized_start=18
   _globals['_TOESP32']._serialized_end=142
-  _globals['_FROMESP32']._serialized_start=145
-  _globals['_FROMESP32']._serialized_end=291
-  _globals['_ALIVECOMMAND']._serialized_start=293
-  _globals['_ALIVECOMMAND']._serialized_end=307
-  _globals['_GETDATACOMMAND']._serialized_start=309
-  _globals['_GETDATACOMMAND']._serialized_end=325
-  _globals['_SETMUXCOMMAND']._serialized_start=327
-  _globals['_SETMUXCOMMAND']._serialized_end=358
+  _globals['_ALIVECOMMAND']._serialized_start=144
+  _globals['_ALIVECOMMAND']._serialized_end=158
+  _globals['_GETDATACOMMAND']._serialized_start=160
+  _globals['_GETDATACOMMAND']._serialized_end=176
+  _globals['_SETMUXCOMMAND']._serialized_start=178
+  _globals['_SETMUXCOMMAND']._serialized_end=209
+  _globals['_FROMESP32']._serialized_start=212
+  _globals['_FROMESP32']._serialized_end=358
   _globals['_ACK']._serialized_start=360
   _globals['_ACK']._serialized_end=382
   _globals['_SENSORSAMPLE']._serialized_start=384
