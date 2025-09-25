@@ -10,7 +10,7 @@ nanopb_src_dir = "/nanopb"
 
 # Zielverzeichnisse für generierte Dateien
 out_dir_py = '.'
-out_dir_esp = "esp_proto_comm/lib/proto"
+out_dir_esp = "esp32project/lib/proto"
 
 
 # Pfade zu Protobuf-Dateien
