@@ -21,10 +21,10 @@ static void txTask(void* pv) {
   TxPacket pkt;
   for (;;) {
     if (xQueueReceive(h->q, &pkt, portMAX_DELAY) == pdTRUE) {
-      // write length (big-endian)
+      // Write length (big endian)
       h->stream->write((uint8_t)(pkt.len >> 8));
       h->stream->write((uint8_t)(pkt.len & 0xFF));
-      // write payload (handle partial writes)
+      // Write payload handling partial writes
       size_t off = 0;
       while (off < pkt.len) {
         int n = h->stream->write(pkt.data + off, pkt.len - off);
@@ -71,7 +71,7 @@ bool send(const uint8_t* data, uint16_t len) {
   if (xQueueSend(g_handle->q, &pkt, 0) == pdPASS) {
     return true;
   }
-  // Drop-oldest strategy
+  // Drop-oldest on overflow
   TxPacket drop;
   xQueueReceive(g_handle->q, &drop, 0);
   return xQueueSend(g_handle->q, &pkt, 0) == pdPASS;
@@ -82,9 +82,7 @@ bool isActive() {
 }
 
 void end() {
-  if (!g_handle) return;
-  // Note: For simplicity, we don't reclaim the task/queue here.
-  // In typical Arduino/ESP32 app lifetime, end() is rarely used.
+  // Not implemented for simplicity; typical Arduino apps don't stop tasks.
 }
 
 } // namespace AsyncPacketBuffer

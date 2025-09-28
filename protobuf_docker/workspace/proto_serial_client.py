@@ -2,7 +2,7 @@ import threading
 import serial
 import struct
 import time
-from messages_pb2 import ToEsp32, FromEsp32
+from messages_pb2 import ToEsp32, FromEsp32, SystemSettings
 
 class ProtoSerialClient:
     def __init__(self, port, baudrate=115200):
@@ -22,28 +22,39 @@ class ProtoSerialClient:
             self.listener_thread.join()
         self.ser.close()
 
-    def send_message(self, msg: ToEsp32):
-        data = msg.SerializeToString()
-        length = len(data)
+    # ---------- framing ----------
+    def _write_framed(self, payload: bytes):
+        length = len(payload)
         if length > 128:
-            raise ValueError("Message too long")
-        header = struct.pack('>H', length)
-        self.ser.write(header + data)
+            raise ValueError("Message too long (>128 bytes)")
+        header = struct.pack(">H", length)
+        self.ser.write(header + payload)
 
-    def read_message(self):
+    def _read_framed(self):
         header = self.ser.read(2)
-        if len(header) < 2:
+        if len(header) != 2:
             return None
-        length = struct.unpack('>H', header)[0]
-        if length > 128:
+        (length,) = struct.unpack(">H", header)
+        if length == 0 or length > 128:
             return None
         data = self.ser.read(length)
         if len(data) != length:
+            return None
+        return data
+
+    # ---------- high-level send/recv ----------
+    def send_message(self, msg: ToEsp32):
+        self._write_framed(msg.SerializeToString())
+
+    def read_message(self):
+        data = self._read_framed()
+        if not data:
             return None
         msg = FromEsp32()
         msg.ParseFromString(data)
         return msg
 
+    # ---------- listener ----------
     def listen(self):
         while self.running:
             msg = self.read_message()
@@ -53,57 +64,57 @@ class ProtoSerialClient:
 
     def handle_message(self, msg: FromEsp32):
         print("📥 Nachricht empfangen:")
-        print(f"  🕒 Zeitstempel: {msg.timestamp}")
+        print(f"  🧾 seq: {msg.seq}  🕒 timestamp: {msg.timestamp}")
         if msg.HasField("debug"):
             print(f"  🐞 Debug: {msg.debug.text}")
         elif msg.HasField("ack"):
             print(f"  ✅ ACK: {msg.ack.message}")
         elif msg.HasField("error"):
             print(f"  ❌ ERROR: {msg.error.error}")
+        elif msg.HasField("settings"):
+            s = msg.settings.settings
+            print(f"  ⚙️ Settings → current_signal_selection_state={s.current_signal_selection_state}, action_state={s.action_state}")
         elif msg.HasField("sample"):
-            pass
-            #print(f"  📊 Sample → Sensor: {msg.sample.sensor_id}, Wert: {msg.sample.value}, Checksumme: {msg.sample.checksum}")
+            smp = msg.sample
+            print(f"  📊 Sample → sensor_id={smp.sensor_id}, value={smp.value:.3f}, checksum=0x{smp.checksum:08X}")
         else:
             print("  ❓ Unbekannte Antwort")
 
-    def send_alive(self):
+    # ---------- convenience commands ----------
+    def send_ping(self, seq: int = 0):
         msg = ToEsp32()
-        msg.alive.SetInParent()
+        msg.seq = seq
+        msg.ping.SetInParent()
         self.send_message(msg)
 
-    def send_get_data(self):
+    def send_get_settings(self, seq: int = 0):
         msg = ToEsp32()
-        msg.get_data.SetInParent()
+        msg.seq = seq
+        msg.get_settings.SetInParent()
         self.send_message(msg)
 
-    def send_set_mux(self):
+    def send_set_settings(self, current_signal_selection_state: bool, action_state: int, seq: int = 0):
         msg = ToEsp32()
-        msg.set_mux.toggle = True  # oder False, wenn nötig
+        msg.seq = seq
+        msg.set_settings.settings.current_signal_selection_state = bool(current_signal_selection_state)
+        # constrain 0..3 on client side as well
+        msg.set_settings.settings.action_state = max(0, min(3, int(action_state)))
         self.send_message(msg)
 
-    def send_get_data_1000x(self):  # todo checksum testen, testen, ob verbindung successful, no print
-        """Sendet 1000 mal get_data und misst die Sendefrequenz"""
-        print("🚀 Starte 1000x get_data Test...")
-        
-        start_time = time.time()
-        
+    def send_set_mux(self, channel: int, seq: int = 0):
+        msg = ToEsp32()
+        msg.seq = seq
+        msg.set_mux.channel = int(channel)
+        self.send_message(msg)
+
+    def send_ping_1000x(self):
+        print("🚀 Starte 1000x ping Test...")
+        start = time.time()
         for i in range(1000):
-            msg = ToEsp32()
-            msg.get_data.SetInParent()
-            self.send_message(msg)
-            
-            # Fortschritt alle 100 Nachrichten anzeigen
+            self.send_ping(seq=i+1)
             if (i + 1) % 100 == 0:
-                elapsed = time.time() - start_time
-                current_freq = (i + 1) / elapsed
-                print(f"  📈 {i + 1}/1000 gesendet - Aktuelle Frequenz: {current_freq:.2f} Hz")
-        
-        end_time = time.time()
-        total_time = end_time - start_time
-        frequency = 1000 / total_time
-        
-        print(f"\n✅ Test abgeschlossen:")
-        print(f"  📊 1000 Nachrichten in {total_time:.3f} Sekunden gesendet")
-        print(f"  🎯 Durchschnittliche Sendefrequenz: {frequency:.2f} Hz")
-        print(f"  ⏱️ Zeit pro Nachricht: {total_time/1000*1000:.3f} ms")
-
+                dt = time.time() - start
+                print(f"  📈 {i+1}/1000 gesendet – ~{(i+1)/dt:.2f} Hz")
+            time.sleep(0.0005)
+        dt = time.time() - start
+        print(f"✅ 1000 Nachrichten in {dt:.3f}s → {(1000/dt):.2f} Hz")

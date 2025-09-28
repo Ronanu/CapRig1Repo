@@ -1,7 +1,6 @@
 #include "ProtobufComm.hpp"
 #include <pb_encode.h>
 #include <pb_decode.h>
-
 #include "AsyncPacketBuffer.hpp"
 
 ProtobufComm::ProtobufComm(Stream& stream)
@@ -18,7 +17,7 @@ bool ProtobufComm::receive(ToEsp32& out) {
   while (i < len) {
     if (serial.available()) {
       buffer[i++] = (uint8_t)serial.read();
-    } else if (micros() - start > 20000) { // ~20ms
+    } else if (micros() - start > 20000) { // ~20ms guard
       return false;
     } else {
       vTaskDelay(1);
@@ -35,7 +34,6 @@ void ProtobufComm::send(const FromEsp32& msg) {
   if (!pb_encode(&stream, FromEsp32_fields, &msg)) return;
 
   uint16_t n = (uint16_t)stream.bytes_written;
-
   if (AsyncPacketBuffer::isActive()) {
     (void)AsyncPacketBuffer::send(buffer, n);
   } else {
@@ -47,6 +45,7 @@ void ProtobufComm::send(const FromEsp32& msg) {
 
 void ProtobufComm::sendDebug(const char* text) {
   FromEsp32 msg = FromEsp32_init_zero;
+  msg.seq = 0;
   msg.timestamp = micros();
   msg.which_response = FromEsp32_debug_tag;
   strncpy(msg.response.debug.text, text, sizeof(msg.response.debug.text) - 1);

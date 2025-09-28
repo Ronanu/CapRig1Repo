@@ -2,38 +2,35 @@
 #define ASYNC_PACKET_BUFFER_HPP
 
 #include <Arduino.h>
-
-// FreeRTOS forward declarations
 #include <freertos/FreeRTOS.h>
 #include <freertos/queue.h>
 #include <freertos/task.h>
 
 namespace AsyncPacketBuffer {
 
-// Opaque handle for the buffer
+// Opaque handle kept internal; global singleton for simplicity.
 struct Handle;
 
 /**
- * Initialize the asynchronous packet buffer.
- * A worker task will write packets to the given Stream (length-prefixed: big-endian 16-bit + payload).
- * Returns a Handle pointer on success, or nullptr on failure.
+ * @brief Start the async TX buffer worker.
+ * @param stream   Stream to write to (e.g., Serial)
+ * @param taskCore Core to pin worker to (ESP32: 0 or 1)
+ * @param taskPrio FreeRTOS priority (1 is fine)
+ * @param queueLen Number of packets buffered
+ * @return Handle* or nullptr on failure
  */
 Handle* begin(Stream& stream, uint8_t taskCore = 1, UBaseType_t taskPrio = 1, uint16_t queueLen = 16);
 
 /**
- * Enqueue one complete packet (payload only). The worker adds the 2-byte length prefix.
- * If called before begin(), returns false.
+ * @brief Enqueue a complete payload (without length prefix).
+ * Adds a 2-byte big-endian length prefix on send.
  */
 bool send(const uint8_t* data, uint16_t len);
 
-/**
- * Whether the global buffer is active (begin() was called successfully).
- */
+/** @brief Is the async buffer active? */
 bool isActive();
 
-/**
- * Optional: stop and free resources.
- */
+/** @brief Optional stop (not typically used on Arduino lifecycle). */
 void end();
 
 } // namespace AsyncPacketBuffer
