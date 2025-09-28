@@ -1,23 +1,13 @@
 #include <Arduino.h>
 #include "ProtobufComm.hpp"
+#include "Settings.hpp"
 #include "messages_nanopb.pb.h"
 #include "AsyncPacketBuffer.hpp"
-
-// ---- System settings state ----
-static bool   g_current_signal_selection_state = false;
-static uint32_t g_action_state = 0; // 0..3
 
 constexpr TickType_t RX_TASK_DELAY = pdMS_TO_TICKS(1);
 
 ProtobufComm protoComm(Serial);
 
-static void fillSettingsState(FromEsp32& out) {
-  out.seq = 0;
-  out.timestamp = micros();
-  out.which_response = FromEsp32_settings_tag;
-  out.response.settings.settings.current_signal_selection_state = g_current_signal_selection_state;
-  out.response.settings.settings.action_state = g_action_state;
-}
 
 static void sendAck(const char* msg, uint32_t seq) {
   FromEsp32 res = FromEsp32_init_zero;
@@ -42,11 +32,9 @@ static void sendSettings(uint32_t seq) {
   res.seq = seq;
   res.timestamp = micros();
   res.which_response = FromEsp32_settings_tag;
-  res.response.settings.settings.current_signal_selection_state = g_current_signal_selection_state;
-  res.response.settings.settings.action_state = g_action_state;
+  SettingsManager::instance().toProto(res.response.settings.settings);
   protoComm.send(res);
 }
-
 static void sendSample(uint32_t sensor_id, float value, uint32_t seq) {
   FromEsp32 res = FromEsp32_init_zero;
   res.seq = seq;
@@ -75,37 +63,34 @@ void rxTask(void* pv) {
           break;
         }
         case ToEsp32_set_settings_tag: {
-          const auto& s = cmd.command.set_settings.settings;
-          // Validate ranges
-          g_current_signal_selection_state = s.current_signal_selection_state;
-          g_action_state = s.action_state <= 3 ? s.action_state : 3;
+          SettingsManager::instance().fromProto(cmd.command.set_settings.settings);
+          SettingsManager::instance().saveDebounced();
           sendAck("settings updated", seq);
-          // Optionally echo settings back:
           sendSettings(seq);
           break;
         }
         case ToEsp32_set_mux_tag: {
           uint32_t ch = cmd.command.set_mux.channel;
-          // TODO: set MUX hardware here
-          (void)ch;
+          (void)ch; // TODO: implement MUX switching
           sendAck("mux set", seq);
           break;
         }
-        default:
-          // Unknown or empty
+        default: {
           sendError("unknown command", seq);
           break;
+        }
       }
     } else {
       vTaskDelay(RX_TASK_DELAY);
     }
+    SettingsManager::instance().tick();
   }
 }
-
-void setup() {
+ void setup(){
   Serial.begin(115200);
+  SettingsManager::instance().load();
   // Enable async TX buffer (non-blocking sends). Remove this line for pure synchronous TX.
-  AsyncPacketBuffer::begin(Serial, 1, 1, 16);
+  AsyncPacketBuffer::begin(Serial, 1, 1, 1200);
 
   // Start RX task
   xTaskCreatePinnedToCore(

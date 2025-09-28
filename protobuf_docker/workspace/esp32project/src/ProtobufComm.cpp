@@ -33,14 +33,33 @@ void ProtobufComm::send(const FromEsp32& msg) {
   pb_ostream_t stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
   if (!pb_encode(&stream, FromEsp32_fields, &msg)) return;
 
-  uint16_t n = (uint16_t)stream.bytes_written;
+  const uint16_t n = (uint16_t)stream.bytes_written;
   if (AsyncPacketBuffer::isActive()) {
-    (void)AsyncPacketBuffer::send(buffer, n);
-  } else {
-    serial.write((uint8_t)(n >> 8));
-    serial.write((uint8_t)(n & 0xFF));
-    serial.write(buffer, n);
+    if (AsyncPacketBuffer::send(buffer, n)) {
+      return;
+    }
+    // Queue full -> guarantee error message with same seq (sync path)
+    FromEsp32 err = FromEsp32_init_zero;
+    err.seq = msg.seq;
+    err.timestamp = micros();
+    err.which_response = FromEsp32_error_tag;
+    strncpy(err.response.error.error, "tx_queue_full", sizeof(err.response.error.error) - 1);
+
+    uint8_t ebuf[128];
+    pb_ostream_t es = pb_ostream_from_buffer(ebuf, sizeof(ebuf));
+    if (pb_encode(&es, FromEsp32_fields, &err)) {
+      const uint16_t en = (uint16_t)es.bytes_written;
+      serial.write((uint8_t)(en >> 8));
+      serial.write((uint8_t)(en & 0xFF));
+      serial.write(ebuf, en);
+    }
+    return;
   }
+
+  // Fallback: synchronous
+  serial.write((uint8_t)(n >> 8));
+  serial.write((uint8_t)(n & 0xFF));
+  serial.write(buffer, n);
 }
 
 void ProtobufComm::sendDebug(const char* text) {

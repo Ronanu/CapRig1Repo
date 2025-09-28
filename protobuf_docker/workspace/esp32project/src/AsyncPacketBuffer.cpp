@@ -68,15 +68,9 @@ bool send(const uint8_t* data, uint16_t len) {
   pkt.len = len;
   memcpy(pkt.data, data, len);
 
-  if (xQueueSend(g_handle->q, &pkt, 0) == pdPASS) {
-    return true;
-  }
-  // Drop-oldest on overflow
-  TxPacket drop;
-  xQueueReceive(g_handle->q, &drop, 0);
+  // Non-blocking; if full => return false (no implicit drop)
   return xQueueSend(g_handle->q, &pkt, 0) == pdPASS;
 }
-
 bool isActive() {
   return g_handle && g_handle->q && g_handle->task;
 }

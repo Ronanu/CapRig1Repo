@@ -5,12 +5,18 @@ import time
 from messages_pb2 import ToEsp32, FromEsp32, SystemSettings
 
 class ProtoSerialClient:
-    def __init__(self, port, baudrate=115200):
+    def __init__(self, port, baudrate=115200, seq_start=1):
         self.port = port
         self.baudrate = baudrate
+        self._seq = seq_start
         self.ser = serial.Serial(port, baudrate, timeout=0.1)
         self.running = False
         self.listener_thread = threading.Thread(target=self.listen, daemon=True)
+
+    def _next_seq(self):
+        s = self._seq
+        self._seq = 1 if s >= 0xFFFFFFFF else s + 1
+        return s
 
     def start_listener(self):
         self.running = True
@@ -70,7 +76,11 @@ class ProtoSerialClient:
         elif msg.HasField("ack"):
             print(f"  ✅ ACK: {msg.ack.message}")
         elif msg.HasField("error"):
-            print(f"  ❌ ERROR: {msg.error.error}")
+            err = msg.error.error
+            if err == "tx_queue_full":
+                print("  ❌ ERROR: tx_queue_full (ESP32 TX-Queue ausgelastet)")
+            else:
+                print(f"  ❌ ERROR: {err}")
         elif msg.HasField("settings"):
             s = msg.settings.settings
             print(f"  ⚙️ Settings → current_signal_selection_state={s.current_signal_selection_state}, action_state={s.action_state}")
@@ -81,29 +91,29 @@ class ProtoSerialClient:
             print("  ❓ Unbekannte Antwort")
 
     # ---------- convenience commands ----------
-    def send_ping(self, seq: int = 0):
+    def send_ping(self, seq=None):
         msg = ToEsp32()
-        msg.seq = seq
+        msg.seq = self._next_seq() if seq is None else int(seq)
         msg.ping.SetInParent()
         self.send_message(msg)
 
-    def send_get_settings(self, seq: int = 0):
+    def send_get_settings(self, seq=None):
         msg = ToEsp32()
-        msg.seq = seq
+        msg.seq = self._next_seq() if seq is None else int(seq)
         msg.get_settings.SetInParent()
         self.send_message(msg)
 
-    def send_set_settings(self, current_signal_selection_state: bool, action_state: int, seq: int = 0):
+    def send_set_settings(self, current_signal_selection_state: bool, action_state: int, seq=None):
         msg = ToEsp32()
-        msg.seq = seq
+        msg.seq = self._next_seq() if seq is None else int(seq)
         msg.set_settings.settings.current_signal_selection_state = bool(current_signal_selection_state)
         # constrain 0..3 on client side as well
         msg.set_settings.settings.action_state = max(0, min(3, int(action_state)))
         self.send_message(msg)
 
-    def send_set_mux(self, channel: int, seq: int = 0):
+    def send_set_mux(self, channel: int, seq=None):
         msg = ToEsp32()
-        msg.seq = seq
+        msg.seq = self._next_seq() if seq is None else int(seq)
         msg.set_mux.channel = int(channel)
         self.send_message(msg)
 
@@ -112,9 +122,7 @@ class ProtoSerialClient:
         start = time.time()
         for i in range(1000):
             self.send_ping(seq=i+1)
-            if (i + 1) % 100 == 0:
-                dt = time.time() - start
-                print(f"  📈 {i+1}/1000 gesendet – ~{(i+1)/dt:.2f} Hz")
             time.sleep(0.0005)
         dt = time.time() - start
+        time.sleep(10)  # Warte auf ausstehende Antworten
         print(f"✅ 1000 Nachrichten in {dt:.3f}s → {(1000/dt):.2f} Hz")
