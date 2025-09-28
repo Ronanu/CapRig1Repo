@@ -57,7 +57,9 @@ void SettingsManager::saveDebounced() {
 void SettingsManager::tick() {
   if (!pending_save_) return;
   const uint32_t now = micros();
-  // 100ms debounce
+
+
+  // 100ms debounce, then save 
   if ((uint32_t)(now - last_save_request_us_) >= 100000) {
     pending_save_ = false;
     // persist current settings

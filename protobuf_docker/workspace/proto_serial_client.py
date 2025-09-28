@@ -71,9 +71,10 @@ class ProtoSerialClient:
     def handle_message(self, msg: FromEsp32):
         print(f"  🧾 seq: {msg.seq}  🕒 timestamp: {msg.timestamp}")
         if msg.HasField("debug"):
+            pass
             print(f"  🐞 Debug: {msg.debug.text}")
         elif msg.HasField("ack"):
-            print(f"  ✅ ACK: {msg.ack.message}")
+            pass
         elif msg.HasField("error"):
             err = msg.error.error
             if err == "tx_queue_full":
@@ -81,7 +82,7 @@ class ProtoSerialClient:
             else:
                 print(f"  ❌ ERROR: {err}")
         elif msg.HasField("settings"):
-            s = msg.settings.settings
+            s = msg.settings
             print(f"  ⚙️ Settings → current_signal_selection_state={s.current_signal_selection_state}, action_state={s.action_state}")
         elif msg.HasField("sample"):
             smp = msg.sample
@@ -123,5 +124,5 @@ class ProtoSerialClient:
             self.send_ping(seq=i+1)
             time.sleep(0.0005)
         dt = time.time() - start
-        time.sleep(10)  # Warte auf ausstehende Antworten
+        time.sleep(3)  # Warte auf ausstehende Antworten
         print(f"✅ 1000 Nachrichten in {dt:.3f}s → {(1000/dt):.2f} Hz")

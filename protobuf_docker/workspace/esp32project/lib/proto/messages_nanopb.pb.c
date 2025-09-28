@@ -6,9 +6,6 @@
 #error Regenerate this file with the current version of nanopb generator.
 #endif
 
-PB_BIND(SystemSettings, SystemSettings, AUTO)
-
-
 PB_BIND(Ping, Ping, AUTO)
 
 
@@ -33,7 +30,7 @@ PB_BIND(Error, Error, AUTO)
 PB_BIND(Debug, Debug, AUTO)
 
 
-PB_BIND(SettingsState, SettingsState, AUTO)
+PB_BIND(SystemSettings, SystemSettings, AUTO)
 
 
 PB_BIND(SensorSample, SensorSample, AUTO)

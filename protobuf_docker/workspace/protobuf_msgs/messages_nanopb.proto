@@ -8,13 +8,6 @@ import "nanopb.proto";
 // - FromEsp32: responses and notifications from the ESP32
 // ------------------------------------------------------------
 
-// ============================
-// System types
-// ============================
-message SystemSettings {
-  bool  current_signal_selection_state = 1; // true = active
-  uint32 action_state                  = 2; // 0..3 (validated in firmware)
-}
 
 // ============================
 // Commands to ESP32 (payloads)
@@ -54,8 +47,9 @@ message Error {
 message Debug {
   string text = 1 [(nanopb).max_size = 128];
 }
-message SettingsState {
-  SystemSettings settings = 1;
+message SystemSettings {
+  bool  current_signal_selection_state = 1; // true = active
+  uint32 action_state                  = 2; // 0..3 (validated in firmware)
 }
 message SensorSample {
   uint32 sensor_id = 1;
@@ -74,7 +68,7 @@ message FromEsp32 {
     Ack           ack      = 10;
     Error         error    = 11;
     Debug         debug    = 12;
-    SettingsState settings = 13;
+    SystemSettings settings = 13;
     SensorSample  sample   = 14;
   }
 }

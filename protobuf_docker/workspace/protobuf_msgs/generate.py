@@ -9,7 +9,7 @@ proto_dir = "protobuf_msgs"
 nanopb_src_dir = "/nanopb"
 
 # Zielverzeichnisse für generierte Dateien
-out_dir_py = '.'
+out_dir_py = 'pythonProcect'
 out_dir_esp = "esp32project/lib/proto"
 
 
@@ -30,6 +30,7 @@ nanopb_files = [
 ]
 
 os.makedirs(out_dir_esp, exist_ok=True)
+os.makedirs(out_dir_py, exist_ok=True)
 
 print("🔁 Starte Protobuf-Generierung...")
 
