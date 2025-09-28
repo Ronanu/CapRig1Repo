@@ -89,7 +89,7 @@ class ProtoSerialClient:
             print(f"  ⚙️ Settings → current_signal_selection_state={s.current_signal_selection_state}, action_state={s.action_state}")
         elif msg.HasField("sample"):
             smp = msg.sample
-            #print(f"  📊 Sample → sensor_id={smp.sensor_id}, value={smp.value:.3f}, checksum=0x{smp.checksum:08X}, timestamp={msg.timestamp}")
+            print(f"  📊 Sample → sensor_id={smp.sensor_id}, value={smp.value:.3f}, checksum=0x{smp.checksum:08X}, timestamp={msg.timestamp}")
         else:
             print("  ❓ Unbekannte Antwort")
 

@@ -1,0 +1,431 @@
+2025-09-28 23:54:02,961 - INFO - ProtoSerialClient created for COM4 @ 230400
+2025-09-28 23:54:02,965 - WARNING - Ping after reconnect failed: No client bound to runtime (File: proto_connection, Line: 53, Function: _on_up)
+2025-09-28 23:54:02,965 - INFO - Listener started
+2025-09-28 23:54:03,907 - INFO - samples: +64/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:04,909 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:05,909 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:06,905 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:07,898 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:08,901 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:09,908 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:10,899 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:11,901 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:12,901 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:13,905 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:14,906 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:15,904 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:16,903 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:17,906 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:18,900 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:19,900 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:20,910 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:21,907 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:22,904 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:23,905 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:24,905 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:25,898 - INFO - samples: +79/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:26,907 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:27,908 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:28,901 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:29,901 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:30,904 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:31,904 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:32,906 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:33,899 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:34,907 - INFO - samples: +80/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:35,899 - INFO - samples: +79/s, lost_total=0, dup_total=0, resets=0
+2025-09-28 23:54:36,248 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:36,293 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:36,340 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:36,551 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:36,609 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:37,103 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:37,217 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:37,349 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:37,471 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:37,561 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:38,048 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:38,160 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:38,228 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:38,494 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:38,596 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:38,843 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:39,090 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:39,323 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:39,358 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:39,522 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:39,601 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:39,758 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:39,827 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:40,051 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:40,185 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:40,414 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:40,651 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:40,675 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:40,875 - INFO - samples: +27/s, lost_total=607, dup_total=0, resets=0
+2025-09-28 23:54:41,121 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:41,555 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:41,754 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:41,833 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:41,858 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:41,958 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:42,102 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:42,489 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:42,834 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:43,186 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:43,276 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:43,311 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:43,822 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:44,181 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:44,449 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:44,615 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:44,970 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:45,060 - INFO - samples: +1/s, lost_total=1153, dup_total=0, resets=0
+2025-09-28 23:54:45,183 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:45,273 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:45,318 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:45,522 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:45,678 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:45,768 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:45,957 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:46,035 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:46,146 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:46,214 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:46,423 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:46,672 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:46,925 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:46,960 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:47,039 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:47,329 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:47,443 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:47,710 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:47,810 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:47,846 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:47,938 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:48,778 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:48,815 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:48,849 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:49,008 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:49,408 - INFO - samples: +1/s, lost_total=1717, dup_total=0, resets=0
+2025-09-28 23:54:49,675 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:49,877 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:49,999 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:50,112 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:50,469 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:50,693 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:50,783 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:50,951 - INFO - samples: +2/s, lost_total=1914, dup_total=0, resets=0
+2025-09-28 23:54:51,462 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:51,519 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:51,940 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:52,558 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:52,696 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:53,037 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:53,082 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:53,358 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:53,870 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:54,215 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:54,305 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:54,494 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:54,923 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:55,111 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:55,146 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:55,259 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:55,878 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:55,956 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:55,991 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:56,191 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:56,393 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:56,419 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:56,640 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:56,664 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:56,876 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:57,120 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:57,178 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:57,256 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:57,722 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:57,789 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:58,296 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:58,374 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:58,597 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:58,698 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:58,810 - INFO - samples: +1/s, lost_total=2811, dup_total=0, resets=0
+2025-09-28 23:54:58,825 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:59,201 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:59,493 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:59,606 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:54:59,817 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:00,551 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:00,697 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:00,962 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:01,339 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:01,675 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:01,923 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:02,034 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:02,280 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:02,811 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:03,231 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:03,344 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:03,971 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:04,039 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:04,088 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:04,353 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:04,465 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:04,654 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:04,823 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:05,070 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:05,129 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:05,482 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:05,595 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:05,949 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:06,190 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:06,425 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:06,604 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:06,627 - INFO - samples: +1/s, lost_total=3711, dup_total=0, resets=0
+2025-09-28 23:55:06,774 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:06,879 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:06,904 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:07,148 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:07,216 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:07,673 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:07,920 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:08,099 - INFO - samples: +1/s, lost_total=3942, dup_total=0, resets=0
+2025-09-28 23:55:08,310 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:08,402 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:08,493 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:08,505 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:08,618 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:09,083 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:09,197 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:09,332 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:09,467 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:09,590 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:09,649 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:09,663 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:09,779 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:10,181 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:10,648 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:10,715 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:10,937 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:11,140 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:11,629 - INFO - samples: +1/s, lost_total=4397, dup_total=0, resets=0
+2025-09-28 23:55:11,795 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:11,863 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:12,020 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:12,089 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-28 23:55:12,126 - INFO - Link closed
+2025-09-28 23:55:12,269 - WARNING - Listener stopped or stop requested (File: proto_connection, Line: 72, Function: _loop)
+2025-09-28 23:55:12,269 - INFO - Programm beendet
+2025-09-29 00:01:51,280 - INFO - ProtoSerialClient created for COM4 @ 230400
+2025-09-29 00:01:51,288 - WARNING - Ping after reconnect failed: No client bound to runtime (File: proto_connection, Line: 53, Function: _on_up)
+2025-09-29 00:01:51,288 - INFO - Listener started
+2025-09-29 00:01:51,409 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-29 00:01:51,666 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-29 00:01:52,439 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-29 00:01:52,484 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-29 00:01:52,575 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-29 00:01:52,653 - ERROR - Unhandled listener exception: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 127, Function: listen)
+2025-09-29 00:01:52,857 - INFO - samples: +1/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:01:53,856 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:01:54,853 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:01:55,859 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:01:56,861 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:01:57,859 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:01:58,860 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:01:59,854 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:02:00,861 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:02:01,857 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:02:02,852 - INFO - samples: +81/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:02:03,861 - INFO - samples: +83/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:02:04,231 - INFO - Link closed
+2025-09-29 00:02:04,312 - WARNING - Listener stopped or stop requested (File: proto_connection, Line: 72, Function: _loop)
+2025-09-29 00:02:04,312 - INFO - Programm beendet
+2025-09-29 00:02:04,313 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\main.py", line 57, in <module>
+    main()
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\main.py", line 25, in main
+    runtime.get_settings()
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\proto_runtime.py", line 254, in get_settings
+    raise RuntimeError("No client bound to runtime")
+RuntimeError: No client bound to runtime
+2025-09-29 00:02:57,383 - INFO - ProtoSerialClient created for COM4 @ 230400
+2025-09-29 00:02:57,387 - WARNING - Ping after reconnect failed: No client bound to runtime (File: proto_connection, Line: 53, Function: _on_up)
+2025-09-29 00:02:57,388 - INFO - Listener started
+2025-09-29 00:02:58,292 - INFO - samples: +74/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:02:59,295 - INFO - samples: +82/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:02:59,504 - INFO - Link closed
+2025-09-29 00:02:59,595 - WARNING - Listener stopped or stop requested (File: proto_connection, Line: 72, Function: _loop)
+2025-09-29 00:02:59,595 - INFO - Programm beendet
+2025-09-29 00:02:59,596 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\main.py", line 57, in <module>
+    main()
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\main.py", line 20, in main
+    runtime.ping()
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\proto_runtime.py", line 240, in ping
+    raise RuntimeError("No client bound to runtime")
+RuntimeError: No client bound to runtime
+2025-09-29 00:03:00,951 - INFO - ProtoSerialClient created for COM4 @ 230400
+2025-09-29 00:03:00,955 - WARNING - Ping after reconnect failed: No client bound to runtime (File: proto_connection, Line: 53, Function: _on_up)
+2025-09-29 00:03:00,955 - INFO - Listener started
+2025-09-29 00:03:01,931 - INFO - samples: +65/s, lost_total=0, dup_total=0, resets=0
+2025-09-29 00:03:01,971 - INFO - Link closed
+2025-09-29 00:03:02,159 - WARNING - Listener stopped or stop requested (File: proto_connection, Line: 72, Function: _loop)
+2025-09-29 00:03:02,159 - INFO - Programm beendet
+2025-09-29 00:03:02,160 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\main.py", line 57, in <module>
+    main()
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\main.py", line 25, in main
+    runtime.get_settings()
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\proto_runtime.py", line 254, in get_settings
+    raise RuntimeError("No client bound to runtime")
+RuntimeError: No client bound to runtime
+2025-09-29 00:14:26,730 - INFO - ProtoSerialClient created for COM4 @ 230400
+2025-09-29 00:14:26,738 - WARNING - Ping after reconnect failed: No client bound to runtime (File: proto_connection, Line: 56, Function: _on_up)
+2025-09-29 00:14:26,739 - INFO - Listener started
+2025-09-29 00:14:26,743 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:29,749 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:32,754 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:35,321 - ERROR - Command error: No client bound to runtime (File: gui_main, Line: 124, Function: _wrap)
+2025-09-29 00:14:35,760 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:38,766 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:41,772 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:44,778 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:47,784 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:48,633 - ERROR - Command error: No client bound to runtime (File: gui_main, Line: 124, Function: _wrap)
+2025-09-29 00:14:49,729 - ERROR - Command error: No client bound to runtime (File: gui_main, Line: 124, Function: _wrap)
+2025-09-29 00:14:50,378 - ERROR - Command error: No client bound to runtime (File: gui_main, Line: 124, Function: _wrap)
+2025-09-29 00:14:50,789 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:51,554 - ERROR - Command error: No client bound to runtime (File: gui_main, Line: 124, Function: _wrap)
+2025-09-29 00:14:53,794 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:56,800 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:14:58,081 - ERROR - Command error: No client bound to runtime (File: gui_main, Line: 124, Function: _wrap)
+2025-09-29 00:14:59,804 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:02,809 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:05,815 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:08,058 - ERROR - Command error: No client bound to runtime (File: gui_main, Line: 124, Function: _wrap)
+2025-09-29 00:15:08,820 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:11,825 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:14,831 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:17,838 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:20,844 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:23,850 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:26,857 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:29,864 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:32,869 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:35,874 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:38,880 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:41,885 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:44,891 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:47,897 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:50,902 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:53,909 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:56,915 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:15:59,921 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:02,926 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:05,932 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:08,938 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:11,944 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:14,949 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:17,955 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:20,961 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:23,967 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:26,972 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:29,979 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:32,986 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:35,990 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:38,997 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:42,002 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:45,008 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:48,012 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:51,018 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:54,025 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:16:57,030 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:00,035 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:03,040 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:06,046 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:09,052 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:12,057 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:15,064 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:18,070 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:21,076 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:24,081 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:27,085 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:30,090 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:33,096 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:36,101 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:39,107 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:42,113 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:45,118 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:48,125 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:51,130 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:54,135 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:17:57,142 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:00,147 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:03,152 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:06,157 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:09,162 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:12,167 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:15,172 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:18,178 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:21,184 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:24,188 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:27,194 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:30,199 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:33,205 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:36,209 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:39,215 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:42,222 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:45,228 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:48,232 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:51,237 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:54,244 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:18:57,249 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:19:00,255 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:19:03,261 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:19:06,268 - WARNING - keepalive ping failed: No client bound to runtime (File: proto_connection, Line: 81, Function: _loop)
+2025-09-29 00:19:07,555 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:11,031 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:14,035 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:14,735 - INFO - ERROR TypeError: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq'
+2025-09-29 00:19:17,041 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:20,047 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:21,578 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:24,584 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:25,487 - INFO - ERROR TypeError: ProtoSerialClient.send_get_settings() got an unexpected keyword argument 'return_seq'
+2025-09-29 00:19:27,589 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:30,596 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:32,128 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:35,134 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:35,632 - INFO - ERROR TypeError: ProtoRuntime.set_settings() got an unexpected keyword argument 'current_signal_selection_state'
+2025-09-29 00:19:38,140 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:41,146 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:42,688 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:45,693 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:48,700 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:51,704 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:53,241 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:56,246 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:19:59,252 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:20:02,257 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:20:03,792 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:20:06,797 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:20:09,802 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:20:12,806 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:20:14,334 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:20:17,341 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:21:49,272 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:21:50,899 - INFO - ERROR TypeError: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq'
+2025-09-29 00:21:52,277 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:21:55,283 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:21:58,290 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:21:59,827 - WARNING - keepalive ping failed: ProtoSerialClient.send_ping() got an unexpected keyword argument 'return_seq' (File: proto_connection, Line: 133, Function: _send_keepalive)
+2025-09-29 00:29:24,120 - CRITICAL - Unbehandelte Ausnahme (File: log, Line: 22, Function: handle_exception)
+Traceback (most recent call last):
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\gui_main.py", line 8, in <module>
+    from proto_connection import ReconnectSupervisor
+  File "c:\Users\rodi9\Dropbox\InstitutGR\HESS4MRA\Testing\CapRig1Repo\protobuf_docker\workspace\pythonProject\proto_connection.py", line 10, in <module>
+    from proto_runtime import ProtoRuntime
+ModuleNotFoundError: No module named 'proto_runtime'

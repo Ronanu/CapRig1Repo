@@ -14,7 +14,7 @@ constexpr TickType_t RX_TASK_DELAY = pdMS_TO_TICKS(1);
 // Fixed by request: CS pin = 15, channel = 6
 #define ADC_CS_PIN         15
 #define ADC_CHANNEL_FIXED   6   // valid: 0..6 (AIN1..AIN7)
-#define SAMPLE_HZ       1000    // adjust if needed
+#define SAMPLE_HZ       100    // adjust if needed
 
 // -------------------- Globals ---------------------------
 ProtobufComm protoComm(Serial);
