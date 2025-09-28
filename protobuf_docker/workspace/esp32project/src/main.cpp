@@ -32,12 +32,11 @@ static void sendSettings(uint32_t seq) {
   res.seq = seq;
   res.timestamp = micros();
   res.which_response = FromEsp32_settings_tag;
-
+  res.response.settings.has_settings = true;
   // Hol aktuelle Werte aus dem Manager und mappe direkt ins Proto
   Settings s = SettingsManager::instance().get();
   res.response.settings.settings.current_signal_selection_state = s.current_signal_selection_state;
   res.response.settings.settings.action_state = s.action_state;
-
   protoComm.send(res);
 }
 static void sendSample(uint32_t sensor_id, float value, uint32_t seq) {

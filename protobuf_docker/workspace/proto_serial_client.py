@@ -69,7 +69,6 @@ class ProtoSerialClient:
             time.sleep(0.01)
 
     def handle_message(self, msg: FromEsp32):
-        print("📥 Nachricht empfangen:")
         print(f"  🧾 seq: {msg.seq}  🕒 timestamp: {msg.timestamp}")
         if msg.HasField("debug"):
             print(f"  🐞 Debug: {msg.debug.text}")
