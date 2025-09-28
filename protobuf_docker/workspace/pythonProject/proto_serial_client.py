@@ -69,7 +69,7 @@ class ProtoSerialClient:
             time.sleep(0.01)
 
     def handle_message(self, msg: FromEsp32):
-        print(f"  🧾 seq: {msg.seq}  🕒 timestamp: {msg.timestamp}")
+        #print(f"  🧾 seq: {msg.seq}  🕒 timestamp: {msg.timestamp}")
         if msg.HasField("debug"):
             pass
             print(f"  🐞 Debug: {msg.debug.text}")
