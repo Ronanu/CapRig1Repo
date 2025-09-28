@@ -2,27 +2,31 @@
 #include <pb_encode.h>
 #include <pb_decode.h>
 
+#include "AsyncPacketBuffer.hpp"
+
 ProtobufComm::ProtobufComm(Stream& stream)
   : serial(stream) {}
 
 bool ProtobufComm::receive(ToEsp32& out) {
   if (serial.available() < 2) return false;
   uint16_t len = ((uint16_t)serial.read() << 8) | serial.read();
-  if (len > 128) return false;
+  if (len == 0 || len > 128) return false;
 
   uint8_t buffer[128];
   size_t i = 0;
   unsigned long start = micros();
-  while (i < len && (micros() - start) < 50000) {
+  while (i < len) {
     if (serial.available()) {
-      buffer[i++] = serial.read();
+      buffer[i++] = (uint8_t)serial.read();
+    } else if (micros() - start > 20000) { // ~20ms
+      return false;
+    } else {
+      vTaskDelay(1);
     }
   }
 
-  if (i < len) return false;
-
-  pb_istream_t stream = pb_istream_from_buffer(buffer, len);
-  return pb_decode(&stream, ToEsp32_fields, &out);
+  pb_istream_t istream = pb_istream_from_buffer(buffer, len);
+  return pb_decode(&istream, ToEsp32_fields, &out);
 }
 
 void ProtobufComm::send(const FromEsp32& msg) {
@@ -30,9 +34,15 @@ void ProtobufComm::send(const FromEsp32& msg) {
   pb_ostream_t stream = pb_ostream_from_buffer(buffer, sizeof(buffer));
   if (!pb_encode(&stream, FromEsp32_fields, &msg)) return;
 
-  serial.write((uint8_t)(stream.bytes_written >> 8));
-  serial.write((uint8_t)(stream.bytes_written & 0xFF));
-  serial.write(buffer, stream.bytes_written);
+  uint16_t n = (uint16_t)stream.bytes_written;
+
+  if (AsyncPacketBuffer::isActive()) {
+    (void)AsyncPacketBuffer::send(buffer, n);
+  } else {
+    serial.write((uint8_t)(n >> 8));
+    serial.write((uint8_t)(n & 0xFF));
+    serial.write(buffer, n);
+  }
 }
 
 void ProtobufComm::sendDebug(const char* text) {
@@ -45,7 +55,6 @@ void ProtobufComm::sendDebug(const char* text) {
 }
 
 uint32_t ProtobufComm::calculateChecksum(uint32_t sensor_id, float value) {
-  // Simple XOR-based checksum
   union { float f; uint32_t u; } conv = { value };
   return sensor_id ^ conv.u;
 }

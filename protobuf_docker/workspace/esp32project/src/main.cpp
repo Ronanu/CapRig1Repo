@@ -1,6 +1,15 @@
 #include <Arduino.h>
 #include "ProtobufComm.hpp"
+#include "ProtoTxBuffer.hpp"
 #include "messages_nanopb.pb.h"
+#include "AsyncPacketBuffer.hpp"
+
+#include "AsyncTxBuffer.hpp"
+#include "ByteSink.hpp"
+
+static AsyncTxBuffer g_async_tx;
+static bool sink_send_bytes(const uint8_t* data, uint16_t len) { return g_async_tx.enqueue(data, len); }
+
 
 constexpr TickType_t RECEIVE_TASK_DELAY = pdMS_TO_TICKS(1);
 constexpr gpio_num_t MUX_PIN = GPIO_NUM_27;
@@ -77,6 +86,12 @@ void TaskReceive(void* pvParameters) {
 
 void setup() {
   Serial.begin(115200);
+  AsyncPacketBuffer::begin(Serial, 1, 1, 16);
+  // Enable buffered TX for protobuf frames
+  proto_txbuffer_begin(Serial, 1, 1, 16);
+  g_async_tx.begin(Serial, 16, 1, 1);
+  g_proto_send_bytes = &sink_send_bytes;
+  
   delay(300);  // USB-Verbindung abwarten (optional)
 
   pinMode(MUX_PIN, OUTPUT);

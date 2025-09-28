@@ -6,7 +6,7 @@
 
 class ProtobufComm {
 public:
-  ProtobufComm(Stream& stream);
+  explicit ProtobufComm(Stream& stream);
 
   bool receive(ToEsp32& out);
   void send(const FromEsp32& msg);
@@ -17,4 +17,4 @@ private:
   Stream& serial;
 };
 
-#endif
+#endif // PROTOBUF_COMM_HPP
