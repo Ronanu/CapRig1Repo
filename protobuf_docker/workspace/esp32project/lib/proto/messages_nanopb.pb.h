@@ -10,36 +10,54 @@
 #endif
 
 /* Struct definitions */
-typedef struct _AliveCommand {
+/* ============================
+ System types
+ ============================ */
+typedef struct _SystemSettings {
+    bool current_signal_selection_state; /* true = active */
+    uint32_t action_state; /* 0..3 (validated in firmware) */
+} SystemSettings;
+
+/* ============================
+ Commands to ESP32 (payloads)
+ ============================ */
+typedef struct _Ping {
     char dummy_field;
-} AliveCommand;
+} Ping;
 
-typedef struct _GetDataCommand {
+typedef struct _GetSettings {
     char dummy_field;
-} GetDataCommand;
+} GetSettings;
 
-typedef struct _SetMuxCommand {
-    bool toggle;
-} SetMuxCommand;
+typedef struct _SetSettings {
+    bool has_settings;
+    SystemSettings settings;
+} SetSettings;
 
+typedef struct _SetMux {
+    uint32_t channel;
+} SetMux;
+
+/* ============================
+ Wrapper: ToEsp32
+ ============================ */
 typedef struct _ToEsp32 {
+    uint32_t seq; /* request id, 0 if unused */
     pb_size_t which_command;
     union _ToEsp32_command {
-        AliveCommand alive;
-        GetDataCommand get_data;
-        SetMuxCommand set_mux;
+        Ping ping;
+        GetSettings get_settings;
+        SetSettings set_settings;
+        SetMux set_mux;
     } command;
 } ToEsp32;
 
+/* ============================
+ Responses from ESP32 (payloads)
+ ============================ */
 typedef struct _Ack {
     char message[64];
 } Ack;
-
-typedef struct _SensorSample {
-    uint32_t sensor_id;
-    float value;
-    uint32_t checksum;
-} SensorSample;
 
 typedef struct _Error {
     char error[64];
@@ -49,14 +67,30 @@ typedef struct _Debug {
     char text[128];
 } Debug;
 
+typedef struct _SettingsState {
+    bool has_settings;
+    SystemSettings settings;
+} SettingsState;
+
+typedef struct _SensorSample {
+    uint32_t sensor_id;
+    float value;
+    uint32_t checksum;
+} SensorSample;
+
+/* ============================
+ Wrapper: FromEsp32
+ ============================ */
 typedef struct _FromEsp32 {
-    uint32_t timestamp;
+    uint32_t seq; /* mirrors request id (0 for unsolicited) */
+    uint32_t timestamp; /* device-side timestamp (e.g., micros) */
     pb_size_t which_response;
     union _FromEsp32_response {
         Ack ack;
-        SensorSample sample;
         Error error;
         Debug debug;
+        SettingsState settings;
+        SensorSample sample;
     } response;
 } FromEsp32;
 
@@ -66,92 +100,101 @@ extern "C" {
 #endif
 
 /* Initializer values for message structs */
-#define ToEsp32_init_default                     {0, {AliveCommand_init_default}}
-#define AliveCommand_init_default                {0}
-#define GetDataCommand_init_default              {0}
-#define SetMuxCommand_init_default               {0}
-#define FromEsp32_init_default                   {0, 0, {Ack_init_default}}
+#define SystemSettings_init_default              {0, 0}
+#define Ping_init_default                        {0}
+#define GetSettings_init_default                 {0}
+#define SetSettings_init_default                 {false, SystemSettings_init_default}
+#define SetMux_init_default                      {0}
+#define ToEsp32_init_default                     {0, 0, {Ping_init_default}}
 #define Ack_init_default                         {""}
-#define SensorSample_init_default                {0, 0, 0}
 #define Error_init_default                       {""}
 #define Debug_init_default                       {""}
-#define ToEsp32_init_zero                        {0, {AliveCommand_init_zero}}
-#define AliveCommand_init_zero                   {0}
-#define GetDataCommand_init_zero                 {0}
-#define SetMuxCommand_init_zero                  {0}
-#define FromEsp32_init_zero                      {0, 0, {Ack_init_zero}}
+#define SettingsState_init_default               {false, SystemSettings_init_default}
+#define SensorSample_init_default                {0, 0, 0}
+#define FromEsp32_init_default                   {0, 0, 0, {Ack_init_default}}
+#define SystemSettings_init_zero                 {0, 0}
+#define Ping_init_zero                           {0}
+#define GetSettings_init_zero                    {0}
+#define SetSettings_init_zero                    {false, SystemSettings_init_zero}
+#define SetMux_init_zero                         {0}
+#define ToEsp32_init_zero                        {0, 0, {Ping_init_zero}}
 #define Ack_init_zero                            {""}
-#define SensorSample_init_zero                   {0, 0, 0}
 #define Error_init_zero                          {""}
 #define Debug_init_zero                          {""}
+#define SettingsState_init_zero                  {false, SystemSettings_init_zero}
+#define SensorSample_init_zero                   {0, 0, 0}
+#define FromEsp32_init_zero                      {0, 0, 0, {Ack_init_zero}}
 
 /* Field tags (for use in manual encoding/decoding) */
-#define SetMuxCommand_toggle_tag                 1
-#define ToEsp32_alive_tag                        1
-#define ToEsp32_get_data_tag                     2
-#define ToEsp32_set_mux_tag                      3
+#define SystemSettings_current_signal_selection_state_tag 1
+#define SystemSettings_action_state_tag          2
+#define SetSettings_settings_tag                 1
+#define SetMux_channel_tag                       1
+#define ToEsp32_seq_tag                          1
+#define ToEsp32_ping_tag                         10
+#define ToEsp32_get_settings_tag                 11
+#define ToEsp32_set_settings_tag                 12
+#define ToEsp32_set_mux_tag                      13
 #define Ack_message_tag                          1
+#define Error_error_tag                          1
+#define Debug_text_tag                           1
+#define SettingsState_settings_tag               1
 #define SensorSample_sensor_id_tag               1
 #define SensorSample_value_tag                   2
 #define SensorSample_checksum_tag                3
-#define Error_error_tag                          1
-#define Debug_text_tag                           1
-#define FromEsp32_timestamp_tag                  1
-#define FromEsp32_ack_tag                        2
-#define FromEsp32_sample_tag                     3
-#define FromEsp32_error_tag                      4
-#define FromEsp32_debug_tag                      5
+#define FromEsp32_seq_tag                        1
+#define FromEsp32_timestamp_tag                  2
+#define FromEsp32_ack_tag                        10
+#define FromEsp32_error_tag                      11
+#define FromEsp32_debug_tag                      12
+#define FromEsp32_settings_tag                   13
+#define FromEsp32_sample_tag                     14
 
 /* Struct field encoding specification for nanopb */
+#define SystemSettings_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, BOOL,     current_signal_selection_state,   1) \
+X(a, STATIC,   SINGULAR, UINT32,   action_state,      2)
+#define SystemSettings_CALLBACK NULL
+#define SystemSettings_DEFAULT NULL
+
+#define Ping_FIELDLIST(X, a) \
+
+#define Ping_CALLBACK NULL
+#define Ping_DEFAULT NULL
+
+#define GetSettings_FIELDLIST(X, a) \
+
+#define GetSettings_CALLBACK NULL
+#define GetSettings_DEFAULT NULL
+
+#define SetSettings_FIELDLIST(X, a) \
+X(a, STATIC,   OPTIONAL, MESSAGE,  settings,          1)
+#define SetSettings_CALLBACK NULL
+#define SetSettings_DEFAULT NULL
+#define SetSettings_settings_MSGTYPE SystemSettings
+
+#define SetMux_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   channel,           1)
+#define SetMux_CALLBACK NULL
+#define SetMux_DEFAULT NULL
+
 #define ToEsp32_FIELDLIST(X, a) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (command,alive,command.alive),   1) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (command,get_data,command.get_data),   2) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_mux,command.set_mux),   3)
+X(a, STATIC,   SINGULAR, UINT32,   seq,               1) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (command,ping,command.ping),  10) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (command,get_settings,command.get_settings),  11) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_settings,command.set_settings),  12) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_mux,command.set_mux),  13)
 #define ToEsp32_CALLBACK NULL
 #define ToEsp32_DEFAULT NULL
-#define ToEsp32_command_alive_MSGTYPE AliveCommand
-#define ToEsp32_command_get_data_MSGTYPE GetDataCommand
-#define ToEsp32_command_set_mux_MSGTYPE SetMuxCommand
-
-#define AliveCommand_FIELDLIST(X, a) \
-
-#define AliveCommand_CALLBACK NULL
-#define AliveCommand_DEFAULT NULL
-
-#define GetDataCommand_FIELDLIST(X, a) \
-
-#define GetDataCommand_CALLBACK NULL
-#define GetDataCommand_DEFAULT NULL
-
-#define SetMuxCommand_FIELDLIST(X, a) \
-X(a, STATIC,   SINGULAR, BOOL,     toggle,            1)
-#define SetMuxCommand_CALLBACK NULL
-#define SetMuxCommand_DEFAULT NULL
-
-#define FromEsp32_FIELDLIST(X, a) \
-X(a, STATIC,   SINGULAR, UINT32,   timestamp,         1) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,ack,response.ack),   2) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,sample,response.sample),   3) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,error,response.error),   4) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,debug,response.debug),   5)
-#define FromEsp32_CALLBACK NULL
-#define FromEsp32_DEFAULT NULL
-#define FromEsp32_response_ack_MSGTYPE Ack
-#define FromEsp32_response_sample_MSGTYPE SensorSample
-#define FromEsp32_response_error_MSGTYPE Error
-#define FromEsp32_response_debug_MSGTYPE Debug
+#define ToEsp32_command_ping_MSGTYPE Ping
+#define ToEsp32_command_get_settings_MSGTYPE GetSettings
+#define ToEsp32_command_set_settings_MSGTYPE SetSettings
+#define ToEsp32_command_set_mux_MSGTYPE SetMux
 
 #define Ack_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, STRING,   message,           1)
 #define Ack_CALLBACK NULL
 #define Ack_DEFAULT NULL
-
-#define SensorSample_FIELDLIST(X, a) \
-X(a, STATIC,   SINGULAR, UINT32,   sensor_id,         1) \
-X(a, STATIC,   SINGULAR, FLOAT,    value,             2) \
-X(a, STATIC,   SINGULAR, UINT32,   checksum,          3)
-#define SensorSample_CALLBACK NULL
-#define SensorSample_DEFAULT NULL
 
 #define Error_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, STRING,   error,             1)
@@ -163,38 +206,76 @@ X(a, STATIC,   SINGULAR, STRING,   text,              1)
 #define Debug_CALLBACK NULL
 #define Debug_DEFAULT NULL
 
+#define SettingsState_FIELDLIST(X, a) \
+X(a, STATIC,   OPTIONAL, MESSAGE,  settings,          1)
+#define SettingsState_CALLBACK NULL
+#define SettingsState_DEFAULT NULL
+#define SettingsState_settings_MSGTYPE SystemSettings
+
+#define SensorSample_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   sensor_id,         1) \
+X(a, STATIC,   SINGULAR, FLOAT,    value,             2) \
+X(a, STATIC,   SINGULAR, UINT32,   checksum,          3)
+#define SensorSample_CALLBACK NULL
+#define SensorSample_DEFAULT NULL
+
+#define FromEsp32_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   seq,               1) \
+X(a, STATIC,   SINGULAR, UINT32,   timestamp,         2) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,ack,response.ack),  10) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,error,response.error),  11) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,debug,response.debug),  12) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,settings,response.settings),  13) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,sample,response.sample),  14)
+#define FromEsp32_CALLBACK NULL
+#define FromEsp32_DEFAULT NULL
+#define FromEsp32_response_ack_MSGTYPE Ack
+#define FromEsp32_response_error_MSGTYPE Error
+#define FromEsp32_response_debug_MSGTYPE Debug
+#define FromEsp32_response_settings_MSGTYPE SettingsState
+#define FromEsp32_response_sample_MSGTYPE SensorSample
+
+extern const pb_msgdesc_t SystemSettings_msg;
+extern const pb_msgdesc_t Ping_msg;
+extern const pb_msgdesc_t GetSettings_msg;
+extern const pb_msgdesc_t SetSettings_msg;
+extern const pb_msgdesc_t SetMux_msg;
 extern const pb_msgdesc_t ToEsp32_msg;
-extern const pb_msgdesc_t AliveCommand_msg;
-extern const pb_msgdesc_t GetDataCommand_msg;
-extern const pb_msgdesc_t SetMuxCommand_msg;
-extern const pb_msgdesc_t FromEsp32_msg;
 extern const pb_msgdesc_t Ack_msg;
-extern const pb_msgdesc_t SensorSample_msg;
 extern const pb_msgdesc_t Error_msg;
 extern const pb_msgdesc_t Debug_msg;
+extern const pb_msgdesc_t SettingsState_msg;
+extern const pb_msgdesc_t SensorSample_msg;
+extern const pb_msgdesc_t FromEsp32_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
+#define SystemSettings_fields &SystemSettings_msg
+#define Ping_fields &Ping_msg
+#define GetSettings_fields &GetSettings_msg
+#define SetSettings_fields &SetSettings_msg
+#define SetMux_fields &SetMux_msg
 #define ToEsp32_fields &ToEsp32_msg
-#define AliveCommand_fields &AliveCommand_msg
-#define GetDataCommand_fields &GetDataCommand_msg
-#define SetMuxCommand_fields &SetMuxCommand_msg
-#define FromEsp32_fields &FromEsp32_msg
 #define Ack_fields &Ack_msg
-#define SensorSample_fields &SensorSample_msg
 #define Error_fields &Error_msg
 #define Debug_fields &Debug_msg
+#define SettingsState_fields &SettingsState_msg
+#define SensorSample_fields &SensorSample_msg
+#define FromEsp32_fields &FromEsp32_msg
 
 /* Maximum encoded size of messages (where known) */
 #define Ack_size                                 65
-#define AliveCommand_size                        0
 #define Debug_size                               130
 #define Error_size                               65
-#define FromEsp32_size                           139
-#define GetDataCommand_size                      0
+#define FromEsp32_size                           145
+#define GetSettings_size                         0
 #define MESSAGES_NANOPB_PB_H_MAX_SIZE            FromEsp32_size
+#define Ping_size                                0
 #define SensorSample_size                        17
-#define SetMuxCommand_size                       2
-#define ToEsp32_size                             4
+#define SetMux_size                              6
+#define SetSettings_size                         10
+#define SettingsState_size                       10
+#define SystemSettings_size                      8
+#define ToEsp32_size                             18
 
 #ifdef __cplusplus
 } /* extern "C" */
