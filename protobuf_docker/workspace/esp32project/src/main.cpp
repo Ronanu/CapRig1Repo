@@ -32,7 +32,12 @@ static void sendSettings(uint32_t seq) {
   res.seq = seq;
   res.timestamp = micros();
   res.which_response = FromEsp32_settings_tag;
-  SettingsManager::instance().toProto(res.response.settings.settings);
+
+  // Hol aktuelle Werte aus dem Manager und mappe direkt ins Proto
+  Settings s = SettingsManager::instance().get();
+  res.response.settings.settings.current_signal_selection_state = s.current_signal_selection_state;
+  res.response.settings.settings.action_state = s.action_state;
+
   protoComm.send(res);
 }
 static void sendSample(uint32_t sensor_id, float value, uint32_t seq) {
@@ -63,7 +68,28 @@ void rxTask(void* pv) {
           break;
         }
         case ToEsp32_set_settings_tag: {
-          SettingsManager::instance().fromProto(cmd.command.set_settings.settings);
+          // Read values from nested 'settings' (SetSettings.settings -> SystemSettings)
+          const SystemSettings& in = cmd.command.set_settings.settings;
+
+          // Optional: debug what came in
+          {
+            char dmsg[96];
+            snprintf(dmsg, sizeof(dmsg), "rx set: sel=%d act=%lu",
+                     (int)in.current_signal_selection_state,
+                     (unsigned long)in.action_state);
+            protoComm.sendDebug(dmsg);
+          }
+
+          SettingsManager::instance().fromProto(in);
+          // Read back from manager to verify the state really changed
+          {
+            Settings s_now = SettingsManager::instance().get();
+            char d2[96];
+            snprintf(d2, sizeof(d2), "mgr after set: sel=%d act=%lu",
+                     (int)s_now.current_signal_selection_state,
+                     (unsigned long)s_now.action_state);
+            protoComm.sendDebug(d2);
+          }
           SettingsManager::instance().saveDebounced();
           sendAck("settings updated", seq);
           sendSettings(seq);
