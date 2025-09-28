@@ -9,7 +9,7 @@ proto_dir = "protobuf_msgs"
 nanopb_src_dir = "/nanopb"
 
 # Zielverzeichnisse für generierte Dateien
-out_dir_py = 'pythonProcect'
+out_dir_py = 'pythonProject'
 out_dir_esp = "esp32project/lib/proto"
 
 
