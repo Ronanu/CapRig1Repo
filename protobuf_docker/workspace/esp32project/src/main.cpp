@@ -3,7 +3,7 @@
 #include "messages_nanopb.pb.h"
 
 constexpr TickType_t RECEIVE_TASK_DELAY = pdMS_TO_TICKS(1);
-constexpr gpio_num_t MUX_PIN = GPIO_NUM_13;
+constexpr gpio_num_t MUX_PIN = GPIO_NUM_27;
 
 ProtobufComm protoComm(Serial);
 
@@ -35,8 +35,11 @@ void sendDummySample() {
   protoComm.send(response);
 }
 
-void toggleMuxPin() {
-  digitalWrite(MUX_PIN, !digitalRead(MUX_PIN));
+// Toggle den MUX-Pin und gib den neuen Zustand zurück (true = HIGH, false = LOW)
+bool toggleMuxPin() {
+  const bool newState = !digitalRead(MUX_PIN);
+  digitalWrite(MUX_PIN, newState ? HIGH : LOW);
+  return newState;
 }
 
 void TaskReceive(void* pvParameters) {
@@ -54,10 +57,14 @@ void TaskReceive(void* pvParameters) {
           sendDummySample();
           break;
 
-        case ToEsp32_set_mux_tag:
-          toggleMuxPin();
+        case ToEsp32_set_mux_tag: {
+          bool state = toggleMuxPin();
+          char dbg[64];
+          snprintf(dbg, sizeof(dbg), "MUX toggled, new state=%d", static_cast<int>(state));
+          protoComm.sendDebug(dbg);
           sendAck("MUX toggled");
           break;
+        }
 
         default:
           sendError("Unknown command received");
