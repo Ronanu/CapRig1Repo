@@ -1,49 +1,78 @@
 syntax = "proto3";
 
+// ------------------------------------------------------------
+// Protocol overview
+// - ToEsp32:  commands sent to the ESP32
+// - FromEsp32: responses and notifications from the ESP32
+// ------------------------------------------------------------
+
+// ============================
+// System types
+// ============================
+message SystemSettings {
+  bool  current_signal_selection_state = 1; // true = active
+  uint32 action_state                  = 2; // 0..3 (validated in firmware)
+}
+
+// ============================
+// Commands to ESP32 (payloads)
+// ============================
+message Ping {}                 // Liveness test
+message GetSettings {}          // Request current settings
+message SetSettings {           // Apply new settings
+  SystemSettings settings = 1;
+}
+message SetMux {                // Optional: control a multiplexer channel
+  uint32 channel = 1;
+}
+
+// ============================
+// Wrapper: ToEsp32
+// ============================
 message ToEsp32 {
+  uint32 seq = 1; // request id, 0 if unused
+
   oneof command {
-    AliveCommand alive = 1;
-    GetDataCommand get_data = 2;
-    SetMuxCommand set_mux = 3;
+    Ping        ping         = 10;
+    GetSettings get_settings = 11;
+    SetSettings set_settings = 12;
+    SetMux      set_mux      = 13;
   }
 }
 
-message AliveCommand {
-}
-
-message GetDataCommand {
-}
-
-message SetMuxCommand {
-  bool toggle = 1;
-}
-
-//###########################
-
-message FromEsp32 {
-  uint32 timestamp = 1;
-  oneof response {
-    Ack ack = 2;
-    SensorSample sample = 3;
-    Error error = 4;
-    Debug debug = 5;
-  }
-}
-
+// ============================
+// Responses from ESP32 (payloads)
+// ============================
 message Ack {
   string message = 1;
 }
-
-message SensorSample {
-  uint32 sensor_id = 1;
-  float value = 2;
-  uint32 checksum = 3;
-}
-
 message Error {
   string error = 1;
 }
-
 message Debug {
   string text = 1;
+}
+message SettingsState {
+  SystemSettings settings = 1;
+}
+message SensorSample {          // Single sensor value (optional use)
+  uint32 sensor_id = 1;
+  float  value     = 2;
+  uint32 checksum  = 3;
+}
+
+// ============================
+// Wrapper: FromEsp32
+// ============================
+message FromEsp32 {
+  uint32 seq       = 1; // mirrors request id (0 for unsolicited)
+  uint32 timestamp = 2; // device-side timestamp (e.g., micros)
+
+  oneof response {
+    Ack           ack      = 10;
+    Error         error    = 11;
+    Debug         debug    = 12;
+    SettingsState settings = 13;
+    SensorSample  sample   = 14;
+  }
 }
