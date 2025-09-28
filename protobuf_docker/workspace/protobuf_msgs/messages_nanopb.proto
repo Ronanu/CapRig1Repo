@@ -17,9 +17,6 @@ message GetSettings {}
 message SetSettings {
   SystemSettings settings = 1;
 }
-message SetMux {
-  uint32 channel = 1;
-}
 
 // ============================
 // Wrapper: ToEsp32
@@ -31,14 +28,14 @@ message ToEsp32 {
     Ping        ping         = 10;
     GetSettings get_settings = 11;
     SetSettings set_settings = 12;
-    SetMux      set_mux      = 13;
   }
 }
 
 // ============================
 // Responses from ESP32 (payloads)
 // ============================
-message Ack {
+message Ack {}
+message Info {
   string message = 1 [(nanopb).max_size = 64];
 }
 message Error {
@@ -66,9 +63,10 @@ message FromEsp32 {
 
   oneof response {
     Ack           ack      = 10;
-    Error         error    = 11;
-    Debug         debug    = 12;
-    SystemSettings settings = 13;
-    SensorSample  sample   = 14;
+    Info          info     = 11;
+    Error         error    = 12;
+    Debug         debug    = 13;
+    SystemSettings settings = 14;
+    SensorSample  sample   = 15;
   }
 }

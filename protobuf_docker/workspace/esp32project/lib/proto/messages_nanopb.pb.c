@@ -15,13 +15,13 @@ PB_BIND(GetSettings, GetSettings, AUTO)
 PB_BIND(SetSettings, SetSettings, AUTO)
 
 
-PB_BIND(SetMux, SetMux, AUTO)
-
-
 PB_BIND(ToEsp32, ToEsp32, AUTO)
 
 
 PB_BIND(Ack, Ack, AUTO)
+
+
+PB_BIND(Info, Info, AUTO)
 
 
 PB_BIND(Error, Error, AUTO)

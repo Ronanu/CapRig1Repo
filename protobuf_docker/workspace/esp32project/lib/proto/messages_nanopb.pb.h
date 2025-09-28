@@ -21,16 +21,16 @@ typedef struct _GetSettings {
     char dummy_field;
 } GetSettings;
 
-typedef struct _SetMux {
-    uint32_t channel;
-} SetMux;
-
 /* ============================
  Responses from ESP32 (payloads)
  ============================ */
 typedef struct _Ack {
-    char message[64];
+    char dummy_field;
 } Ack;
+
+typedef struct _Info {
+    char message[64];
+} Info;
 
 typedef struct _Error {
     char error[64];
@@ -60,7 +60,6 @@ typedef struct _ToEsp32 {
         Ping ping;
         GetSettings get_settings;
         SetSettings set_settings;
-        SetMux set_mux;
     } command;
 } ToEsp32;
 
@@ -79,6 +78,7 @@ typedef struct _FromEsp32 {
     pb_size_t which_response;
     union _FromEsp32_response {
         Ack ack;
+        Info info;
         Error error;
         Debug debug;
         SystemSettings settings;
@@ -95,9 +95,9 @@ extern "C" {
 #define Ping_init_default                        {0}
 #define GetSettings_init_default                 {0}
 #define SetSettings_init_default                 {false, SystemSettings_init_default}
-#define SetMux_init_default                      {0}
 #define ToEsp32_init_default                     {0, 0, {Ping_init_default}}
-#define Ack_init_default                         {""}
+#define Ack_init_default                         {0}
+#define Info_init_default                        {""}
 #define Error_init_default                       {""}
 #define Debug_init_default                       {""}
 #define SystemSettings_init_default              {0, 0}
@@ -106,9 +106,9 @@ extern "C" {
 #define Ping_init_zero                           {0}
 #define GetSettings_init_zero                    {0}
 #define SetSettings_init_zero                    {false, SystemSettings_init_zero}
-#define SetMux_init_zero                         {0}
 #define ToEsp32_init_zero                        {0, 0, {Ping_init_zero}}
-#define Ack_init_zero                            {""}
+#define Ack_init_zero                            {0}
+#define Info_init_zero                           {""}
 #define Error_init_zero                          {""}
 #define Debug_init_zero                          {""}
 #define SystemSettings_init_zero                 {0, 0}
@@ -116,8 +116,7 @@ extern "C" {
 #define FromEsp32_init_zero                      {0, 0, 0, {Ack_init_zero}}
 
 /* Field tags (for use in manual encoding/decoding) */
-#define SetMux_channel_tag                       1
-#define Ack_message_tag                          1
+#define Info_message_tag                         1
 #define Error_error_tag                          1
 #define Debug_text_tag                           1
 #define SystemSettings_current_signal_selection_state_tag 1
@@ -127,17 +126,17 @@ extern "C" {
 #define ToEsp32_ping_tag                         10
 #define ToEsp32_get_settings_tag                 11
 #define ToEsp32_set_settings_tag                 12
-#define ToEsp32_set_mux_tag                      13
 #define SensorSample_sensor_id_tag               1
 #define SensorSample_value_tag                   2
 #define SensorSample_checksum_tag                3
 #define FromEsp32_seq_tag                        1
 #define FromEsp32_timestamp_tag                  2
 #define FromEsp32_ack_tag                        10
-#define FromEsp32_error_tag                      11
-#define FromEsp32_debug_tag                      12
-#define FromEsp32_settings_tag                   13
-#define FromEsp32_sample_tag                     14
+#define FromEsp32_info_tag                       11
+#define FromEsp32_error_tag                      12
+#define FromEsp32_debug_tag                      13
+#define FromEsp32_settings_tag                   14
+#define FromEsp32_sample_tag                     15
 
 /* Struct field encoding specification for nanopb */
 #define Ping_FIELDLIST(X, a) \
@@ -156,28 +155,26 @@ X(a, STATIC,   OPTIONAL, MESSAGE,  settings,          1)
 #define SetSettings_DEFAULT NULL
 #define SetSettings_settings_MSGTYPE SystemSettings
 
-#define SetMux_FIELDLIST(X, a) \
-X(a, STATIC,   SINGULAR, UINT32,   channel,           1)
-#define SetMux_CALLBACK NULL
-#define SetMux_DEFAULT NULL
-
 #define ToEsp32_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, UINT32,   seq,               1) \
 X(a, STATIC,   ONEOF,    MESSAGE,  (command,ping,command.ping),  10) \
 X(a, STATIC,   ONEOF,    MESSAGE,  (command,get_settings,command.get_settings),  11) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_settings,command.set_settings),  12) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_mux,command.set_mux),  13)
+X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_settings,command.set_settings),  12)
 #define ToEsp32_CALLBACK NULL
 #define ToEsp32_DEFAULT NULL
 #define ToEsp32_command_ping_MSGTYPE Ping
 #define ToEsp32_command_get_settings_MSGTYPE GetSettings
 #define ToEsp32_command_set_settings_MSGTYPE SetSettings
-#define ToEsp32_command_set_mux_MSGTYPE SetMux
 
 #define Ack_FIELDLIST(X, a) \
-X(a, STATIC,   SINGULAR, STRING,   message,           1)
+
 #define Ack_CALLBACK NULL
 #define Ack_DEFAULT NULL
+
+#define Info_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, STRING,   message,           1)
+#define Info_CALLBACK NULL
+#define Info_DEFAULT NULL
 
 #define Error_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, STRING,   error,             1)
@@ -206,13 +203,15 @@ X(a, STATIC,   SINGULAR, UINT32,   checksum,          3)
 X(a, STATIC,   SINGULAR, UINT32,   seq,               1) \
 X(a, STATIC,   SINGULAR, UINT32,   timestamp,         2) \
 X(a, STATIC,   ONEOF,    MESSAGE,  (response,ack,response.ack),  10) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,error,response.error),  11) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,debug,response.debug),  12) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,settings,response.settings),  13) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (response,sample,response.sample),  14)
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,info,response.info),  11) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,error,response.error),  12) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,debug,response.debug),  13) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,settings,response.settings),  14) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (response,sample,response.sample),  15)
 #define FromEsp32_CALLBACK NULL
 #define FromEsp32_DEFAULT NULL
 #define FromEsp32_response_ack_MSGTYPE Ack
+#define FromEsp32_response_info_MSGTYPE Info
 #define FromEsp32_response_error_MSGTYPE Error
 #define FromEsp32_response_debug_MSGTYPE Debug
 #define FromEsp32_response_settings_MSGTYPE SystemSettings
@@ -221,9 +220,9 @@ X(a, STATIC,   ONEOF,    MESSAGE,  (response,sample,response.sample),  14)
 extern const pb_msgdesc_t Ping_msg;
 extern const pb_msgdesc_t GetSettings_msg;
 extern const pb_msgdesc_t SetSettings_msg;
-extern const pb_msgdesc_t SetMux_msg;
 extern const pb_msgdesc_t ToEsp32_msg;
 extern const pb_msgdesc_t Ack_msg;
+extern const pb_msgdesc_t Info_msg;
 extern const pb_msgdesc_t Error_msg;
 extern const pb_msgdesc_t Debug_msg;
 extern const pb_msgdesc_t SystemSettings_msg;
@@ -234,9 +233,9 @@ extern const pb_msgdesc_t FromEsp32_msg;
 #define Ping_fields &Ping_msg
 #define GetSettings_fields &GetSettings_msg
 #define SetSettings_fields &SetSettings_msg
-#define SetMux_fields &SetMux_msg
 #define ToEsp32_fields &ToEsp32_msg
 #define Ack_fields &Ack_msg
+#define Info_fields &Info_msg
 #define Error_fields &Error_msg
 #define Debug_fields &Debug_msg
 #define SystemSettings_fields &SystemSettings_msg
@@ -244,15 +243,15 @@ extern const pb_msgdesc_t FromEsp32_msg;
 #define FromEsp32_fields &FromEsp32_msg
 
 /* Maximum encoded size of messages (where known) */
-#define Ack_size                                 65
+#define Ack_size                                 0
 #define Debug_size                               130
 #define Error_size                               65
 #define FromEsp32_size                           145
 #define GetSettings_size                         0
+#define Info_size                                65
 #define MESSAGES_NANOPB_PB_H_MAX_SIZE            FromEsp32_size
 #define Ping_size                                0
 #define SensorSample_size                        17
-#define SetMux_size                              6
 #define SetSettings_size                         10
 #define SystemSettings_size                      8
 #define ToEsp32_size                             18

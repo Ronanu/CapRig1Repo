@@ -1,21 +1,48 @@
 #include <Arduino.h>
+#include <SPI.h>
+#include "ADC78H89.h"
 #include "ProtobufComm.hpp"
 #include "Settings.hpp"
 #include "messages_nanopb.pb.h"
 #include "AsyncPacketBuffer.hpp"
 
+// -------------------- Serial / tasks --------------------
 constexpr unsigned long SERIAL_BAUDRATE = 230400;
 constexpr TickType_t RX_TASK_DELAY = pdMS_TO_TICKS(1);
 
+// -------------------- ADC config ------------------------
+// Fixed by request: CS pin = 15, channel = 6
+#define ADC_CS_PIN         15
+#define ADC_CHANNEL_FIXED   6   // valid: 0..6 (AIN1..AIN7)
+#define SAMPLE_HZ       1000    // adjust if needed
+
+// -------------------- Globals ---------------------------
 ProtobufComm protoComm(Serial);
+static ADC78H89 adc(ADC_CS_PIN);
 
+static hw_timer_t*        g_sampleTimer   = nullptr;
+static SemaphoreHandle_t  g_sampleSem     = nullptr;
+static volatile uint32_t  g_sampleCounter = 0;   // monotonically increasing, used as seq for samples
 
-static void sendAck(const char* msg, uint32_t seq) {
+// -------------------- Proto helpers ---------------------
+// Ack is intentionally EMPTY now.
+static void sendAck(uint32_t seq) {
+  FromEsp32 res = FromEsp32_init_zero;
+  res.seq = seq;                 // keep correlation if host expects it
+  res.timestamp = micros();      // time of ack creation
+  res.which_response = FromEsp32_ack_tag;
+  // no payload fields (ack is empty)
+  protoComm.send(res);
+}
+
+// New: INFO message carries human-readable text
+static void sendInfo(const char* msg, uint32_t seq) {
   FromEsp32 res = FromEsp32_init_zero;
   res.seq = seq;
   res.timestamp = micros();
-  res.which_response = FromEsp32_ack_tag;
-  strncpy(res.response.ack.message, msg, sizeof(res.response.ack.message)-1);
+  res.which_response = FromEsp32_info_tag;
+  // adjust field name to your .proto if different
+  strncpy(res.response.info.message, msg, sizeof(res.response.info.message)-1);
   protoComm.send(res);
 }
 
@@ -34,72 +61,101 @@ static void sendSettings(uint32_t seq) {
   res.timestamp = micros();
   res.which_response = FromEsp32_settings_tag;
 
-  // Hol aktuelle Werte aus dem Manager und mappe direkt ins Proto
   Settings s = SettingsManager::instance().get();
   res.response.settings.current_signal_selection_state = s.current_signal_selection_state;
   res.response.settings.action_state = s.action_state;
   protoComm.send(res);
 }
-static void sendSample(uint32_t sensor_id, float value, uint32_t seq) {
+
+// Now timestamp is provided by the caller (measured right at sampling)
+static void sendSample(uint32_t sensor_id, float value, uint32_t sample_seq, uint32_t timestamp_us) {
   FromEsp32 res = FromEsp32_init_zero;
-  res.seq = seq;
-  res.timestamp = micros();
+  res.seq = sample_seq;            // use sample counter as seq for samples
+  res.timestamp = timestamp_us;    // measurement timestamp (from sampling site)
   res.which_response = FromEsp32_sample_tag;
   res.response.sample.sensor_id = sensor_id;
   res.response.sample.value = value;
-  // Simple checksum (same as helper)
   union { float f; uint32_t u; } conv = { value };
   res.response.sample.checksum = sensor_id ^ conv.u;
   protoComm.send(res);
 }
 
-void rxTask(void* pv) {
+// -------------------- Timer ISR -------------------------
+void IRAM_ATTR onSampleTimer() {
+  BaseType_t hp = pdFALSE;
+  if (g_sampleSem) xSemaphoreGiveFromISR(g_sampleSem, &hp);
+  if (hp) portYIELD_FROM_ISR();
+}
+
+// -------------------- Sampling Task (Core 0) ------------
+void sampleTask(void* /*pv*/) {
+  // Initialize ADC/SPI in task context (never in ISR)
+  adc.begin();
+
+  for (;;) {
+    if (xSemaphoreTake(g_sampleSem, portMAX_DELAY) == pdTRUE) {
+      // fixed channel by request
+      uint16_t raw = adc.readChannel(ADC_CHANNEL_FIXED);
+      // timestamp measured immediately after the conversion returned
+      uint32_t ts = micros();
+      uint32_t seq = g_sampleCounter++;
+      // Send raw code as float; convert to volts on the host if desired
+      sendSample(/*sensor_id*/ 1, static_cast<float>(raw), seq, ts);
+    }
+  }
+}
+
+// -------------------- RX Task (Core 1) ------------------
+void rxTask(void* /*pv*/) {
   for (;;) {
     ToEsp32 cmd = ToEsp32_init_zero;
     if (protoComm.receive(cmd)) {
-      uint32_t seq = cmd.seq;
+      const uint32_t seq = cmd.seq;
       switch (cmd.which_command) {
-        case ToEsp32_ping_tag: {
-          sendAck("pong", seq);
+        case ToEsp32_ping_tag:
+          // empty ACK + info text
+          sendAck(seq);
+          sendInfo("pong", seq);
           break;
-        }
-        case ToEsp32_get_settings_tag: {
+
+        case ToEsp32_get_settings_tag:
+          sendAck(seq);
           sendSettings(seq);
           break;
-        }
+
         case ToEsp32_set_settings_tag: {
-          // Read values from nested 'settings' (SetSettings.settings -> SystemSettings)
           const SystemSettings& in = cmd.command.set_settings.settings;
           SettingsManager::instance().fromProto(in);
           SettingsManager::instance().saveDebounced();
-          sendAck("settings updated", seq);
+          sendAck(seq);
+          sendInfo("settings updated", seq);
           sendSettings(seq);
           break;
         }
-        case ToEsp32_set_mux_tag: {
-          uint32_t ch = cmd.command.set_mux.channel;
-          (void)ch; // TODO: implement MUX switching
-          sendAck("mux set", seq);
-          break;
-        }
-        default: {
+
+        // NOTE: set_mux command removed as requested
+
+        default:
           sendError("unknown command", seq);
           break;
-        }
       }
     } else {
       vTaskDelay(RX_TASK_DELAY);
     }
+
     SettingsManager::instance().tick();
   }
 }
- void setup(){
+
+// -------------------- Setup / Loop ----------------------
+void setup() {
   Serial.begin(SERIAL_BAUDRATE);
   SettingsManager::instance().load();
-  // Enable async TX buffer (non-blocking sends). Remove this line for pure synchronous TX.
-  AsyncPacketBuffer::begin(Serial, 1, 1, 1200);
-  
-  // Start RX task
+
+  // Asynchronous TX buffer for non-blocking proto sends
+  AsyncPacketBuffer::begin(Serial, /*qLen*/ 1, /*taskPrio*/ 1, /*stackWords*/ 1200);
+
+  // RX task on Core 1 (communication side)
   xTaskCreatePinnedToCore(
     rxTask,
     "ProtoRX",
@@ -110,9 +166,30 @@ void rxTask(void* pv) {
     1
   );
 
-  protoComm.sendDebug("System ready.");
+  // Sampling sync primitive
+  g_sampleSem = xSemaphoreCreateBinary();
+
+  // Sampling task on Core 0 (acquisition side)
+  xTaskCreatePinnedToCore(
+    sampleTask,
+    "SampleTask",
+    4096,
+    nullptr,
+    3,      // higher prio than RX
+    nullptr,
+    0
+  );
+
+  // Hardware timer @ SAMPLE_HZ
+  g_sampleTimer = timerBegin(/*timer*/0, /*prescaler*/80, /*countUp*/true); // 1 tick = 1 us at 80 MHz APB
+  timerAttachInterrupt(g_sampleTimer, &onSampleTimer, /*edge*/true);
+  const uint32_t ticks = 1000000UL / SAMPLE_HZ; // microseconds per sample
+  timerAlarmWrite(g_sampleTimer, ticks, /*autoReload*/true);
+  timerAlarmEnable(g_sampleTimer);
+
+  protoComm.sendDebug("System ready. ADC sampling active.");
 }
 
 void loop() {
-  // main loop unused; logic runs in rxTask
+  // All logic is in tasks
 }

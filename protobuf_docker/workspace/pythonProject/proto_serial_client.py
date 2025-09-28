@@ -63,9 +63,12 @@ class ProtoSerialClient:
     # ---------- listener ----------
     def listen(self):
         while self.running:
-            msg = self.read_message()
-            if msg:
-                self.handle_message(msg)
+            try:
+                msg = self.read_message()
+                if msg:
+                    self.handle_message(msg)
+            except Exception as e:
+                print(f"  ❌ ERROR: {e}")
             time.sleep(0.01)
 
     def handle_message(self, msg: FromEsp32):
@@ -86,7 +89,7 @@ class ProtoSerialClient:
             print(f"  ⚙️ Settings → current_signal_selection_state={s.current_signal_selection_state}, action_state={s.action_state}")
         elif msg.HasField("sample"):
             smp = msg.sample
-            print(f"  📊 Sample → sensor_id={smp.sensor_id}, value={smp.value:.3f}, checksum=0x{smp.checksum:08X}")
+            #print(f"  📊 Sample → sensor_id={smp.sensor_id}, value={smp.value:.3f}, checksum=0x{smp.checksum:08X}, timestamp={msg.timestamp}")
         else:
             print("  ❓ Unbekannte Antwort")
 
