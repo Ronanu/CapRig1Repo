@@ -7,7 +7,7 @@
 #include "AsyncPacketBuffer.hpp"
 
 // -------------------- Serial / tasks --------------------
-constexpr unsigned long SERIAL_BAUDRATE = 230400;
+constexpr unsigned long SERIAL_BAUDRATE = 500000;
 constexpr TickType_t RX_TASK_DELAY = pdMS_TO_TICKS(1);
 
 // -------------------- ADC config ------------------------
@@ -95,7 +95,7 @@ void sampleTask(void* /*pv*/) {
   adc.begin();
 
   for (;;) {
-    if (xSemaphoreTake(g_sampleSem, portMAX_DELAY) == pdTRUE) {
+    if (false){ //(xSemaphoreTake(g_sampleSem, portMAX_DELAY) == pdTRUE) {
       // fixed channel by request
       uint16_t raw = adc.readChannel(ADC_CHANNEL_VOLTAGE);
       // timestamp measured immediately after the conversion returned
@@ -158,7 +158,7 @@ void setup() {
     "ProtoRX",
     4096,
     nullptr,
-    1,
+    10,
     nullptr,
     1
   );
@@ -172,7 +172,7 @@ void setup() {
     "SampleTask",
     4096,
     nullptr,
-    3,      // höher als RX
+    1,      
     nullptr,
     0
   );

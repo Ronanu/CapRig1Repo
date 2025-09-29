@@ -2686,3 +2686,1564 @@ ImportError: cannot import name 'setup_logger' from 'logger_config' (c:\Users\ro
 2025-09-29 02:52:19,320 - INFO - ACK
 2025-09-29 02:52:22,324 - INFO - ACK
 2025-09-29 02:52:22,328 - INFO - ACK
+2025-09-29 02:54:14,911 - INFO - Link up: COM4 @230400
+2025-09-29 02:54:14,974 - INFO - ACK
+2025-09-29 02:54:14,985 - INFO - ACK
+2025-09-29 02:54:17,565 - INFO - Ping gesendet
+2025-09-29 02:54:17,568 - INFO - ACK
+2025-09-29 02:54:17,574 - INFO - ACK
+2025-09-29 02:54:17,920 - INFO - ACK
+2025-09-29 02:54:17,921 - INFO - ACK
+2025-09-29 02:54:19,381 - INFO - Ping gesendet
+2025-09-29 02:54:19,386 - INFO - ACK
+2025-09-29 02:54:19,388 - INFO - ACK
+2025-09-29 02:54:20,926 - INFO - ACK
+2025-09-29 02:54:20,927 - INFO - ACK
+2025-09-29 02:54:20,933 - INFO - GetSettings angefordert
+2025-09-29 02:54:20,937 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=10309503
+2025-09-29 02:54:20,938 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=10309503
+2025-09-29 02:54:23,070 - INFO - GetSettings angefordert
+2025-09-29 02:54:23,076 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=12447487
+2025-09-29 02:54:23,077 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=12447487
+2025-09-29 02:54:23,930 - INFO - ACK
+2025-09-29 02:54:23,931 - INFO - ACK
+2025-09-29 02:54:26,526 - INFO - GetSettings angefordert
+2025-09-29 02:54:26,529 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=15903487
+2025-09-29 02:54:26,537 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=15903487
+2025-09-29 02:54:26,936 - INFO - ACK
+2025-09-29 02:54:26,938 - INFO - ACK
+2025-09-29 02:54:28,733 - INFO - SetSettings gesendet (state=1)
+2025-09-29 02:54:28,739 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=18109623
+2025-09-29 02:54:28,740 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=18109623
+2025-09-29 02:54:29,941 - INFO - ACK
+2025-09-29 02:54:29,942 - INFO - ACK
+2025-09-29 02:54:32,947 - INFO - ACK
+2025-09-29 02:54:32,949 - INFO - ACK
+2025-09-29 02:54:35,950 - INFO - ACK
+2025-09-29 02:54:35,952 - INFO - ACK
+2025-09-29 02:54:38,956 - INFO - ACK
+2025-09-29 02:54:38,958 - INFO - ACK
+2025-09-29 02:54:41,959 - INFO - ACK
+2025-09-29 02:54:41,960 - INFO - ACK
+2025-09-29 02:54:44,967 - INFO - ACK
+2025-09-29 02:54:44,969 - INFO - ACK
+2025-09-29 02:54:47,969 - INFO - ACK
+2025-09-29 02:54:47,972 - INFO - ACK
+2025-09-29 02:54:50,976 - INFO - ACK
+2025-09-29 02:54:50,977 - INFO - ACK
+2025-09-29 02:54:53,979 - INFO - ACK
+2025-09-29 02:54:53,980 - INFO - ACK
+2025-09-29 02:54:57,124 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:54:57,182 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:54:57,194 - INFO - Reconnect in 0.50s
+2025-09-29 02:54:57,712 - INFO - Link up: COM4 @230400
+2025-09-29 02:54:57,716 - INFO - ACK
+2025-09-29 02:54:57,718 - INFO - ACK
+2025-09-29 02:55:00,722 - INFO - ACK
+2025-09-29 02:55:00,723 - INFO - ACK
+2025-09-29 02:55:02,207 - INFO - Ping gesendet
+2025-09-29 02:55:02,214 - INFO - ACK
+2025-09-29 02:55:02,215 - INFO - ACK
+2025-09-29 02:55:03,614 - INFO - Ping gesendet
+2025-09-29 02:55:03,615 - INFO - ACK
+2025-09-29 02:55:03,617 - INFO - ACK
+2025-09-29 02:55:03,726 - INFO - ACK
+2025-09-29 02:55:03,727 - INFO - ACK
+2025-09-29 02:55:06,733 - INFO - ACK
+2025-09-29 02:55:06,735 - INFO - ACK
+2025-09-29 02:55:09,737 - INFO - ACK
+2025-09-29 02:55:09,738 - INFO - ACK
+2025-09-29 02:56:54,791 - INFO - Link up: COM4 @230400
+2025-09-29 02:56:54,892 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:56:54,993 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:56:55,006 - INFO - Reconnect in 0.50s
+2025-09-29 02:56:55,527 - INFO - Link up: COM4 @230400
+2025-09-29 02:57:00,041 - INFO - Ping gesendet
+2025-09-29 02:57:04,641 - INFO - Ping gesendet
+2025-09-29 02:57:06,392 - INFO - GetSettings angefordert
+2025-09-29 02:57:07,387 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:57:07,546 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 02:57:07,546 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:57:07,552 - INFO - Reconnect in 0.50s
+2025-09-29 02:57:08,071 - INFO - Link up: COM4 @230400
+2025-09-29 02:57:12,417 - INFO - GetSettings angefordert
+2025-09-29 02:57:20,164 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:57:20,292 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:57:20,297 - INFO - Reconnect in 0.50s
+2025-09-29 02:57:20,817 - INFO - Link up: COM4 @230400
+2025-09-29 02:57:33,015 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:57:33,035 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:57:33,042 - INFO - Reconnect in 0.50s
+2025-09-29 02:57:33,564 - INFO - Link up: COM4 @230400
+2025-09-29 02:57:45,514 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:57:45,585 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 02:57:45,587 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:57:45,595 - INFO - Reconnect in 0.50s
+2025-09-29 02:57:46,116 - INFO - Link up: COM4 @230400
+2025-09-29 02:57:57,285 - INFO - Link up: COM4 @230400
+2025-09-29 02:57:59,449 - INFO - Ping gesendet
+2025-09-29 02:58:03,706 - INFO - Ping gesendet
+2025-09-29 02:58:05,058 - INFO - GetSettings angefordert
+2025-09-29 02:58:09,117 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:58:09,306 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 02:58:09,306 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:58:09,308 - INFO - Link down
+2025-09-29 02:58:09,309 - INFO - Reconnect in 0.50s
+2025-09-29 02:58:09,830 - INFO - Link up: COM4 @230400
+2025-09-29 02:58:21,558 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:58:21,650 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:58:21,654 - INFO - Link down
+2025-09-29 02:58:21,655 - INFO - Reconnect in 0.50s
+2025-09-29 02:58:22,177 - INFO - Link up: COM4 @230400
+2025-09-29 02:58:24,179 - INFO - Ping gesendet
+2025-09-29 02:58:34,001 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:58:34,196 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 02:58:34,197 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:58:34,199 - INFO - Link down
+2025-09-29 02:58:34,200 - INFO - Reconnect in 0.50s
+2025-09-29 02:58:34,719 - INFO - Link up: COM4 @230400
+2025-09-29 02:58:46,701 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:58:46,739 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 02:58:46,740 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:58:47,109 - INFO - Link down
+2025-09-29 02:58:47,110 - INFO - Reconnect in 0.50s
+2025-09-29 02:58:47,630 - INFO - Link up: COM4 @230400
+2025-09-29 02:58:59,454 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:58:59,649 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 02:58:59,650 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:58:59,652 - INFO - Link down
+2025-09-29 02:58:59,653 - INFO - Reconnect in 0.50s
+2025-09-29 02:59:00,174 - INFO - Link up: COM4 @230400
+2025-09-29 02:59:11,973 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:59:11,993 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:59:11,994 - INFO - Link down
+2025-09-29 02:59:11,995 - INFO - Reconnect in 0.50s
+2025-09-29 02:59:12,515 - INFO - Link up: COM4 @230400
+2025-09-29 02:59:24,773 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:59:24,936 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:59:24,939 - INFO - Link down
+2025-09-29 02:59:24,940 - INFO - Reconnect in 0.50s
+2025-09-29 02:59:25,461 - INFO - Link up: COM4 @230400
+2025-09-29 02:59:37,300 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:59:37,482 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 02:59:37,482 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:59:37,485 - INFO - Link down
+2025-09-29 02:59:37,486 - INFO - Reconnect in 0.50s
+2025-09-29 02:59:38,007 - INFO - Link up: COM4 @230400
+2025-09-29 02:59:49,890 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 02:59:50,025 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 02:59:50,026 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 02:59:50,256 - INFO - Link down
+2025-09-29 02:59:50,257 - INFO - Reconnect in 0.50s
+2025-09-29 02:59:50,777 - INFO - Link up: COM4 @230400
+2025-09-29 03:00:02,637 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:00:02,797 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 03:00:02,798 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:00:02,800 - INFO - Link down
+2025-09-29 03:00:02,801 - INFO - Reconnect in 0.50s
+2025-09-29 03:00:03,321 - INFO - Link up: COM4 @230400
+2025-09-29 03:00:15,346 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:00:15,542 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:00:15,545 - INFO - Link down
+2025-09-29 03:00:15,546 - INFO - Reconnect in 0.50s
+2025-09-29 03:00:16,067 - INFO - Link up: COM4 @230400
+2025-09-29 03:00:28,172 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:00:28,287 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:00:28,290 - INFO - Link down
+2025-09-29 03:00:28,291 - INFO - Reconnect in 0.50s
+2025-09-29 03:00:28,809 - INFO - Link up: COM4 @230400
+2025-09-29 03:00:40,620 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:00:40,629 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:00:40,631 - INFO - Link down
+2025-09-29 03:00:40,632 - INFO - Reconnect in 0.50s
+2025-09-29 03:00:41,153 - INFO - Link up: COM4 @230400
+2025-09-29 03:01:12,394 - INFO - Link up: COM4 @500000
+2025-09-29 03:01:12,442 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:01:12,596 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:01:12,598 - INFO - Link down
+2025-09-29 03:01:12,599 - INFO - Reconnect in 0.50s
+2025-09-29 03:01:13,117 - INFO - Link up: COM4 @500000
+2025-09-29 03:01:15,415 - INFO - Ping gesendet
+2025-09-29 03:01:22,056 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:01:22,131 - WARNING - Keepalive fehlgeschlagen: Nicht verbunden (File: proto_serial_client, Line: 180, Function: _run_supervisor)
+2025-09-29 03:01:22,131 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:01:22,133 - INFO - Link down
+2025-09-29 03:01:22,134 - INFO - Reconnect in 0.50s
+2025-09-29 03:01:22,653 - INFO - Link up: COM4 @500000
+2025-09-29 03:01:28,815 - INFO - GetSettings angefordert
+2025-09-29 03:01:31,329 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:01:31,467 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:01:31,469 - INFO - Link down
+2025-09-29 03:01:31,470 - INFO - Reconnect in 0.50s
+2025-09-29 03:01:31,606 - INFO - ERROR RuntimeError: Nicht verbunden
+2025-09-29 03:01:31,989 - INFO - Link up: COM4 @500000
+2025-09-29 03:01:35,975 - INFO - GetSettings angefordert
+2025-09-29 03:01:40,325 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:01:40,403 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:01:40,405 - INFO - Link down
+2025-09-29 03:01:40,406 - INFO - Reconnect in 0.50s
+2025-09-29 03:01:40,925 - INFO - Link up: COM4 @500000
+2025-09-29 03:02:23,882 - INFO - Link up: COM4 @500000
+2025-09-29 03:02:23,929 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:02:24,084 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:02:24,085 - INFO - Link down
+2025-09-29 03:02:24,085 - INFO - Reconnect in 0.50s
+2025-09-29 03:02:24,604 - INFO - Link up: COM4 @500000
+2025-09-29 03:02:28,529 - INFO - Ping gesendet
+2025-09-29 03:02:32,881 - INFO - Ping gesendet
+2025-09-29 03:02:33,703 - INFO - Ping gesendet
+2025-09-29 03:02:34,336 - INFO - Ping gesendet
+2025-09-29 03:02:56,075 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:02:56,258 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:02:56,259 - INFO - Link down
+2025-09-29 03:02:56,260 - INFO - Reconnect in 0.50s
+2025-09-29 03:02:56,778 - INFO - Link up: COM4 @500000
+2025-09-29 03:03:41,366 - INFO - Link up: COM4 @500000
+2025-09-29 03:03:41,423 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:03:41,567 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:03:41,571 - INFO - Link down
+2025-09-29 03:03:41,572 - INFO - Reconnect in 0.50s
+2025-09-29 03:03:42,089 - INFO - Link up: COM4 @500000
+2025-09-29 03:03:44,570 - INFO - Ping gesendet
+2025-09-29 03:03:51,202 - INFO - Ping gesendet
+2025-09-29 03:03:52,498 - INFO - Ping gesendet
+2025-09-29 03:04:10,408 - INFO - Link up: COM4 @500000
+2025-09-29 03:11:07,600 - INFO - Link up: COM4 @500000
+2025-09-29 03:11:07,626 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:11:07,803 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:11:07,805 - INFO - Link down
+2025-09-29 03:11:07,806 - INFO - Reconnect in 0.50s
+2025-09-29 03:11:08,324 - INFO - Link up: COM4 @500000
+2025-09-29 03:11:10,773 - INFO - Ping gesendet
+2025-09-29 03:11:13,404 - INFO - Ping gesendet
+2025-09-29 03:11:15,836 - INFO - GetSettings angefordert
+2025-09-29 03:11:16,620 - INFO - GetSettings angefordert
+2025-09-29 03:11:20,092 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:11:21,276 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:11:21,572 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:11:23,756 - INFO - Ping gesendet
+2025-09-29 03:11:26,796 - INFO - GetSettings angefordert
+2025-09-29 03:11:27,244 - INFO - GetSettings angefordert
+2025-09-29 03:18:44,812 - INFO - Link up: COM4 @500000
+2025-09-29 03:18:47,190 - INFO - Ping gesendet
+2025-09-29 03:22:12,649 - INFO - Link up: COM4 @500000
+2025-09-29 03:22:12,659 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:22:12,851 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:22:12,853 - INFO - Link down
+2025-09-29 03:22:12,854 - INFO - Reconnect in 0.50s
+2025-09-29 03:22:13,372 - INFO - Link up: COM4 @500000
+2025-09-29 03:22:17,363 - INFO - Ping gesendet
+2025-09-29 03:22:20,235 - INFO - Ping gesendet
+2025-09-29 03:22:23,531 - INFO - Ping gesendet
+2025-09-29 03:22:24,140 - INFO - Ping gesendet
+2025-09-29 03:22:24,340 - INFO - Ping gesendet
+2025-09-29 03:22:24,604 - INFO - Ping gesendet
+2025-09-29 03:22:24,836 - INFO - Ping gesendet
+2025-09-29 03:22:25,004 - INFO - Ping gesendet
+2025-09-29 03:22:25,179 - INFO - Ping gesendet
+2025-09-29 03:22:25,339 - INFO - Ping gesendet
+2025-09-29 03:22:25,499 - INFO - Ping gesendet
+2025-09-29 03:22:25,677 - INFO - Ping gesendet
+2025-09-29 03:22:25,828 - INFO - Ping gesendet
+2025-09-29 03:22:25,988 - INFO - Ping gesendet
+2025-09-29 03:22:26,139 - INFO - Ping gesendet
+2025-09-29 03:22:26,292 - INFO - Ping gesendet
+2025-09-29 03:22:26,477 - INFO - Ping gesendet
+2025-09-29 03:22:26,636 - INFO - Ping gesendet
+2025-09-29 03:22:26,796 - INFO - Ping gesendet
+2025-09-29 03:22:26,980 - INFO - Ping gesendet
+2025-09-29 03:22:27,156 - INFO - Ping gesendet
+2025-09-29 03:22:27,301 - INFO - Ping gesendet
+2025-09-29 03:22:28,540 - INFO - Ping gesendet
+2025-09-29 03:22:45,636 - INFO - Link up: COM4 @500000
+2025-09-29 03:22:47,268 - INFO - GetSettings angefordert
+2025-09-29 03:22:48,484 - INFO - GetSettings angefordert
+2025-09-29 03:22:49,172 - INFO - GetSettings angefordert
+2025-09-29 03:22:49,709 - INFO - GetSettings angefordert
+2025-09-29 03:22:50,012 - INFO - GetSettings angefordert
+2025-09-29 03:22:50,684 - INFO - GetSettings angefordert
+2025-09-29 03:24:36,990 - INFO - Link up: COM4 @500000
+2025-09-29 03:24:38,639 - INFO - Ping gesendet
+2025-09-29 03:24:39,766 - INFO - Ping gesendet
+2025-09-29 03:24:40,535 - INFO - Ping gesendet
+2025-09-29 03:24:41,214 - INFO - Ping gesendet
+2025-09-29 03:24:42,198 - INFO - Ping gesendet
+2025-09-29 03:24:42,999 - INFO - Ping gesendet
+2025-09-29 03:24:43,214 - INFO - Ping gesendet
+2025-09-29 03:24:43,944 - INFO - Ping gesendet
+2025-09-29 03:24:44,575 - INFO - Ping gesendet
+2025-09-29 03:24:44,831 - INFO - Ping gesendet
+2025-09-29 03:24:45,015 - INFO - Ping gesendet
+2025-09-29 03:24:45,224 - INFO - Ping gesendet
+2025-09-29 03:24:45,432 - INFO - Ping gesendet
+2025-09-29 03:24:45,615 - INFO - Ping gesendet
+2025-09-29 03:24:45,798 - INFO - Ping gesendet
+2025-09-29 03:24:45,975 - INFO - Ping gesendet
+2025-09-29 03:24:46,159 - INFO - Ping gesendet
+2025-09-29 03:24:46,327 - INFO - Ping gesendet
+2025-09-29 03:24:46,496 - INFO - Ping gesendet
+2025-09-29 03:24:46,679 - INFO - Ping gesendet
+2025-09-29 03:28:22,316 - INFO - Link up: COM4 @500000
+2025-09-29 03:28:22,324 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:28:22,518 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:28:22,521 - INFO - Link down
+2025-09-29 03:28:22,521 - INFO - Reconnect in 0.50s
+2025-09-29 03:28:23,040 - INFO - Link up: COM4 @500000
+2025-09-29 03:28:25,140 - INFO - Ping gesendet
+2025-09-29 03:28:26,708 - INFO - Ping gesendet
+2025-09-29 03:28:27,692 - INFO - Ping gesendet
+2025-09-29 03:28:27,757 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:28:27,848 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:28:27,850 - INFO - Link down
+2025-09-29 03:28:27,851 - INFO - Reconnect in 0.50s
+2025-09-29 03:28:28,369 - INFO - Link up: COM4 @500000
+2025-09-29 03:28:31,132 - INFO - Ping gesendet
+2025-09-29 03:28:32,774 - INFO - GetSettings angefordert
+2025-09-29 03:28:33,041 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:28:33,178 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:28:33,559 - INFO - Link down
+2025-09-29 03:28:33,560 - INFO - Reconnect in 0.50s
+2025-09-29 03:28:34,079 - INFO - Link up: COM4 @500000
+2025-09-29 03:28:34,082 - INFO - ACK
+2025-09-29 03:28:34,084 - INFO - ACK
+2025-09-29 03:28:37,086 - INFO - ACK
+2025-09-29 03:28:37,087 - INFO - ACK
+2025-09-29 03:28:38,318 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:28:38,487 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:28:38,489 - INFO - Link down
+2025-09-29 03:28:38,490 - INFO - Reconnect in 0.50s
+2025-09-29 03:28:39,008 - INFO - Link up: COM4 @500000
+2025-09-29 03:28:39,012 - INFO - ACK
+2025-09-29 03:28:39,013 - INFO - ACK
+2025-09-29 03:28:42,015 - INFO - ACK
+2025-09-29 03:28:42,016 - INFO - ACK
+2025-09-29 03:28:43,595 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:28:43,617 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:28:43,619 - INFO - Link down
+2025-09-29 03:28:43,620 - INFO - Reconnect in 0.50s
+2025-09-29 03:28:44,138 - INFO - Link up: COM4 @500000
+2025-09-29 03:28:44,142 - INFO - ACK
+2025-09-29 03:28:44,143 - INFO - ACK
+2025-09-29 03:28:47,147 - INFO - ACK
+2025-09-29 03:28:47,148 - INFO - ACK
+2025-09-29 03:28:48,876 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:28:48,949 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:28:48,951 - INFO - Link down
+2025-09-29 03:28:48,952 - INFO - Reconnect in 0.50s
+2025-09-29 03:28:49,471 - INFO - Link up: COM4 @500000
+2025-09-29 03:28:49,475 - INFO - ACK
+2025-09-29 03:28:49,476 - INFO - ACK
+2025-09-29 03:28:50,604 - INFO - GetSettings angefordert
+2025-09-29 03:28:50,606 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=1753895
+2025-09-29 03:28:50,607 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=1753895
+2025-09-29 03:28:52,479 - INFO - ACK
+2025-09-29 03:28:52,480 - INFO - ACK
+2025-09-29 03:28:53,389 - INFO - GetSettings angefordert
+2025-09-29 03:28:53,390 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4537887
+2025-09-29 03:28:53,394 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4537887
+2025-09-29 03:28:54,154 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:28:54,280 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:28:54,280 - INFO - Link down
+2025-09-29 03:28:54,282 - INFO - Reconnect in 0.50s
+2025-09-29 03:28:54,801 - INFO - Link up: COM4 @500000
+2025-09-29 03:28:54,803 - INFO - ACK
+2025-09-29 03:28:54,806 - INFO - ACK
+2025-09-29 03:28:57,807 - INFO - ACK
+2025-09-29 03:28:57,809 - INFO - ACK
+2025-09-29 03:28:58,684 - INFO - GetSettings angefordert
+2025-09-29 03:28:58,687 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4554858
+2025-09-29 03:28:58,688 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4554858
+2025-09-29 03:28:59,434 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:28:59,609 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:28:59,611 - INFO - Link down
+2025-09-29 03:28:59,613 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:00,130 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:00,133 - INFO - ACK
+2025-09-29 03:29:00,135 - INFO - ACK
+2025-09-29 03:29:00,853 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:00,854 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=1444048
+2025-09-29 03:29:00,856 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=1444048
+2025-09-29 03:29:02,021 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:02,023 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=2612084
+2025-09-29 03:29:02,024 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=2612084
+2025-09-29 03:29:02,886 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:02,887 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=3477095
+2025-09-29 03:29:02,890 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=3477095
+2025-09-29 03:29:03,139 - INFO - ACK
+2025-09-29 03:29:03,141 - INFO - ACK
+2025-09-29 03:29:03,389 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:03,391 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=3980044
+2025-09-29 03:29:03,393 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=3980044
+2025-09-29 03:29:03,758 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:03,759 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4349084
+2025-09-29 03:29:03,762 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4349084
+2025-09-29 03:29:03,934 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:03,936 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4525096
+2025-09-29 03:29:03,938 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4525096
+2025-09-29 03:29:04,136 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:04,137 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4726084
+2025-09-29 03:29:04,139 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4726084
+2025-09-29 03:29:04,325 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:04,327 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4916096
+2025-09-29 03:29:04,328 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4916096
+2025-09-29 03:29:04,713 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:04,739 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:05,242 - INFO - Link down
+2025-09-29 03:29:05,243 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:05,760 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:05,763 - INFO - ACK
+2025-09-29 03:29:05,764 - INFO - ACK
+2025-09-29 03:29:08,765 - INFO - ACK
+2025-09-29 03:29:08,768 - INFO - ACK
+2025-09-29 03:29:08,910 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:29:08,911 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4221016
+2025-09-29 03:29:08,917 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4221016
+2025-09-29 03:29:09,993 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:10,167 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:10,169 - INFO - Link down
+2025-09-29 03:29:10,170 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:10,689 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:10,691 - INFO - ACK
+2025-09-29 03:29:10,694 - INFO - ACK
+2025-09-29 03:29:13,695 - INFO - ACK
+2025-09-29 03:29:13,697 - INFO - ACK
+2025-09-29 03:29:15,268 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:15,296 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:15,299 - INFO - Link down
+2025-09-29 03:29:15,300 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:15,817 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:15,821 - INFO - ACK
+2025-09-29 03:29:15,824 - INFO - ACK
+2025-09-29 03:29:18,825 - INFO - ACK
+2025-09-29 03:29:18,826 - INFO - ACK
+2025-09-29 03:29:20,547 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:20,627 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:20,629 - INFO - Link down
+2025-09-29 03:29:20,629 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:21,148 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:21,150 - INFO - ACK
+2025-09-29 03:29:21,153 - INFO - ACK
+2025-09-29 03:29:24,156 - INFO - ACK
+2025-09-29 03:29:24,157 - INFO - ACK
+2025-09-29 03:29:25,827 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:25,958 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:25,961 - INFO - Link down
+2025-09-29 03:29:25,962 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:26,480 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:26,483 - INFO - ACK
+2025-09-29 03:29:26,484 - INFO - ACK
+2025-09-29 03:29:29,487 - INFO - ACK
+2025-09-29 03:29:29,489 - INFO - ACK
+2025-09-29 03:29:31,102 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:31,288 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:31,290 - INFO - Link down
+2025-09-29 03:29:31,291 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:31,809 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:31,812 - INFO - ACK
+2025-09-29 03:29:31,815 - INFO - ACK
+2025-09-29 03:29:34,818 - INFO - ACK
+2025-09-29 03:29:34,819 - INFO - ACK
+2025-09-29 03:29:36,386 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:36,418 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:36,596 - INFO - Link down
+2025-09-29 03:29:36,596 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:37,115 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:37,119 - INFO - ACK
+2025-09-29 03:29:37,120 - INFO - ACK
+2025-09-29 03:29:40,122 - INFO - ACK
+2025-09-29 03:29:40,123 - INFO - ACK
+2025-09-29 03:29:41,667 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:41,723 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:41,725 - INFO - Link down
+2025-09-29 03:29:41,726 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:42,244 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:42,247 - INFO - ACK
+2025-09-29 03:29:42,250 - INFO - ACK
+2025-09-29 03:29:45,251 - INFO - ACK
+2025-09-29 03:29:45,253 - INFO - ACK
+2025-09-29 03:29:46,939 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:47,053 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:47,055 - INFO - Link down
+2025-09-29 03:29:47,056 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:47,574 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:47,578 - INFO - ACK
+2025-09-29 03:29:47,580 - INFO - ACK
+2025-09-29 03:29:50,582 - INFO - ACK
+2025-09-29 03:29:50,584 - INFO - ACK
+2025-09-29 03:29:52,221 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:52,383 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:52,384 - INFO - Link down
+2025-09-29 03:29:52,385 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:52,904 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:52,907 - INFO - ACK
+2025-09-29 03:29:52,909 - INFO - ACK
+2025-09-29 03:29:55,910 - INFO - ACK
+2025-09-29 03:29:55,912 - INFO - ACK
+2025-09-29 03:29:57,488 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:29:57,511 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:29:57,513 - INFO - Link down
+2025-09-29 03:29:57,513 - INFO - Reconnect in 0.50s
+2025-09-29 03:29:58,032 - INFO - Link up: COM4 @500000
+2025-09-29 03:29:58,035 - INFO - ACK
+2025-09-29 03:29:58,036 - INFO - ACK
+2025-09-29 03:30:01,040 - INFO - ACK
+2025-09-29 03:30:01,041 - INFO - ACK
+2025-09-29 03:30:02,806 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:02,841 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:02,844 - INFO - Link down
+2025-09-29 03:30:02,844 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:03,363 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:03,367 - INFO - ACK
+2025-09-29 03:30:03,368 - INFO - ACK
+2025-09-29 03:30:06,370 - INFO - ACK
+2025-09-29 03:30:06,372 - INFO - ACK
+2025-09-29 03:30:08,061 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:08,172 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:08,179 - INFO - Link down
+2025-09-29 03:30:08,180 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:08,699 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:08,702 - INFO - ACK
+2025-09-29 03:30:08,705 - INFO - ACK
+2025-09-29 03:30:11,708 - INFO - ACK
+2025-09-29 03:30:11,710 - INFO - ACK
+2025-09-29 03:30:13,332 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:13,509 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:13,511 - INFO - Link down
+2025-09-29 03:30:13,511 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:14,030 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:14,034 - INFO - ACK
+2025-09-29 03:30:14,036 - INFO - ACK
+2025-09-29 03:30:17,037 - INFO - ACK
+2025-09-29 03:30:17,039 - INFO - ACK
+2025-09-29 03:30:18,619 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:18,639 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:18,642 - INFO - Link down
+2025-09-29 03:30:18,643 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:19,160 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:19,163 - INFO - ACK
+2025-09-29 03:30:19,164 - INFO - ACK
+2025-09-29 03:30:22,169 - INFO - ACK
+2025-09-29 03:30:22,170 - INFO - ACK
+2025-09-29 03:30:23,883 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:23,969 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:23,971 - INFO - Link down
+2025-09-29 03:30:23,971 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:24,490 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:24,494 - INFO - ACK
+2025-09-29 03:30:24,497 - INFO - ACK
+2025-09-29 03:30:27,498 - INFO - ACK
+2025-09-29 03:30:27,500 - INFO - ACK
+2025-09-29 03:30:29,175 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:29,299 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:29,301 - INFO - Link down
+2025-09-29 03:30:29,303 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:29,820 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:29,823 - INFO - ACK
+2025-09-29 03:30:29,823 - INFO - ACK
+2025-09-29 03:30:32,827 - INFO - ACK
+2025-09-29 03:30:32,828 - INFO - ACK
+2025-09-29 03:30:34,454 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:34,629 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:34,630 - INFO - Link down
+2025-09-29 03:30:34,631 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:35,148 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:35,152 - INFO - ACK
+2025-09-29 03:30:35,154 - INFO - ACK
+2025-09-29 03:30:38,156 - INFO - ACK
+2025-09-29 03:30:38,158 - INFO - ACK
+2025-09-29 03:30:39,732 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:39,758 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:39,760 - INFO - Link down
+2025-09-29 03:30:39,761 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:40,279 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:40,282 - INFO - ACK
+2025-09-29 03:30:40,284 - INFO - ACK
+2025-09-29 03:30:43,287 - INFO - ACK
+2025-09-29 03:30:43,288 - INFO - ACK
+2025-09-29 03:30:45,012 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:45,087 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:45,088 - INFO - Link down
+2025-09-29 03:30:45,089 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:45,608 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:45,611 - INFO - ACK
+2025-09-29 03:30:45,613 - INFO - ACK
+2025-09-29 03:30:48,615 - INFO - ACK
+2025-09-29 03:30:48,617 - INFO - ACK
+2025-09-29 03:30:50,290 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:50,417 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:50,419 - INFO - Link down
+2025-09-29 03:30:50,420 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:50,938 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:50,940 - INFO - ACK
+2025-09-29 03:30:50,942 - INFO - ACK
+2025-09-29 03:30:53,946 - INFO - ACK
+2025-09-29 03:30:53,947 - INFO - ACK
+2025-09-29 03:30:55,595 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:30:55,747 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:30:55,750 - INFO - Link down
+2025-09-29 03:30:55,751 - INFO - Reconnect in 0.50s
+2025-09-29 03:30:56,269 - INFO - Link up: COM4 @500000
+2025-09-29 03:30:56,273 - INFO - ACK
+2025-09-29 03:30:56,276 - INFO - ACK
+2025-09-29 03:30:59,278 - INFO - ACK
+2025-09-29 03:30:59,280 - INFO - ACK
+2025-09-29 03:31:00,840 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:00,878 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:00,880 - INFO - Link down
+2025-09-29 03:31:00,880 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:01,399 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:01,402 - INFO - ACK
+2025-09-29 03:31:01,405 - INFO - ACK
+2025-09-29 03:31:04,406 - INFO - ACK
+2025-09-29 03:31:04,408 - INFO - ACK
+2025-09-29 03:31:06,157 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:06,208 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:06,211 - INFO - Link down
+2025-09-29 03:31:06,212 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:06,731 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:06,734 - INFO - ACK
+2025-09-29 03:31:06,736 - INFO - ACK
+2025-09-29 03:31:09,740 - INFO - ACK
+2025-09-29 03:31:09,742 - INFO - ACK
+2025-09-29 03:31:11,400 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:11,540 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:11,543 - INFO - Link down
+2025-09-29 03:31:11,543 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:12,061 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:12,063 - INFO - ACK
+2025-09-29 03:31:12,065 - INFO - ACK
+2025-09-29 03:31:15,068 - INFO - ACK
+2025-09-29 03:31:15,070 - INFO - ACK
+2025-09-29 03:31:16,687 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:16,869 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:16,871 - INFO - Link down
+2025-09-29 03:31:16,872 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:17,391 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:17,394 - INFO - ACK
+2025-09-29 03:31:17,395 - INFO - ACK
+2025-09-29 03:31:20,398 - INFO - ACK
+2025-09-29 03:31:20,400 - INFO - ACK
+2025-09-29 03:31:21,956 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:22,000 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:22,002 - INFO - Link down
+2025-09-29 03:31:22,003 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:22,521 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:22,524 - INFO - ACK
+2025-09-29 03:31:22,526 - INFO - ACK
+2025-09-29 03:31:25,528 - INFO - ACK
+2025-09-29 03:31:25,530 - INFO - ACK
+2025-09-29 03:31:27,244 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:27,331 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:27,333 - INFO - Link down
+2025-09-29 03:31:27,333 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:27,850 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:27,853 - INFO - ACK
+2025-09-29 03:31:27,855 - INFO - ACK
+2025-09-29 03:31:30,857 - INFO - ACK
+2025-09-29 03:31:30,859 - INFO - ACK
+2025-09-29 03:31:32,516 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:32,659 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:32,661 - INFO - Link down
+2025-09-29 03:31:32,662 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:33,180 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:33,183 - INFO - ACK
+2025-09-29 03:31:33,185 - INFO - ACK
+2025-09-29 03:31:37,101 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:37,103 - INFO - ACK
+2025-09-29 03:31:37,177 - INFO - ACK
+2025-09-29 03:31:37,832 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:37,904 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:37,906 - INFO - Link down
+2025-09-29 03:31:37,907 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:38,425 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:38,429 - INFO - ACK
+2025-09-29 03:31:38,430 - INFO - ACK
+2025-09-29 03:31:41,430 - INFO - ACK
+2025-09-29 03:31:41,432 - INFO - ACK
+2025-09-29 03:31:43,080 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:43,233 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:43,235 - INFO - Link down
+2025-09-29 03:31:43,236 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:43,753 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:43,756 - INFO - ACK
+2025-09-29 03:31:43,759 - INFO - ACK
+2025-09-29 03:31:46,763 - INFO - ACK
+2025-09-29 03:31:46,764 - INFO - ACK
+2025-09-29 03:31:48,392 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:48,563 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:48,565 - INFO - Link down
+2025-09-29 03:31:48,565 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:49,084 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:49,087 - INFO - ACK
+2025-09-29 03:31:49,088 - INFO - ACK
+2025-09-29 03:31:52,092 - INFO - ACK
+2025-09-29 03:31:52,093 - INFO - ACK
+2025-09-29 03:31:53,639 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:53,694 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:53,695 - INFO - Link down
+2025-09-29 03:31:53,696 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:54,214 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:54,218 - INFO - ACK
+2025-09-29 03:31:54,220 - INFO - ACK
+2025-09-29 03:31:57,222 - INFO - ACK
+2025-09-29 03:31:57,223 - INFO - ACK
+2025-09-29 03:31:58,949 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:31:59,024 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:31:59,025 - INFO - Link down
+2025-09-29 03:31:59,026 - INFO - Reconnect in 0.50s
+2025-09-29 03:31:59,545 - INFO - Link up: COM4 @500000
+2025-09-29 03:31:59,549 - INFO - ACK
+2025-09-29 03:31:59,550 - INFO - ACK
+2025-09-29 03:32:02,551 - INFO - ACK
+2025-09-29 03:32:02,553 - INFO - ACK
+2025-09-29 03:32:04,194 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:04,353 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:04,354 - INFO - Link down
+2025-09-29 03:32:04,355 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:04,873 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:04,876 - INFO - ACK
+2025-09-29 03:32:04,879 - INFO - ACK
+2025-09-29 03:32:07,880 - INFO - ACK
+2025-09-29 03:32:07,881 - INFO - ACK
+2025-09-29 03:32:09,506 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:09,682 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:09,684 - INFO - Link down
+2025-09-29 03:32:09,685 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:10,204 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:10,207 - INFO - ACK
+2025-09-29 03:32:10,209 - INFO - ACK
+2025-09-29 03:32:13,211 - INFO - ACK
+2025-09-29 03:32:13,212 - INFO - ACK
+2025-09-29 03:32:14,757 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:14,811 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:14,813 - INFO - Link down
+2025-09-29 03:32:14,814 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:15,333 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:15,336 - INFO - ACK
+2025-09-29 03:32:15,337 - INFO - ACK
+2025-09-29 03:32:18,341 - INFO - ACK
+2025-09-29 03:32:18,342 - INFO - ACK
+2025-09-29 03:32:20,064 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:20,142 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:20,143 - INFO - Link down
+2025-09-29 03:32:20,145 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:20,663 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:20,666 - INFO - ACK
+2025-09-29 03:32:20,667 - INFO - ACK
+2025-09-29 03:32:23,670 - INFO - ACK
+2025-09-29 03:32:23,671 - INFO - ACK
+2025-09-29 03:32:25,313 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:25,470 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:25,472 - INFO - Link down
+2025-09-29 03:32:25,472 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:25,991 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:25,994 - INFO - ACK
+2025-09-29 03:32:25,996 - INFO - ACK
+2025-09-29 03:32:28,999 - INFO - ACK
+2025-09-29 03:32:29,001 - INFO - ACK
+2025-09-29 03:32:30,597 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:30,600 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:30,601 - INFO - Link down
+2025-09-29 03:32:30,602 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:31,120 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:31,123 - INFO - ACK
+2025-09-29 03:32:31,124 - INFO - ACK
+2025-09-29 03:32:34,128 - INFO - ACK
+2025-09-29 03:32:34,136 - INFO - ACK
+2025-09-29 03:32:35,466 - INFO - GetSettings angefordert
+2025-09-29 03:32:35,467 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4894865
+2025-09-29 03:32:35,468 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4894865
+2025-09-29 03:32:35,864 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:35,929 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:35,932 - INFO - Link down
+2025-09-29 03:32:35,933 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:36,451 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:36,454 - INFO - ACK
+2025-09-29 03:32:36,457 - INFO - ACK
+2025-09-29 03:32:36,938 - INFO - GetSettings angefordert
+2025-09-29 03:32:36,940 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=1087864
+2025-09-29 03:32:36,942 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=1087864
+2025-09-29 03:32:38,298 - INFO - GetSettings angefordert
+2025-09-29 03:32:38,299 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=2447864
+2025-09-29 03:32:38,302 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=2447864
+2025-09-29 03:32:38,498 - INFO - GetSettings angefordert
+2025-09-29 03:32:38,500 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=2648864
+2025-09-29 03:32:38,502 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=2648864
+2025-09-29 03:32:38,946 - INFO - GetSettings angefordert
+2025-09-29 03:32:38,946 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=3095864
+2025-09-29 03:32:38,949 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=3095864
+2025-09-29 03:32:39,306 - INFO - GetSettings angefordert
+2025-09-29 03:32:39,307 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=3455864
+2025-09-29 03:32:39,310 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=3455864
+2025-09-29 03:32:39,460 - INFO - ACK
+2025-09-29 03:32:39,461 - INFO - ACK
+2025-09-29 03:32:39,716 - INFO - GetSettings angefordert
+2025-09-29 03:32:39,716 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=3864856
+2025-09-29 03:32:39,722 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=3864856
+2025-09-29 03:32:40,138 - INFO - GetSettings angefordert
+2025-09-29 03:32:40,139 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4287864
+2025-09-29 03:32:40,141 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4287864
+2025-09-29 03:32:40,579 - INFO - GetSettings angefordert
+2025-09-29 03:32:40,581 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4727864
+2025-09-29 03:32:40,583 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4727864
+2025-09-29 03:32:40,842 - INFO - GetSettings angefordert
+2025-09-29 03:32:40,843 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4991864
+2025-09-29 03:32:40,846 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4991864
+2025-09-29 03:32:41,151 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:41,261 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:41,263 - INFO - Link down
+2025-09-29 03:32:41,264 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:41,290 - INFO - ERROR RuntimeError: Nicht verbunden
+2025-09-29 03:32:41,782 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:41,784 - INFO - ACK
+2025-09-29 03:32:41,789 - INFO - ACK
+2025-09-29 03:32:43,356 - INFO - GetSettings angefordert
+2025-09-29 03:32:43,358 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=2225862
+2025-09-29 03:32:43,360 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=2225862
+2025-09-29 03:32:43,883 - INFO - GetSettings angefordert
+2025-09-29 03:32:43,884 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=2753862
+2025-09-29 03:32:43,886 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=2753862
+2025-09-29 03:32:44,394 - INFO - GetSettings angefordert
+2025-09-29 03:32:44,396 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=3265862
+2025-09-29 03:32:44,397 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=3265862
+2025-09-29 03:32:44,789 - INFO - ACK
+2025-09-29 03:32:44,791 - INFO - ACK
+2025-09-29 03:32:44,843 - INFO - GetSettings angefordert
+2025-09-29 03:32:44,844 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=3713866
+2025-09-29 03:32:44,846 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=3713866
+2025-09-29 03:32:45,410 - INFO - GetSettings angefordert
+2025-09-29 03:32:45,411 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4280862
+2025-09-29 03:32:45,413 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4280862
+2025-09-29 03:32:46,179 - INFO - SetSettings gesendet (state=1)
+2025-09-29 03:32:46,435 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:46,590 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:46,593 - INFO - Link down
+2025-09-29 03:32:46,593 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:47,043 - INFO - ERROR RuntimeError: Nicht verbunden
+2025-09-29 03:32:47,111 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:47,115 - INFO - ACK
+2025-09-29 03:32:47,121 - INFO - ACK
+2025-09-29 03:32:50,121 - INFO - ACK
+2025-09-29 03:32:50,123 - INFO - ACK
+2025-09-29 03:32:51,711 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:32:51,721 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:32:51,724 - INFO - Link down
+2025-09-29 03:32:51,725 - INFO - Reconnect in 0.50s
+2025-09-29 03:32:52,243 - INFO - Link up: COM4 @500000
+2025-09-29 03:32:52,246 - INFO - ACK
+2025-09-29 03:34:51,023 - INFO - Link up: COM4 @500000
+2025-09-29 03:34:51,026 - INFO - ACK
+2025-09-29 03:34:51,058 - INFO - ACK
+2025-09-29 03:34:53,131 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:34:53,227 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:34:53,228 - INFO - Link down
+2025-09-29 03:34:53,229 - INFO - Reconnect in 0.50s
+2025-09-29 03:34:53,747 - INFO - Link up: COM4 @500000
+2025-09-29 03:34:53,750 - INFO - ACK
+2025-09-29 03:34:53,751 - INFO - ACK
+2025-09-29 03:34:56,756 - INFO - ACK
+2025-09-29 03:34:56,757 - INFO - ACK
+2025-09-29 03:34:58,407 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:34:58,557 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:34:58,558 - INFO - Link down
+2025-09-29 03:34:58,560 - INFO - Reconnect in 0.50s
+2025-09-29 03:34:59,077 - INFO - Link up: COM4 @500000
+2025-09-29 03:34:59,081 - INFO - ACK
+2025-09-29 03:34:59,082 - INFO - ACK
+2025-09-29 03:35:02,085 - INFO - ACK
+2025-09-29 03:35:02,086 - INFO - ACK
+2025-09-29 03:35:03,677 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:03,685 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:03,689 - INFO - Link down
+2025-09-29 03:35:03,690 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:04,208 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:04,210 - INFO - ACK
+2025-09-29 03:35:04,211 - INFO - ACK
+2025-09-29 03:35:07,216 - INFO - ACK
+2025-09-29 03:35:07,217 - INFO - ACK
+2025-09-29 03:35:08,968 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:09,017 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:09,018 - INFO - Link down
+2025-09-29 03:35:09,019 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:09,536 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:09,539 - INFO - ACK
+2025-09-29 03:35:09,540 - INFO - ACK
+2025-09-29 03:35:12,545 - INFO - ACK
+2025-09-29 03:35:12,546 - INFO - ACK
+2025-09-29 03:35:14,244 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:14,346 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:14,348 - INFO - Link down
+2025-09-29 03:35:14,349 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:14,867 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:14,870 - INFO - ACK
+2025-09-29 03:35:14,872 - INFO - ACK
+2025-09-29 03:35:17,876 - INFO - ACK
+2025-09-29 03:35:17,877 - INFO - ACK
+2025-09-29 03:35:19,560 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:19,677 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:19,679 - INFO - Link down
+2025-09-29 03:35:19,680 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:20,198 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:20,200 - INFO - ACK
+2025-09-29 03:35:20,203 - INFO - ACK
+2025-09-29 03:35:23,206 - INFO - ACK
+2025-09-29 03:35:23,207 - INFO - ACK
+2025-09-29 03:35:24,805 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:24,807 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:24,810 - INFO - Link down
+2025-09-29 03:35:24,811 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:25,329 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:25,332 - INFO - ACK
+2025-09-29 03:35:25,333 - INFO - ACK
+2025-09-29 03:35:28,337 - INFO - ACK
+2025-09-29 03:35:28,340 - INFO - ACK
+2025-09-29 03:35:30,084 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:30,139 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:30,142 - INFO - Link down
+2025-09-29 03:35:30,143 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:30,660 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:30,664 - INFO - ACK
+2025-09-29 03:35:30,664 - INFO - ACK
+2025-09-29 03:35:33,668 - INFO - ACK
+2025-09-29 03:35:33,670 - INFO - ACK
+2025-09-29 03:35:35,388 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:35,469 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:35,473 - INFO - Link down
+2025-09-29 03:35:35,474 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:35,992 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:35,995 - INFO - ACK
+2025-09-29 03:35:35,997 - INFO - ACK
+2025-09-29 03:35:39,002 - INFO - ACK
+2025-09-29 03:35:39,004 - INFO - ACK
+2025-09-29 03:35:40,638 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:40,802 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:40,805 - INFO - Link down
+2025-09-29 03:35:40,806 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:41,323 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:41,327 - INFO - ACK
+2025-09-29 03:35:41,329 - INFO - ACK
+2025-09-29 03:35:44,330 - INFO - ACK
+2025-09-29 03:35:44,333 - INFO - ACK
+2025-09-29 03:35:45,953 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:46,132 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:46,134 - INFO - Link down
+2025-09-29 03:35:46,134 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:46,652 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:46,656 - INFO - ACK
+2025-09-29 03:35:46,658 - INFO - ACK
+2025-09-29 03:35:49,659 - INFO - ACK
+2025-09-29 03:35:49,661 - INFO - ACK
+2025-09-29 03:35:51,200 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:51,261 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:51,263 - INFO - Link down
+2025-09-29 03:35:51,264 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:51,782 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:51,785 - INFO - ACK
+2025-09-29 03:35:51,788 - INFO - ACK
+2025-09-29 03:35:54,788 - INFO - ACK
+2025-09-29 03:35:54,790 - INFO - ACK
+2025-09-29 03:35:56,479 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:35:56,591 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:35:56,592 - INFO - Link down
+2025-09-29 03:35:56,593 - INFO - Reconnect in 0.50s
+2025-09-29 03:35:57,111 - INFO - Link up: COM4 @500000
+2025-09-29 03:35:57,114 - INFO - ACK
+2025-09-29 03:35:57,118 - INFO - ACK
+2025-09-29 03:36:00,120 - INFO - ACK
+2025-09-29 03:36:00,121 - INFO - ACK
+2025-09-29 03:36:01,757 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:01,921 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:01,923 - INFO - Link down
+2025-09-29 03:36:01,924 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:02,443 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:02,446 - INFO - ACK
+2025-09-29 03:36:02,448 - INFO - ACK
+2025-09-29 03:36:05,450 - INFO - ACK
+2025-09-29 03:36:05,452 - INFO - ACK
+2025-09-29 03:36:07,039 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:07,052 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:07,054 - INFO - Link down
+2025-09-29 03:36:07,054 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:07,573 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:07,576 - INFO - ACK
+2025-09-29 03:36:07,579 - INFO - ACK
+2025-09-29 03:36:10,583 - INFO - ACK
+2025-09-29 03:36:10,585 - INFO - ACK
+2025-09-29 03:36:12,311 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:12,383 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:12,385 - INFO - Link down
+2025-09-29 03:36:12,385 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:12,903 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:12,906 - INFO - ACK
+2025-09-29 03:36:12,908 - INFO - ACK
+2025-09-29 03:36:15,911 - INFO - ACK
+2025-09-29 03:36:15,912 - INFO - ACK
+2025-09-29 03:36:17,594 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:17,711 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:17,713 - INFO - Link down
+2025-09-29 03:36:17,714 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:18,233 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:18,236 - INFO - ACK
+2025-09-29 03:36:18,237 - INFO - ACK
+2025-09-29 03:36:21,239 - INFO - ACK
+2025-09-29 03:36:21,241 - INFO - ACK
+2025-09-29 03:36:22,873 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:23,040 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:23,042 - INFO - Link down
+2025-09-29 03:36:23,043 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:23,561 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:23,564 - INFO - ACK
+2025-09-29 03:36:23,566 - INFO - ACK
+2025-09-29 03:36:26,573 - INFO - ACK
+2025-09-29 03:36:26,575 - INFO - ACK
+2025-09-29 03:36:28,185 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:28,375 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:28,377 - INFO - Link down
+2025-09-29 03:36:28,378 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:28,896 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:28,899 - INFO - ACK
+2025-09-29 03:36:28,902 - INFO - ACK
+2025-09-29 03:36:31,903 - INFO - ACK
+2025-09-29 03:36:31,904 - INFO - ACK
+2025-09-29 03:36:33,420 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:33,504 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:33,506 - INFO - Link down
+2025-09-29 03:36:33,506 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:34,024 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:34,028 - INFO - ACK
+2025-09-29 03:36:34,030 - INFO - ACK
+2025-09-29 03:36:37,033 - INFO - ACK
+2025-09-29 03:36:37,035 - INFO - ACK
+2025-09-29 03:36:38,711 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:38,835 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:38,838 - INFO - Link down
+2025-09-29 03:36:38,839 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:39,357 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:39,359 - INFO - ACK
+2025-09-29 03:36:39,361 - INFO - ACK
+2025-09-29 03:36:42,365 - INFO - ACK
+2025-09-29 03:36:42,366 - INFO - ACK
+2025-09-29 03:36:43,988 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:44,166 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:44,168 - INFO - Link down
+2025-09-29 03:36:44,168 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:44,686 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:44,689 - INFO - ACK
+2025-09-29 03:36:44,690 - INFO - ACK
+2025-09-29 03:36:47,693 - INFO - ACK
+2025-09-29 03:36:47,695 - INFO - ACK
+2025-09-29 03:36:49,271 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:49,294 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:49,296 - INFO - Link down
+2025-09-29 03:36:49,297 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:49,815 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:49,818 - INFO - ACK
+2025-09-29 03:36:49,820 - INFO - ACK
+2025-09-29 03:36:52,824 - INFO - ACK
+2025-09-29 03:36:52,826 - INFO - ACK
+2025-09-29 03:36:54,537 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:54,625 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:54,967 - INFO - Link down
+2025-09-29 03:36:54,968 - INFO - Reconnect in 0.50s
+2025-09-29 03:36:55,486 - INFO - Link up: COM4 @500000
+2025-09-29 03:36:55,489 - INFO - ACK
+2025-09-29 03:36:55,492 - INFO - ACK
+2025-09-29 03:36:58,493 - INFO - ACK
+2025-09-29 03:36:58,495 - INFO - ACK
+2025-09-29 03:36:59,825 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:36:59,894 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:36:59,896 - INFO - Link down
+2025-09-29 03:36:59,896 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:00,414 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:00,417 - INFO - ACK
+2025-09-29 03:37:00,419 - INFO - ACK
+2025-09-29 03:37:03,422 - INFO - ACK
+2025-09-29 03:37:03,424 - INFO - ACK
+2025-09-29 03:37:05,096 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:05,222 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:05,224 - INFO - Link down
+2025-09-29 03:37:05,225 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:05,744 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:05,747 - INFO - ACK
+2025-09-29 03:37:05,749 - INFO - ACK
+2025-09-29 03:37:08,752 - INFO - ACK
+2025-09-29 03:37:08,754 - INFO - ACK
+2025-09-29 03:37:10,383 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:10,553 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:10,556 - INFO - Link down
+2025-09-29 03:37:10,556 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:11,074 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:11,077 - INFO - ACK
+2025-09-29 03:37:11,078 - INFO - ACK
+2025-09-29 03:37:14,083 - INFO - ACK
+2025-09-29 03:37:14,085 - INFO - ACK
+2025-09-29 03:37:15,665 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:15,684 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:15,686 - INFO - Link down
+2025-09-29 03:37:15,687 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:16,205 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:16,207 - INFO - ACK
+2025-09-29 03:37:16,210 - INFO - ACK
+2025-09-29 03:37:19,211 - INFO - ACK
+2025-09-29 03:37:19,213 - INFO - ACK
+2025-09-29 03:37:20,944 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:21,013 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:21,014 - INFO - Link down
+2025-09-29 03:37:21,015 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:21,534 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:21,537 - INFO - ACK
+2025-09-29 03:37:21,539 - INFO - ACK
+2025-09-29 03:37:24,542 - INFO - ACK
+2025-09-29 03:37:24,544 - INFO - ACK
+2025-09-29 03:37:26,214 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:26,343 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:26,859 - INFO - Link down
+2025-09-29 03:37:26,860 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:27,379 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:27,382 - INFO - ACK
+2025-09-29 03:37:27,385 - INFO - ACK
+2025-09-29 03:37:30,386 - INFO - ACK
+2025-09-29 03:37:30,387 - INFO - ACK
+2025-09-29 03:37:30,489 - INFO - GetSettings angefordert
+2025-09-29 03:37:30,491 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=4288863
+2025-09-29 03:37:30,495 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=4288863
+2025-09-29 03:37:31,502 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:31,587 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:31,589 - INFO - Link down
+2025-09-29 03:37:31,590 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:32,108 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:32,110 - INFO - ACK
+2025-09-29 03:37:32,112 - INFO - ACK
+2025-09-29 03:37:34,697 - INFO - Ping gesendet
+2025-09-29 03:37:34,698 - INFO - ACK
+2025-09-29 03:37:34,699 - INFO - ACK
+2025-09-29 03:37:35,115 - INFO - ACK
+2025-09-29 03:37:35,116 - INFO - ACK
+2025-09-29 03:37:36,009 - INFO - Ping gesendet
+2025-09-29 03:37:36,010 - INFO - ACK
+2025-09-29 03:37:36,012 - INFO - ACK
+2025-09-29 03:37:36,538 - INFO - Ping gesendet
+2025-09-29 03:37:36,808 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:36,917 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:36,919 - INFO - Link down
+2025-09-29 03:37:36,920 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:37,208 - INFO - ERROR RuntimeError: Nicht verbunden
+2025-09-29 03:37:37,439 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:37,442 - INFO - ACK
+2025-09-29 03:37:37,449 - INFO - ACK
+2025-09-29 03:37:40,447 - INFO - ACK
+2025-09-29 03:37:40,449 - INFO - ACK
+2025-09-29 03:37:42,058 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:42,248 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:42,250 - INFO - Link down
+2025-09-29 03:37:42,250 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:42,770 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:42,773 - INFO - ACK
+2025-09-29 03:37:42,776 - INFO - ACK
+2025-09-29 03:37:45,776 - INFO - ACK
+2025-09-29 03:37:45,778 - INFO - ACK
+2025-09-29 03:37:47,341 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:47,378 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:47,381 - INFO - Link down
+2025-09-29 03:37:47,381 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:47,900 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:47,903 - INFO - ACK
+2025-09-29 03:37:47,905 - INFO - ACK
+2025-09-29 03:37:50,907 - INFO - ACK
+2025-09-29 03:37:50,909 - INFO - ACK
+2025-09-29 03:37:52,607 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:52,709 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:52,712 - INFO - Link down
+2025-09-29 03:37:52,713 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:53,231 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:53,234 - INFO - ACK
+2025-09-29 03:37:53,236 - INFO - ACK
+2025-09-29 03:37:56,240 - INFO - ACK
+2025-09-29 03:37:56,242 - INFO - ACK
+2025-09-29 03:37:57,895 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:37:58,041 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:37:58,317 - INFO - Link down
+2025-09-29 03:37:58,318 - INFO - Reconnect in 0.50s
+2025-09-29 03:37:58,836 - INFO - Link up: COM4 @500000
+2025-09-29 03:37:58,838 - INFO - ACK
+2025-09-29 03:37:58,842 - INFO - ACK
+2025-09-29 03:38:01,843 - INFO - ACK
+2025-09-29 03:38:01,845 - INFO - ACK
+2025-09-29 03:38:03,179 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:03,244 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:03,246 - INFO - Link down
+2025-09-29 03:38:03,246 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:03,765 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:03,767 - INFO - ACK
+2025-09-29 03:38:03,769 - INFO - ACK
+2025-09-29 03:38:06,772 - INFO - ACK
+2025-09-29 03:38:06,774 - INFO - ACK
+2025-09-29 03:38:08,457 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:08,573 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:08,575 - INFO - Link down
+2025-09-29 03:38:08,575 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:09,095 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:09,098 - INFO - ACK
+2025-09-29 03:38:09,101 - INFO - ACK
+2025-09-29 03:38:12,102 - INFO - ACK
+2025-09-29 03:38:12,104 - INFO - ACK
+2025-09-29 03:38:13,733 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:13,904 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:13,906 - INFO - Link down
+2025-09-29 03:38:13,907 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:14,425 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:14,429 - INFO - ACK
+2025-09-29 03:38:14,431 - INFO - ACK
+2025-09-29 03:38:17,433 - INFO - ACK
+2025-09-29 03:38:17,435 - INFO - ACK
+2025-09-29 03:38:19,014 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:19,035 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:19,037 - INFO - Link down
+2025-09-29 03:38:19,037 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:19,556 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:19,558 - INFO - ACK
+2025-09-29 03:38:19,560 - INFO - ACK
+2025-09-29 03:38:22,565 - INFO - ACK
+2025-09-29 03:38:22,567 - INFO - ACK
+2025-09-29 03:38:24,318 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:24,365 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:24,367 - INFO - Link down
+2025-09-29 03:38:24,368 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:24,885 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:24,888 - INFO - ACK
+2025-09-29 03:38:24,890 - INFO - ACK
+2025-09-29 03:38:27,893 - INFO - ACK
+2025-09-29 03:38:27,895 - INFO - ACK
+2025-09-29 03:38:29,574 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:29,695 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:29,778 - INFO - Link down
+2025-09-29 03:38:29,779 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:30,298 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:30,300 - INFO - ACK
+2025-09-29 03:38:30,303 - INFO - ACK
+2025-09-29 03:38:33,304 - INFO - ACK
+2025-09-29 03:38:33,306 - INFO - ACK
+2025-09-29 03:38:34,849 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:34,905 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:34,906 - INFO - Link down
+2025-09-29 03:38:34,907 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:35,425 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:35,427 - INFO - ACK
+2025-09-29 03:38:35,429 - INFO - ACK
+2025-09-29 03:38:38,434 - INFO - ACK
+2025-09-29 03:38:38,437 - INFO - ACK
+2025-09-29 03:38:40,129 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:40,233 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:40,235 - INFO - Link down
+2025-09-29 03:38:40,237 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:40,755 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:40,758 - INFO - ACK
+2025-09-29 03:38:40,759 - INFO - ACK
+2025-09-29 03:38:43,889 - INFO - ACK
+2025-09-29 03:38:43,892 - INFO - ACK
+2025-09-29 03:38:45,405 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:45,503 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:45,504 - INFO - Link down
+2025-09-29 03:38:45,505 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:46,024 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:46,028 - INFO - ACK
+2025-09-29 03:38:46,031 - INFO - ACK
+2025-09-29 03:38:49,032 - INFO - ACK
+2025-09-29 03:38:49,034 - INFO - ACK
+2025-09-29 03:38:50,675 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:50,834 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:50,837 - INFO - Link down
+2025-09-29 03:38:50,838 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:51,357 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:51,359 - INFO - ACK
+2025-09-29 03:38:51,361 - INFO - ACK
+2025-09-29 03:38:54,363 - INFO - ACK
+2025-09-29 03:38:54,367 - INFO - ACK
+2025-09-29 03:38:55,968 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:38:56,166 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:38:56,169 - INFO - Link down
+2025-09-29 03:38:56,170 - INFO - Reconnect in 0.50s
+2025-09-29 03:38:56,688 - INFO - Link up: COM4 @500000
+2025-09-29 03:38:56,691 - INFO - ACK
+2025-09-29 03:38:56,693 - INFO - ACK
+2025-09-29 03:38:59,694 - INFO - ACK
+2025-09-29 03:38:59,696 - INFO - ACK
+2025-09-29 03:39:01,245 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:01,295 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:01,316 - INFO - Link down
+2025-09-29 03:39:01,317 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:01,835 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:01,838 - INFO - ACK
+2025-09-29 03:39:01,840 - INFO - ACK
+2025-09-29 03:39:04,843 - INFO - ACK
+2025-09-29 03:39:04,844 - INFO - ACK
+2025-09-29 03:39:06,524 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:06,644 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:06,646 - INFO - Link down
+2025-09-29 03:39:06,647 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:07,165 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:07,169 - INFO - ACK
+2025-09-29 03:39:07,171 - INFO - ACK
+2025-09-29 03:39:10,172 - INFO - ACK
+2025-09-29 03:39:10,174 - INFO - ACK
+2025-09-29 03:39:11,802 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:11,974 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:11,978 - INFO - Link down
+2025-09-29 03:39:11,978 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:12,497 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:12,500 - INFO - ACK
+2025-09-29 03:39:12,501 - INFO - ACK
+2025-09-29 03:39:15,503 - INFO - ACK
+2025-09-29 03:39:15,505 - INFO - ACK
+2025-09-29 03:39:17,086 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:17,104 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:17,107 - INFO - Link down
+2025-09-29 03:39:17,107 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:17,625 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:17,629 - INFO - ACK
+2025-09-29 03:39:17,631 - INFO - ACK
+2025-09-29 03:39:20,633 - INFO - ACK
+2025-09-29 03:39:20,635 - INFO - ACK
+2025-09-29 03:39:22,359 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:22,435 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:22,438 - INFO - Link down
+2025-09-29 03:39:22,438 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:22,957 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:22,960 - INFO - ACK
+2025-09-29 03:39:22,963 - INFO - ACK
+2025-09-29 03:39:25,964 - INFO - ACK
+2025-09-29 03:39:25,965 - INFO - ACK
+2025-09-29 03:39:27,641 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:27,766 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:27,768 - INFO - Link down
+2025-09-29 03:39:27,769 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:28,288 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:28,291 - INFO - ACK
+2025-09-29 03:39:28,293 - INFO - ACK
+2025-09-29 03:39:31,296 - INFO - ACK
+2025-09-29 03:39:31,299 - INFO - ACK
+2025-09-29 03:39:32,919 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:33,096 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:33,098 - INFO - Link down
+2025-09-29 03:39:33,099 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:33,618 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:33,621 - INFO - ACK
+2025-09-29 03:39:33,623 - INFO - ACK
+2025-09-29 03:39:36,624 - INFO - ACK
+2025-09-29 03:39:36,626 - INFO - ACK
+2025-09-29 03:39:38,187 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:38,227 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:38,229 - INFO - Link down
+2025-09-29 03:39:38,230 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:38,749 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:38,752 - INFO - ACK
+2025-09-29 03:39:38,755 - INFO - ACK
+2025-09-29 03:39:41,755 - INFO - ACK
+2025-09-29 03:39:41,756 - INFO - ACK
+2025-09-29 03:39:43,479 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:43,558 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:43,559 - INFO - Link down
+2025-09-29 03:39:43,559 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:44,078 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:44,082 - INFO - ACK
+2025-09-29 03:39:44,083 - INFO - ACK
+2025-09-29 03:39:47,086 - INFO - ACK
+2025-09-29 03:39:47,087 - INFO - ACK
+2025-09-29 03:39:48,758 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:48,887 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:48,888 - INFO - Link down
+2025-09-29 03:39:48,889 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:49,407 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:49,411 - INFO - ACK
+2025-09-29 03:39:49,413 - INFO - ACK
+2025-09-29 03:39:52,414 - INFO - ACK
+2025-09-29 03:39:52,415 - INFO - ACK
+2025-09-29 03:39:54,033 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:54,216 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:54,219 - INFO - Link down
+2025-09-29 03:39:54,220 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:54,738 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:54,742 - INFO - ACK
+2025-09-29 03:39:54,744 - INFO - ACK
+2025-09-29 03:39:57,745 - INFO - ACK
+2025-09-29 03:39:57,747 - INFO - ACK
+2025-09-29 03:39:59,316 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:39:59,346 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:39:59,350 - INFO - Link down
+2025-09-29 03:39:59,350 - INFO - Reconnect in 0.50s
+2025-09-29 03:39:59,868 - INFO - Link up: COM4 @500000
+2025-09-29 03:39:59,871 - INFO - ACK
+2025-09-29 03:39:59,873 - INFO - ACK
+2025-09-29 03:40:02,875 - INFO - ACK
+2025-09-29 03:40:02,877 - INFO - ACK
+2025-09-29 03:40:04,594 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:04,676 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:04,677 - INFO - Link down
+2025-09-29 03:40:04,678 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:05,196 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:05,199 - INFO - ACK
+2025-09-29 03:40:05,201 - INFO - ACK
+2025-09-29 03:40:08,203 - INFO - ACK
+2025-09-29 03:40:08,205 - INFO - ACK
+2025-09-29 03:40:09,875 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:10,005 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:10,007 - INFO - Link down
+2025-09-29 03:40:10,007 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:10,525 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:10,528 - INFO - ACK
+2025-09-29 03:40:10,530 - INFO - ACK
+2025-09-29 03:40:13,534 - INFO - ACK
+2025-09-29 03:40:13,536 - INFO - ACK
+2025-09-29 03:40:15,183 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:15,335 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:15,337 - INFO - Link down
+2025-09-29 03:40:15,337 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:15,855 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:15,858 - INFO - ACK
+2025-09-29 03:40:15,860 - INFO - ACK
+2025-09-29 03:40:18,863 - INFO - ACK
+2025-09-29 03:40:18,865 - INFO - ACK
+2025-09-29 03:40:20,424 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:20,464 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:20,465 - INFO - Link down
+2025-09-29 03:40:20,467 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:20,984 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:20,987 - INFO - ACK
+2025-09-29 03:40:20,988 - INFO - ACK
+2025-09-29 03:40:23,992 - INFO - ACK
+2025-09-29 03:40:23,994 - INFO - ACK
+2025-09-29 03:40:25,709 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:25,794 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:25,796 - INFO - Link down
+2025-09-29 03:40:25,797 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:26,315 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:26,320 - INFO - ACK
+2025-09-29 03:40:26,321 - INFO - ACK
+2025-09-29 03:40:29,324 - INFO - ACK
+2025-09-29 03:40:29,326 - INFO - ACK
+2025-09-29 03:40:30,990 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:31,125 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:31,126 - INFO - Link down
+2025-09-29 03:40:31,127 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:31,645 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:31,648 - INFO - ACK
+2025-09-29 03:40:31,650 - INFO - ACK
+2025-09-29 03:40:34,652 - INFO - ACK
+2025-09-29 03:40:34,653 - INFO - ACK
+2025-09-29 03:40:36,269 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:36,453 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:36,455 - INFO - Link down
+2025-09-29 03:40:36,456 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:36,974 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:36,977 - INFO - ACK
+2025-09-29 03:40:36,979 - INFO - ACK
+2025-09-29 03:40:39,982 - INFO - ACK
+2025-09-29 03:40:39,984 - INFO - ACK
+2025-09-29 03:40:41,580 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:41,782 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:41,783 - INFO - Link down
+2025-09-29 03:40:41,784 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:42,302 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:42,305 - INFO - ACK
+2025-09-29 03:40:42,306 - INFO - ACK
+2025-09-29 03:40:45,309 - INFO - ACK
+2025-09-29 03:40:45,310 - INFO - ACK
+2025-09-29 03:40:46,829 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:46,910 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:46,913 - INFO - Link down
+2025-09-29 03:40:46,914 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:47,431 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:47,435 - INFO - ACK
+2025-09-29 03:40:47,437 - INFO - ACK
+2025-09-29 03:40:50,438 - INFO - ACK
+2025-09-29 03:40:50,440 - INFO - ACK
+2025-09-29 03:40:52,135 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:52,240 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:52,243 - INFO - Link down
+2025-09-29 03:40:52,243 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:52,761 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:52,764 - INFO - ACK
+2025-09-29 03:40:52,765 - INFO - ACK
+2025-09-29 03:40:55,771 - INFO - ACK
+2025-09-29 03:40:55,773 - INFO - ACK
+2025-09-29 03:40:57,382 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:40:57,572 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:40:57,574 - INFO - Link down
+2025-09-29 03:40:57,574 - INFO - Reconnect in 0.50s
+2025-09-29 03:40:58,092 - INFO - Link up: COM4 @500000
+2025-09-29 03:40:58,095 - INFO - ACK
+2025-09-29 03:40:58,097 - INFO - ACK
+2025-09-29 03:41:01,100 - INFO - ACK
+2025-09-29 03:41:01,101 - INFO - ACK
+2025-09-29 03:41:02,651 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:41:02,700 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:41:02,703 - INFO - Link down
+2025-09-29 03:41:02,704 - INFO - Reconnect in 0.50s
+2025-09-29 03:41:03,222 - INFO - Link up: COM4 @500000
+2025-09-29 03:41:03,224 - INFO - ACK
+2025-09-29 03:41:03,227 - INFO - ACK
+2025-09-29 03:41:06,229 - INFO - ACK
+2025-09-29 03:41:06,231 - INFO - ACK
+2025-09-29 03:41:07,944 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:41:08,030 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:41:08,032 - INFO - Link down
+2025-09-29 03:41:08,033 - INFO - Reconnect in 0.50s
+2025-09-29 03:41:08,550 - INFO - Link up: COM4 @500000
+2025-09-29 03:41:08,553 - INFO - ACK
+2025-09-29 03:41:08,555 - INFO - ACK
+2025-09-29 03:41:11,558 - INFO - ACK
+2025-09-29 03:41:11,561 - INFO - ACK
+2025-09-29 03:41:13,224 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:41:13,360 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:41:13,362 - INFO - Link down
+2025-09-29 03:41:13,363 - INFO - Reconnect in 0.50s
+2025-09-29 03:41:13,881 - INFO - Link up: COM4 @500000
+2025-09-29 03:41:13,885 - INFO - ACK
+2025-09-29 03:41:13,887 - INFO - ACK
+2025-09-29 03:41:16,888 - INFO - ACK
+2025-09-29 03:41:16,889 - INFO - ACK
+2025-09-29 03:41:18,503 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:41:18,690 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:41:18,692 - INFO - Link down
+2025-09-29 03:41:18,693 - INFO - Reconnect in 0.50s
+2025-09-29 03:41:19,211 - INFO - Link up: COM4 @500000
+2025-09-29 03:41:19,214 - INFO - ACK
+2025-09-29 03:41:19,215 - INFO - ACK
+2025-09-29 03:41:22,220 - INFO - ACK
+2025-09-29 03:41:22,222 - INFO - ACK
+2025-09-29 03:41:23,784 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:41:23,820 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:41:23,822 - INFO - Link down
+2025-09-29 03:41:23,823 - INFO - Reconnect in 0.50s
+2025-09-29 03:41:24,345 - INFO - Link up: COM4 @500000
+2025-09-29 03:41:24,348 - INFO - ACK
+2025-09-29 03:41:24,350 - INFO - ACK
+2025-09-29 03:41:27,353 - INFO - ACK
+2025-09-29 03:41:27,355 - INFO - ACK
+2025-09-29 03:41:29,063 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:41:29,154 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:41:29,156 - INFO - Link down
+2025-09-29 03:41:29,156 - INFO - Reconnect in 0.50s
+2025-09-29 03:41:29,674 - INFO - Link up: COM4 @500000
+2025-09-29 03:41:29,677 - INFO - ACK
+2025-09-29 03:41:29,679 - INFO - ACK
+2025-09-29 03:41:32,681 - INFO - ACK
+2025-09-29 03:41:32,683 - INFO - ACK
+2025-09-29 03:41:34,340 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:41:34,483 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:41:34,484 - INFO - Link down
+2025-09-29 03:41:34,484 - INFO - Reconnect in 0.50s
+2025-09-29 03:41:35,004 - INFO - Link up: COM4 @500000
+2025-09-29 03:41:35,006 - INFO - ACK
+2025-09-29 03:41:35,009 - INFO - ACK
+2025-09-29 03:41:38,012 - INFO - ACK
+2025-09-29 03:41:38,013 - INFO - ACK
+2025-09-29 03:41:39,619 - ERROR - Listener-Fehler: Error parsing message with type 'FromEsp32' (File: proto_serial_client, Line: 245, Function: _listen_loop)
+2025-09-29 03:41:39,813 - WARNING - Listener gestoppt reconnect (File: proto_serial_client, Line: 185, Function: _run_supervisor)
+2025-09-29 03:41:39,814 - INFO - Link down
+2025-09-29 03:41:39,815 - INFO - Reconnect in 0.50s
+2025-09-29 03:41:40,333 - INFO - Link up: COM4 @500000
+2025-09-29 03:41:40,336 - INFO - ACK
+2025-09-29 03:41:40,337 - INFO - ACK
+2025-09-29 03:41:43,341 - INFO - ACK
+2025-09-29 03:41:43,343 - INFO - ACK

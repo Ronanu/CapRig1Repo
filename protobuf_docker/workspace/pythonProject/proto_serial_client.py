@@ -99,7 +99,7 @@ class ProtoSerialClient:
             time.sleep(0.0005)
         dt = time.time() - start
         time.sleep(3.0)
-        logger.info(f"1000 Nachrichten in {dt:.3f}s → {(1000/dt):.2f} Hz")
+        logger.info(f"1000 Nachrichten in {dt:.3f}s {(1000/dt):.2f} Hz")
 
     # ---------- Internals ----------
 
@@ -140,7 +140,7 @@ class ProtoSerialClient:
             except Exception:
                 pass
             self._ser = None
-        logger.info("🔌 Link down")
+        logger.info("Link down")
         if self.on_link_down:
             try:
                 self.on_link_down()
@@ -230,7 +230,7 @@ class ProtoSerialClient:
                 try:
                     data = self._read_framed()
                     if not data:
-                        time.sleep(0.01)
+                        #time.sleep(0.00005)
                         continue
                     msg = FromEsp32()
                     msg.ParseFromString(data)

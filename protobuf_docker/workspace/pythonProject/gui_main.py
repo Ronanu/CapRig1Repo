@@ -5,7 +5,7 @@ from log import logger
 from proto_serial_client import ProtoSerialClient
 
 PORT = "COM4"   # anpassen
-BAUDRATE = 230400
+BAUDRATE = 500000
 
 class App(tk.Tk):
     def __init__(self):
