@@ -1,11 +1,8 @@
-
 import tkinter as tk
 from tkinter import ttk, messagebox
-import threading
-import time
 
 from log import logger
-from proto_connection import ReconnectSupervisor
+from proto_serial_client import ProtoSerialClient
 
 PORT = "COM4"   # anpassen
 BAUDRATE = 230400
@@ -14,11 +11,18 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("ESP32 Proto (minimal)")
-        self.geometry("540x360")
+        self.geometry("560x380")
 
-        # Connection supervisor
-        self.conn = ReconnectSupervisor(PORT, BAUDRATE)
-        self.conn.start()
+        # Client direkt nutzen (kein ReconnectSupervisor mehr)
+        self.client = ProtoSerialClient(
+            PORT,
+            BAUDRATE,
+            keepalive_s=3.0,
+            idle_reset_s=10.0,
+            backoff=(0.5, 8.0),
+        )
+        self.client.on_message = self._on_message
+        self.client.start()
 
         # UI
         self.lbl_status = ttk.Label(self, text="Status: connecting...", font=("Segoe UI", 12))
@@ -39,43 +43,66 @@ class App(tk.Tk):
         self.txt = tk.Text(self, height=12)
         self.txt.pack(fill="both", expand=True, padx=8, pady=8)
 
-        # periodic UI update
         self.after(250, self._tick)
 
     # ---------- commands ----------
     def _guard(self):
-        if not self.conn.is_connected():
-            raise RuntimeError("Not connected")
+        if not self.client.is_connected():
+            raise RuntimeError("Nicht verbunden")
         return True
 
     def _cmd_ping(self):
         try:
             self._guard()
-            self.runtime.ping()
-            self._log("Ping sent")
+            self.client.send_ping()
+            self._log("Ping gesendet")
         except Exception as e:
             self._err(e)
 
     def _cmd_get(self):
         try:
             self._guard()
-            st = self.runtime.get_settings()
-            self._log(f"Settings: {st}")
+            self.client.send_get_settings()
+            self._log("GetSettings angefordert")
         except Exception as e:
             self._err(e)
 
     def _cmd_set(self):
         try:
             self._guard()
-            # Minimal demo values; adjust to your schema
-            st = self.runtime.set_settings(current_signal_selection_state=False, action_state=1)
-            self._log(f"Set Settings result: {st}")
+            # Demo-Werte – an dein Schema anpassen
+            self.client.send_set_settings(current_signal_selection_state=False, action_state=1)
+            self._log("SetSettings gesendet (state=1)")
         except Exception as e:
             self._err(e)
 
-    # ---------- ui helpers ----------
+    # ---------- callbacks & ui helpers ----------
+    def _on_message(self, msg):
+        # kommt aus Listener-Thread → in UI-Thread hoppen
+        def _append():
+            if msg.HasField("ack"):
+                self._log("ACK")
+            elif msg.HasField("settings"):
+                s = msg.settings
+                self._log(
+                    f"Settings: current_signal_selection_state={s.current_signal_selection_state}, "
+                    f"action_state={s.action_state}, ts={msg.timestamp}"
+                )
+            elif msg.HasField("info"):
+                self._log(f"Info: {msg.info.text}")
+            elif msg.HasField("error"):
+                self._log(f"ERROR: {msg.error.error}")
+            elif msg.HasField("debug"):
+                self._log(f"Debug: {msg.debug.text}")
+            elif msg.HasField("sample"):
+                smp = msg.sample
+                # self._log(f"Sample: id={smp.sensor_id}, val={smp.value:.3f}")
+            else:
+                self._log("Unbekannte Antwort")
+        self.after(0, _append)
+
     def _tick(self):
-        connected = self.conn.is_connected()
+        connected = self.client.is_connected()
         self.lbl_status.configure(text=f"Status: {'connected' if connected else 'reconnecting...'}")
         self.after(500, self._tick)
 
@@ -91,3 +118,4 @@ class App(tk.Tk):
 
 if __name__ == "__main__":
     App().mainloop()
+1

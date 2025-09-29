@@ -1617,3 +1617,1072 @@ ImportError: cannot import name 'setup_logger' from 'logger_config' (c:\Users\ro
 2025-09-29 02:33:06,906 - INFO - ACK
 2025-09-29 02:33:06,918 - INFO - ACK
 2025-09-29 02:33:06,932 - INFO - ACK
+2025-09-29 02:48:43,705 - INFO - ACK
+2025-09-29 02:48:53,597 - INFO - ACK
+2025-09-29 02:48:53,671 - INFO - ACK
+2025-09-29 02:48:53,678 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:53,694 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:53,762 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:53,768 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:53,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:53,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:53,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:53,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,160 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,358 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,362 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,462 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,660 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:54,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:54,963 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,162 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,561 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,660 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,762 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,862 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:55,958 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:55,960 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,462 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,561 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,603 - INFO - ACK
+2025-09-29 02:48:56,604 - INFO - ACK
+2025-09-29 02:48:56,660 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,662 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,862 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:56,958 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:56,960 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,262 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,362 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,460 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,463 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,860 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:57,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:57,960 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,061 - INFO - Sample: id=2, val=73.000
+2025-09-29 02:48:58,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,458 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,560 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,662 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,762 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,860 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,862 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:58,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:58,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,260 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,312 - INFO - ACK
+2025-09-29 02:48:59,312 - INFO - Ping gesendet
+2025-09-29 02:48:59,315 - INFO - ACK
+2025-09-29 02:48:59,358 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,360 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,561 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,606 - INFO - ACK
+2025-09-29 02:48:59,608 - INFO - ACK
+2025-09-29 02:48:59,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,760 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,860 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:48:59,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:48:59,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,162 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,358 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,458 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,460 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,560 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,660 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,760 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,862 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:00,918 - INFO - Ping gesendet
+2025-09-29 02:49:00,919 - INFO - ACK
+2025-09-29 02:49:00,921 - INFO - ACK
+2025-09-29 02:49:00,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:00,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,260 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,360 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,458 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,460 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,660 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,860 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:01,958 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:01,961 - INFO - Sample: id=2, val=73.000
+2025-09-29 02:49:02,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,126 - INFO - Ping gesendet
+2025-09-29 02:49:02,128 - INFO - ACK
+2025-09-29 02:49:02,130 - INFO - ACK
+2025-09-29 02:49:02,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,257 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,358 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,458 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,560 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,610 - INFO - ACK
+2025-09-29 02:49:02,613 - INFO - ACK
+2025-09-29 02:49:02,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,760 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,857 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,860 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:02,960 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:02,962 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,260 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,263 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,462 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,561 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,860 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:03,958 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:03,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,162 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,260 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,264 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,358 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,360 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,462 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,659 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,760 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,860 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:04,958 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:04,960 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,303 - INFO - GetSettings angefordert
+2025-09-29 02:49:05,310 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1500672483
+2025-09-29 02:49:05,360 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,363 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,560 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,615 - INFO - ACK
+2025-09-29 02:49:05,618 - INFO - ACK
+2025-09-29 02:49:05,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:05,957 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:05,959 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,159 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,360 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,458 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,561 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,854 - INFO - GetSettings angefordert
+2025-09-29 02:49:06,860 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1502224483
+2025-09-29 02:49:06,863 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,867 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:06,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:06,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,160 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,360 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,560 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,660 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:07,958 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:07,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,160 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,259 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,358 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,360 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,620 - INFO - ACK
+2025-09-29 02:49:08,621 - INFO - ACK
+2025-09-29 02:49:08,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,859 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:08,958 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:08,960 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,160 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,260 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,438 - INFO - GetSettings angefordert
+2025-09-29 02:49:09,443 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1504808483
+2025-09-29 02:49:09,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,468 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,559 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,659 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,760 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,859 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:09,958 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:09,959 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,162 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,257 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,262 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,457 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,667 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,862 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,864 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:10,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:10,960 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,062 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,260 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,391 - INFO - GetSettings angefordert
+2025-09-29 02:49:11,397 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1506760483
+2025-09-29 02:49:11,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,560 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,626 - INFO - ACK
+2025-09-29 02:49:11,628 - INFO - ACK
+2025-09-29 02:49:11,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,760 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:11,857 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:11,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:45,742 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:45,745 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:45,825 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:45,827 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:45,907 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:45,910 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:45,990 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:45,992 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,072 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,074 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,154 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,156 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,235 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,238 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,317 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,319 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,398 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,400 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,479 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,481 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,560 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,641 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,643 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,722 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,723 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,803 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,804 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,884 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,886 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:46,967 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:46,969 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,048 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,049 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,129 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,131 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,210 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,212 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,291 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,293 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,374 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,375 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,455 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,457 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,536 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,537 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,617 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,619 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,624 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,626 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,628 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,630 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,632 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,635 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,636 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,639 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,641 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,643 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,646 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,648 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,650 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,652 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,654 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,656 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,657 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,660 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,662 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,664 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,667 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,668 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,670 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,672 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,675 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,677 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,679 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,681 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,683 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,687 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,688 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,690 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,692 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,694 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,696 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,698 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,701 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,703 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,706 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,708 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,709 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,711 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,713 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,716 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,719 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,721 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,723 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,724 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,726 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,728 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,730 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,733 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,734 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,737 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,739 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,741 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,743 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,744 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,748 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,750 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,753 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,755 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,758 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,760 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,762 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,765 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,768 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,770 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,772 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,773 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,775 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,778 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,780 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,783 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,785 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,787 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,790 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,792 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,795 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,797 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,800 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,801 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,803 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,805 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,807 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,809 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,811 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,813 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,815 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,817 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,819 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,821 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,823 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,824 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,828 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,831 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,833 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,835 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,836 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,839 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,841 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,843 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,845 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,847 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,849 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,852 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,854 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,855 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,862 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,863 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,865 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,867 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,868 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,871 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,873 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,877 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,879 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,882 - INFO - GetSettings angefordert
+2025-09-29 02:49:47,883 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,885 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,889 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,891 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,893 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,895 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,898 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,904 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,911 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,915 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,920 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,922 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,923 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,927 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,928 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,930 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,932 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,935 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,937 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,939 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,942 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,943 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,946 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,948 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,951 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,954 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,956 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,958 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,962 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,964 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,965 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,970 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,972 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,974 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,976 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,978 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,981 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,985 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,987 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,990 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,991 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,994 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:47,996 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:47,999 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,000 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,003 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,005 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,007 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,008 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,011 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,014 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,015 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,018 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,021 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,022 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,025 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,027 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,030 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,031 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,033 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,035 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,037 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,039 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,041 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,043 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,045 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,047 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,048 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,050 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,052 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,054 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,057 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,061 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,064 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,067 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,069 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,071 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,072 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,075 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,077 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,079 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,081 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,083 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,085 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,086 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,088 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,091 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,093 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,095 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,098 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,100 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,102 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,104 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,107 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,109 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,111 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,113 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,116 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,118 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,121 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,123 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,125 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,128 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,130 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,132 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,134 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,136 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,138 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,140 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,142 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,143 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,145 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,149 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,152 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,156 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,157 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,161 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,163 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,165 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,167 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,169 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,171 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,173 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,175 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,177 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,179 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,181 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,184 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,186 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,189 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,192 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,193 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,196 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,198 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,200 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,203 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,205 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,207 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,209 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,212 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,213 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,215 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,217 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,220 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,223 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,225 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,227 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,229 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,231 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,233 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,234 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,237 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,239 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,242 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,244 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,247 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,250 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,252 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,256 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,258 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,262 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,264 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,265 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,267 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,269 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,271 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,273 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,274 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,278 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,280 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,282 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,285 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,287 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,288 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,290 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,293 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,295 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,298 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,300 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,303 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,305 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,307 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,310 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,312 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,314 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,317 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,319 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,321 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,324 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,326 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,329 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,331 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,331 - INFO - ACK
+2025-09-29 02:49:48,337 - INFO - ACK
+2025-09-29 02:49:48,340 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,344 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,347 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,349 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,354 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,357 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,361 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,365 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,372 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,374 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,376 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,381 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,385 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,392 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,395 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,398 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,400 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,402 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,404 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,406 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,414 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,417 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,425 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,428 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,430 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,432 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,436 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,438 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,441 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,443 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,447 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,450 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,451 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,454 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,457 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,460 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,462 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,465 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,469 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,483 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,486 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,490 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,492 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,496 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,496 - INFO - Settings  current_signal_selection_state=True, action_state=1, timestamp=1543252483
+2025-09-29 02:49:48,498 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1543252483
+2025-09-29 02:49:48,501 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,502 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,504 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,507 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,509 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,512 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,515 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,516 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,520 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,523 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,524 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,528 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,561 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,676 - INFO - ACK
+2025-09-29 02:49:48,678 - INFO - ACK
+2025-09-29 02:49:48,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,815 - INFO - GetSettings angefordert
+2025-09-29 02:49:48,815 - INFO - Settings  current_signal_selection_state=True, action_state=1, timestamp=1544184483
+2025-09-29 02:49:48,820 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1544184483
+2025-09-29 02:49:48,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:48,961 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:48,962 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,160 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,260 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,362 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,365 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,458 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,558 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,560 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:49,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:49,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,162 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,260 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,361 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,458 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,658 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,662 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,762 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,860 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:50,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:50,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,056 - INFO - GetSettings angefordert
+2025-09-29 02:49:51,058 - INFO - Settings  current_signal_selection_state=True, action_state=1, timestamp=1546424483
+2025-09-29 02:49:51,067 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1546424483
+2025-09-29 02:49:51,068 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,070 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,158 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,160 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,359 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,362 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,560 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,683 - INFO - ACK
+2025-09-29 02:49:51,685 - INFO - ACK
+2025-09-29 02:49:51,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:51,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:51,962 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,259 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,360 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,362 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,462 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,559 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,561 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,660 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,762 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:52,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:52,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,059 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,062 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,160 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,162 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,260 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,360 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,362 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,462 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,560 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,562 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,859 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:53,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:53,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,060 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,162 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,258 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,261 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,360 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,362 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,459 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,461 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,561 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,563 - INFO - Sample: id=2, val=75.000
+2025-09-29 02:49:54,659 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,661 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,686 - INFO - ACK
+2025-09-29 02:49:54,688 - INFO - ACK
+2025-09-29 02:49:54,759 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,761 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,858 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,861 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:54,959 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:54,961 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:55,058 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:55,061 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:49:55,159 - INFO - Sample: id=1, val=0.000
+2025-09-29 02:49:55,161 - INFO - Sample: id=2, val=74.000
+2025-09-29 02:50:40,488 - INFO - Ping gesendet
+2025-09-29 02:50:41,527 - INFO - Ping gesendet
+2025-09-29 02:50:42,368 - INFO - GetSettings angefordert
+2025-09-29 02:50:44,040 - INFO - GetSettings angefordert
+2025-09-29 02:50:45,760 - INFO - SetSettings gesendet (state=1)
+2025-09-29 02:50:47,656 - INFO - SetSettings gesendet (state=1)
+2025-09-29 02:50:49,384 - INFO - SetSettings gesendet (state=1)
+2025-09-29 02:51:05,996 - INFO - ACK
+2025-09-29 02:51:05,997 - INFO - ACK
+2025-09-29 02:51:06,128 - INFO - ACK
+2025-09-29 02:51:06,130 - INFO - ACK
+2025-09-29 02:51:06,187 - INFO - ACK
+2025-09-29 02:51:06,187 - INFO - ACK
+2025-09-29 02:51:06,230 - INFO - ACK
+2025-09-29 02:51:06,231 - INFO - ACK
+2025-09-29 02:51:06,262 - INFO - ACK
+2025-09-29 02:51:06,263 - INFO - ACK
+2025-09-29 02:51:06,274 - INFO - Settings  current_signal_selection_state=True, action_state=1, timestamp=1597738483
+2025-09-29 02:51:06,275 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1597738483
+2025-09-29 02:51:06,340 - INFO - Settings  current_signal_selection_state=True, action_state=1, timestamp=1599410483
+2025-09-29 02:51:06,343 - INFO - Settings: current_signal_selection_state=True, action_state=1, ts=1599410483
+2025-09-29 02:51:06,395 - INFO - ACK
+2025-09-29 02:51:06,397 - INFO - ACK
+2025-09-29 02:51:06,429 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=1601130618
+2025-09-29 02:51:06,431 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=1601130618
+2025-09-29 02:51:06,520 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=1603027681
+2025-09-29 02:51:06,524 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=1603027681
+2025-09-29 02:51:06,547 - INFO - ACK
+2025-09-29 02:51:06,549 - INFO - ACK
+2025-09-29 02:51:06,600 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=1604754622
+2025-09-29 02:51:06,603 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=1604754622
+2025-09-29 02:51:06,681 - INFO - ACK
+2025-09-29 02:51:06,683 - INFO - ACK
+2025-09-29 02:51:06,807 - INFO - ACK
+2025-09-29 02:51:06,809 - INFO - ACK
+2025-09-29 02:51:06,937 - INFO - ACK
+2025-09-29 02:51:06,939 - INFO - ACK
+2025-09-29 02:51:07,066 - INFO - ACK
+2025-09-29 02:51:07,068 - INFO - ACK
+2025-09-29 02:51:07,193 - INFO - ACK
+2025-09-29 02:51:07,195 - INFO - ACK
+2025-09-29 02:51:07,324 - INFO - ACK
+2025-09-29 02:51:07,326 - INFO - ACK
+2025-09-29 02:51:09,268 - INFO - ACK
+2025-09-29 02:51:09,270 - INFO - ACK
+2025-09-29 02:51:12,271 - INFO - ACK
+2025-09-29 02:51:12,273 - INFO - ACK
+2025-09-29 02:51:15,274 - INFO - ACK
+2025-09-29 02:51:15,276 - INFO - ACK
+2025-09-29 02:51:18,291 - INFO - ACK
+2025-09-29 02:51:18,293 - INFO - ACK
+2025-09-29 02:51:21,295 - INFO - ACK
+2025-09-29 02:51:21,297 - INFO - ACK
+2025-09-29 02:51:24,301 - INFO - ACK
+2025-09-29 02:51:24,303 - INFO - ACK
+2025-09-29 02:51:27,307 - INFO - ACK
+2025-09-29 02:51:27,309 - INFO - ACK
+2025-09-29 02:51:30,313 - INFO - ACK
+2025-09-29 02:51:30,315 - INFO - ACK
+2025-09-29 02:51:33,318 - INFO - ACK
+2025-09-29 02:51:33,319 - INFO - ACK
+2025-09-29 02:51:36,323 - INFO - ACK
+2025-09-29 02:51:36,325 - INFO - ACK
+2025-09-29 02:51:39,331 - INFO - ACK
+2025-09-29 02:51:39,333 - INFO - ACK
+2025-09-29 02:51:42,335 - INFO - ACK
+2025-09-29 02:51:42,338 - INFO - ACK
+2025-09-29 02:51:45,344 - INFO - ACK
+2025-09-29 02:51:45,345 - INFO - ACK
+2025-09-29 02:51:49,265 - INFO - Link up: COM4 @230400
+2025-09-29 02:51:49,270 - INFO - ACK
+2025-09-29 02:51:49,344 - INFO - ACK
+2025-09-29 02:51:51,650 - INFO - Ping gesendet
+2025-09-29 02:51:51,651 - INFO - ACK
+2025-09-29 02:51:51,654 - INFO - ACK
+2025-09-29 02:51:52,274 - INFO - ACK
+2025-09-29 02:51:52,275 - INFO - ACK
+2025-09-29 02:51:53,826 - INFO - GetSettings angefordert
+2025-09-29 02:51:53,828 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=1669195495
+2025-09-29 02:51:53,829 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=1669195495
+2025-09-29 02:51:55,279 - INFO - ACK
+2025-09-29 02:51:55,280 - INFO - ACK
+2025-09-29 02:51:58,283 - INFO - ACK
+2025-09-29 02:51:58,284 - INFO - ACK
+2025-09-29 02:52:01,289 - INFO - ACK
+2025-09-29 02:52:01,291 - INFO - ACK
+2025-09-29 02:52:04,293 - INFO - ACK
+2025-09-29 02:52:04,294 - INFO - ACK
+2025-09-29 02:52:04,841 - INFO - SetSettings gesendet (state=1)
+2025-09-29 02:52:04,843 - INFO - Settings  current_signal_selection_state=False, action_state=1, timestamp=1680211610
+2025-09-29 02:52:04,845 - INFO - Settings: current_signal_selection_state=False, action_state=1, ts=1680211610
+2025-09-29 02:52:07,298 - INFO - ACK
+2025-09-29 02:52:07,300 - INFO - ACK
+2025-09-29 02:52:10,302 - INFO - ACK
+2025-09-29 02:52:10,303 - INFO - ACK
+2025-09-29 02:52:13,308 - INFO - ACK
+2025-09-29 02:52:13,310 - INFO - ACK
+2025-09-29 02:52:16,315 - INFO - ACK
+2025-09-29 02:52:16,316 - INFO - ACK
+2025-09-29 02:52:17,300 - INFO - Ping gesendet
+2025-09-29 02:52:17,301 - INFO - ACK
+2025-09-29 02:52:17,303 - INFO - ACK
+2025-09-29 02:52:19,318 - INFO - ACK
+2025-09-29 02:52:19,320 - INFO - ACK
+2025-09-29 02:52:22,324 - INFO - ACK
+2025-09-29 02:52:22,328 - INFO - ACK
