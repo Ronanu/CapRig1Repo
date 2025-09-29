@@ -4,10 +4,8 @@ import time
 import random
 import threading
 from typing import Optional, Callable
-
-from log import logger
 from proto_serial_client import ProtoSerialClient
-from proto_runtime import ProtoRuntime
+from log import logger
 
 class ReconnectSupervisor:
     """
@@ -36,7 +34,6 @@ class ReconnectSupervisor:
         self.backoff_min = backoff_min
         self.backoff_max = backoff_max
 
-        self.runtime = ProtoRuntime(client=None)
         self._client_lock = threading.RLock()
         self._client: Optional[ProtoSerialClient] = None
 
@@ -67,9 +64,6 @@ class ReconnectSupervisor:
             except Exception:
                 pass
         self._bind_client(None)
-
-    def get_runtime(self) -> ProtoRuntime:
-        return self.runtime
 
     def is_connected(self) -> bool:
         c = self._get_client()
@@ -104,7 +98,7 @@ class ReconnectSupervisor:
             # Start listener and verify alive
             c.start_listener()
             self._last_rx_monotonic = time.monotonic()
-            logger.info(f"🔌 Link up: {self.port} @{self.baudrate}")
+            logger.info(f"Link up: {self.port} @{self.baudrate}")
             return c
         except Exception as e:
             logger.error(f"Open client failed: {e}")
@@ -142,7 +136,7 @@ class ReconnectSupervisor:
                 # Backoff after open failure
                 jitter = 0.2 * delay * (random.random() - 0.5)  # ±10%
                 wait_s = max(self.backoff_min, min(self.backoff_max, delay + jitter))
-                logger.info(f"⏳ Reconnect in {wait_s:.2f}s")
+                logger.info(f"Reconnect in {wait_s:.2f}s")
                 time.sleep(wait_s)
                 delay = min(self.backoff_max, max(self.backoff_min, delay * 2.0))
                 continue

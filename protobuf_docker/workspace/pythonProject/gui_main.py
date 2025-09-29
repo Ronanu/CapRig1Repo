@@ -19,7 +19,6 @@ class App(tk.Tk):
         # Connection supervisor
         self.conn = ReconnectSupervisor(PORT, BAUDRATE)
         self.conn.start()
-        self.runtime = self.conn.get_runtime()
 
         # UI
         self.lbl_status = ttk.Label(self, text="Status: connecting...", font=("Segoe UI", 12))

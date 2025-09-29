@@ -1,28 +1,36 @@
 syntax = "proto3";
-
 import "nanopb.proto";
 
-// ------------------------------------------------------------
-// Protocol overview
-// - ToEsp32:  commands sent to the ESP32
-// - FromEsp32: responses and notifications from the ESP32
-// ------------------------------------------------------------
-
-
-// ============================
-// Commands to ESP32 (payloads)
-// ============================
+// ---------- Commands to ESP32 ----------
 message Ping {}
 message GetSettings {}
 message SetSettings {
   SystemSettings settings = 1;
 }
 
-// ============================
-// Wrapper: ToEsp32
-// ============================
+// ---------- Generic responses/info ----------
+message Ack {}
+message Info  { string message = 1 [(nanopb).max_size = 128]; }
+message Error { string error   = 1 [(nanopb).max_size = 128]; }
+message Debug { string text    = 1 [(nanopb).max_size = 128]; }
+
+// ---------- Settings ----------
+message SystemSettings {
+  bool   current_signal_selection_state = 1;
+  uint32 action_state                   = 2;
+  bool   sample_streaming_enabled       = 3; // NEW
+}
+
+// ---------- Data ----------
+message SensorSample {
+  uint32 sensor_id = 1;
+  float  value     = 2;
+  uint32 checksum  = 3;
+}
+
+// ---------- Envelope: PC -> ESP ----------
 message ToEsp32 {
-  uint32 seq = 1; // request id, 0 if unused
+  uint32 seq = 1;
 
   oneof command {
     Ping        ping         = 10;
@@ -31,42 +39,17 @@ message ToEsp32 {
   }
 }
 
-// ============================
-// Responses from ESP32 (payloads)
-// ============================
-message Ack {}
-message Info {
-  string message = 1 [(nanopb).max_size = 64];
-}
-message Error {
-  string error = 1 [(nanopb).max_size = 64];
-}
-message Debug {
-  string text = 1 [(nanopb).max_size = 128];
-}
-message SystemSettings {
-  bool  current_signal_selection_state = 1; // true = active
-  uint32 action_state                  = 2; // 0..3 (validated in firmware)
-}
-message SensorSample {
-  uint32 sensor_id = 1;
-  float  value     = 2;
-  uint32 checksum  = 3;
-}
-
-// ============================
-// Wrapper: FromEsp32
-// ============================
+// ---------- Envelope: ESP -> PC ----------
 message FromEsp32 {
-  uint32 seq       = 1; // mirrors request id (0 for unsolicited)
-  uint32 timestamp = 2; // device-side timestamp (e.g., micros)
+  uint32 seq       = 1;
+  uint32 timestamp = 2;
 
   oneof response {
-    Ack           ack      = 10;
-    Info          info     = 11;
-    Error         error    = 12;
-    Debug         debug    = 13;
+    Ack            ack      = 10;
+    Info           info     = 11;
+    Error          error    = 12;
+    Debug          debug    = 13;
     SystemSettings settings = 14;
-    SensorSample  sample   = 15;
+    SensorSample   sample   = 15;
   }
 }

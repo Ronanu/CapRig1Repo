@@ -10,9 +10,7 @@
 #endif
 
 /* Struct definitions */
-/* ============================
- Commands to ESP32 (payloads)
- ============================ */
+/* ---------- Commands to ESP32 ---------- */
 typedef struct _Ping {
     char dummy_field;
 } Ping;
@@ -21,28 +19,28 @@ typedef struct _GetSettings {
     char dummy_field;
 } GetSettings;
 
-/* ============================
- Responses from ESP32 (payloads)
- ============================ */
+/* ---------- Generic responses/info ---------- */
 typedef struct _Ack {
     char dummy_field;
 } Ack;
 
 typedef struct _Info {
-    char message[64];
+    char message[128];
 } Info;
 
 typedef struct _Error {
-    char error[64];
+    char error[128];
 } Error;
 
 typedef struct _Debug {
     char text[128];
 } Debug;
 
+/* ---------- Settings ---------- */
 typedef struct _SystemSettings {
-    bool current_signal_selection_state; /* true = active */
-    uint32_t action_state; /* 0..3 (validated in firmware) */
+    bool current_signal_selection_state;
+    uint32_t action_state;
+    bool sample_streaming_enabled; /* NEW */
 } SystemSettings;
 
 typedef struct _SetSettings {
@@ -50,11 +48,16 @@ typedef struct _SetSettings {
     SystemSettings settings;
 } SetSettings;
 
-/* ============================
- Wrapper: ToEsp32
- ============================ */
+/* ---------- Data ---------- */
+typedef struct _SensorSample {
+    uint32_t sensor_id;
+    float value;
+    uint32_t checksum;
+} SensorSample;
+
+/* ---------- Envelope: PC -> ESP ---------- */
 typedef struct _ToEsp32 {
-    uint32_t seq; /* request id, 0 if unused */
+    uint32_t seq;
     pb_size_t which_command;
     union _ToEsp32_command {
         Ping ping;
@@ -63,18 +66,10 @@ typedef struct _ToEsp32 {
     } command;
 } ToEsp32;
 
-typedef struct _SensorSample {
-    uint32_t sensor_id;
-    float value;
-    uint32_t checksum;
-} SensorSample;
-
-/* ============================
- Wrapper: FromEsp32
- ============================ */
+/* ---------- Envelope: ESP -> PC ---------- */
 typedef struct _FromEsp32 {
-    uint32_t seq; /* mirrors request id (0 for unsolicited) */
-    uint32_t timestamp; /* device-side timestamp (e.g., micros) */
+    uint32_t seq;
+    uint32_t timestamp;
     pb_size_t which_response;
     union _FromEsp32_response {
         Ack ack;
@@ -95,24 +90,24 @@ extern "C" {
 #define Ping_init_default                        {0}
 #define GetSettings_init_default                 {0}
 #define SetSettings_init_default                 {false, SystemSettings_init_default}
-#define ToEsp32_init_default                     {0, 0, {Ping_init_default}}
 #define Ack_init_default                         {0}
 #define Info_init_default                        {""}
 #define Error_init_default                       {""}
 #define Debug_init_default                       {""}
-#define SystemSettings_init_default              {0, 0}
+#define SystemSettings_init_default              {0, 0, 0}
 #define SensorSample_init_default                {0, 0, 0}
+#define ToEsp32_init_default                     {0, 0, {Ping_init_default}}
 #define FromEsp32_init_default                   {0, 0, 0, {Ack_init_default}}
 #define Ping_init_zero                           {0}
 #define GetSettings_init_zero                    {0}
 #define SetSettings_init_zero                    {false, SystemSettings_init_zero}
-#define ToEsp32_init_zero                        {0, 0, {Ping_init_zero}}
 #define Ack_init_zero                            {0}
 #define Info_init_zero                           {""}
 #define Error_init_zero                          {""}
 #define Debug_init_zero                          {""}
-#define SystemSettings_init_zero                 {0, 0}
+#define SystemSettings_init_zero                 {0, 0, 0}
 #define SensorSample_init_zero                   {0, 0, 0}
+#define ToEsp32_init_zero                        {0, 0, {Ping_init_zero}}
 #define FromEsp32_init_zero                      {0, 0, 0, {Ack_init_zero}}
 
 /* Field tags (for use in manual encoding/decoding) */
@@ -121,14 +116,15 @@ extern "C" {
 #define Debug_text_tag                           1
 #define SystemSettings_current_signal_selection_state_tag 1
 #define SystemSettings_action_state_tag          2
+#define SystemSettings_sample_streaming_enabled_tag 3
 #define SetSettings_settings_tag                 1
+#define SensorSample_sensor_id_tag               1
+#define SensorSample_value_tag                   2
+#define SensorSample_checksum_tag                3
 #define ToEsp32_seq_tag                          1
 #define ToEsp32_ping_tag                         10
 #define ToEsp32_get_settings_tag                 11
 #define ToEsp32_set_settings_tag                 12
-#define SensorSample_sensor_id_tag               1
-#define SensorSample_value_tag                   2
-#define SensorSample_checksum_tag                3
 #define FromEsp32_seq_tag                        1
 #define FromEsp32_timestamp_tag                  2
 #define FromEsp32_ack_tag                        10
@@ -155,17 +151,6 @@ X(a, STATIC,   OPTIONAL, MESSAGE,  settings,          1)
 #define SetSettings_DEFAULT NULL
 #define SetSettings_settings_MSGTYPE SystemSettings
 
-#define ToEsp32_FIELDLIST(X, a) \
-X(a, STATIC,   SINGULAR, UINT32,   seq,               1) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (command,ping,command.ping),  10) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (command,get_settings,command.get_settings),  11) \
-X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_settings,command.set_settings),  12)
-#define ToEsp32_CALLBACK NULL
-#define ToEsp32_DEFAULT NULL
-#define ToEsp32_command_ping_MSGTYPE Ping
-#define ToEsp32_command_get_settings_MSGTYPE GetSettings
-#define ToEsp32_command_set_settings_MSGTYPE SetSettings
-
 #define Ack_FIELDLIST(X, a) \
 
 #define Ack_CALLBACK NULL
@@ -188,7 +173,8 @@ X(a, STATIC,   SINGULAR, STRING,   text,              1)
 
 #define SystemSettings_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, BOOL,     current_signal_selection_state,   1) \
-X(a, STATIC,   SINGULAR, UINT32,   action_state,      2)
+X(a, STATIC,   SINGULAR, UINT32,   action_state,      2) \
+X(a, STATIC,   SINGULAR, BOOL,     sample_streaming_enabled,   3)
 #define SystemSettings_CALLBACK NULL
 #define SystemSettings_DEFAULT NULL
 
@@ -198,6 +184,17 @@ X(a, STATIC,   SINGULAR, FLOAT,    value,             2) \
 X(a, STATIC,   SINGULAR, UINT32,   checksum,          3)
 #define SensorSample_CALLBACK NULL
 #define SensorSample_DEFAULT NULL
+
+#define ToEsp32_FIELDLIST(X, a) \
+X(a, STATIC,   SINGULAR, UINT32,   seq,               1) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (command,ping,command.ping),  10) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (command,get_settings,command.get_settings),  11) \
+X(a, STATIC,   ONEOF,    MESSAGE,  (command,set_settings,command.set_settings),  12)
+#define ToEsp32_CALLBACK NULL
+#define ToEsp32_DEFAULT NULL
+#define ToEsp32_command_ping_MSGTYPE Ping
+#define ToEsp32_command_get_settings_MSGTYPE GetSettings
+#define ToEsp32_command_set_settings_MSGTYPE SetSettings
 
 #define FromEsp32_FIELDLIST(X, a) \
 X(a, STATIC,   SINGULAR, UINT32,   seq,               1) \
@@ -220,41 +217,41 @@ X(a, STATIC,   ONEOF,    MESSAGE,  (response,sample,response.sample),  15)
 extern const pb_msgdesc_t Ping_msg;
 extern const pb_msgdesc_t GetSettings_msg;
 extern const pb_msgdesc_t SetSettings_msg;
-extern const pb_msgdesc_t ToEsp32_msg;
 extern const pb_msgdesc_t Ack_msg;
 extern const pb_msgdesc_t Info_msg;
 extern const pb_msgdesc_t Error_msg;
 extern const pb_msgdesc_t Debug_msg;
 extern const pb_msgdesc_t SystemSettings_msg;
 extern const pb_msgdesc_t SensorSample_msg;
+extern const pb_msgdesc_t ToEsp32_msg;
 extern const pb_msgdesc_t FromEsp32_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define Ping_fields &Ping_msg
 #define GetSettings_fields &GetSettings_msg
 #define SetSettings_fields &SetSettings_msg
-#define ToEsp32_fields &ToEsp32_msg
 #define Ack_fields &Ack_msg
 #define Info_fields &Info_msg
 #define Error_fields &Error_msg
 #define Debug_fields &Debug_msg
 #define SystemSettings_fields &SystemSettings_msg
 #define SensorSample_fields &SensorSample_msg
+#define ToEsp32_fields &ToEsp32_msg
 #define FromEsp32_fields &FromEsp32_msg
 
 /* Maximum encoded size of messages (where known) */
 #define Ack_size                                 0
 #define Debug_size                               130
-#define Error_size                               65
+#define Error_size                               130
 #define FromEsp32_size                           145
 #define GetSettings_size                         0
-#define Info_size                                65
+#define Info_size                                130
 #define MESSAGES_NANOPB_PB_H_MAX_SIZE            FromEsp32_size
 #define Ping_size                                0
 #define SensorSample_size                        17
-#define SetSettings_size                         10
-#define SystemSettings_size                      8
-#define ToEsp32_size                             18
+#define SetSettings_size                         12
+#define SystemSettings_size                      10
+#define ToEsp32_size                             20
 
 #ifdef __cplusplus
 } /* extern "C" */

@@ -1,5 +1,6 @@
 import time
 from proto_serial_client import ProtoSerialClient
+from log import logger
 
 PORT = 'COM4'   # Anpassen
 BAUDRATE = 230400
@@ -20,46 +21,46 @@ def main():
 
     try:
         while True:
-            cmd = input("\n👉 Befehl eingeben: ").strip().lower()
+            cmd = input("\nBefehl eingeben: ").strip().lower()
 
             if cmd == '1':
-                print("📤 Sende ping...")
+                print("Sende ping...")
                 client.send_ping()
             elif cmd == '2':
-                print("📤 Sende get_settings...")
+                print("Sende get_settings...")
                 client.send_get_settings()
             elif cmd == '3':
-                print("📤 Sende set_settings...")
+                print("Sende set_settings...")
                 try:
-                    css = input("  ⚙️ current_signal_selection_state [0/1]: ").strip()
+                    css = input("current_signal_selection_state [0/1]: ").strip()
                     css_bool = (css == '1' or css.lower() in ('true','t','y','yes','ja'))
-                    act = int(input("  ⚙️ action_state [0..3]: ").strip())
+                    act = int(input("action_state [0..3]: ").strip())
                 except Exception as e:
-                    print(f"  ❌ Eingabe ungültig: {e}")
+                    print(f"Eingabe ungültig: {e}")
                     continue
                 client.send_set_settings(css_bool, act)
             elif cmd == '4':
-                print("📤 Sende set_mux...")
+                print("Sende set_mux...")
                 try:
-                    ch = int(input("  🔀 Kanal (uint): ").strip())
+                    ch = int(input("Kanal (uint): ").strip())
                 except Exception as e:
-                    print(f"  ❌ Eingabe ungültig: {e}")
+                    print(f"Eingabe ungültig: {e}")
                     continue
                 client.send_set_mux(ch)
             elif cmd == '5':
-                print("📤 Starte 1000x ping Test...")
+                print("Starte 1000x ping Test...")
                 client.send_ping_1000x()
             elif cmd == 'q':
-                print("👋 Beende Programm...")
+                print("Beende Programm...")
                 break
             else:
-                print("❌ Ungültige Eingabe! Bitte [1]..[5] oder [q] eingeben.")
+                print("Ungültige Eingabe! Bitte [1]..[5] oder [q] eingeben.")
 
             time.sleep(0.1)
     finally:
-        print("\n🔄 Schließe Verbindung...")
+        print("\nSchließe Verbindung...")
         client.stop()
-        print("✅ Verbindung erfolgreich geschlossen.")
+        print("Verbindung erfolgreich geschlossen.")
 
 if __name__ == "__main__":
     main()

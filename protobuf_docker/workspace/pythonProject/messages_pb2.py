@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0emessages.proto\"\x06\n\x04Ping\"\r\n\x0bGetSettings\"0\n\x0bSetSettings\x12!\n\x08settings\x18\x01 \x01(\x0b\x32\x0f.SystemSettings\"\x84\x01\n\x07ToEsp32\x12\x0b\n\x03seq\x18\x01 \x01(\r\x12\x15\n\x04ping\x18\n \x01(\x0b\x32\x05.PingH\x00\x12$\n\x0cget_settings\x18\x0b \x01(\x0b\x32\x0c.GetSettingsH\x00\x12$\n\x0cset_settings\x18\x0c \x01(\x0b\x32\x0c.SetSettingsH\x00\x42\t\n\x07\x63ommand\"\x05\n\x03\x41\x63k\"\x17\n\x04Info\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x16\n\x05\x45rror\x12\r\n\x05\x65rror\x18\x01 \x01(\t\"\x15\n\x05\x44\x65\x62ug\x12\x0c\n\x04text\x18\x01 \x01(\t\"N\n\x0eSystemSettings\x12&\n\x1e\x63urrent_signal_selection_state\x18\x01 \x01(\x08\x12\x14\n\x0c\x61\x63tion_state\x18\x02 \x01(\r\"B\n\x0cSensorSample\x12\x11\n\tsensor_id\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\"\xdb\x01\n\tFromEsp32\x12\x0b\n\x03seq\x18\x01 \x01(\r\x12\x11\n\ttimestamp\x18\x02 \x01(\r\x12\x13\n\x03\x61\x63k\x18\n \x01(\x0b\x32\x04.AckH\x00\x12\x15\n\x04info\x18\x0b \x01(\x0b\x32\x05.InfoH\x00\x12\x17\n\x05\x65rror\x18\x0c \x01(\x0b\x32\x06.ErrorH\x00\x12\x17\n\x05\x64\x65\x62ug\x18\r \x01(\x0b\x32\x06.DebugH\x00\x12#\n\x08settings\x18\x0e \x01(\x0b\x32\x0f.SystemSettingsH\x00\x12\x1f\n\x06sample\x18\x0f \x01(\x0b\x32\r.SensorSampleH\x00\x42\n\n\x08responseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0emessages.proto\"\x06\n\x04Ping\"\r\n\x0bGetSettings\"0\n\x0bSetSettings\x12!\n\x08settings\x18\x01 \x01(\x0b\x32\x0f.SystemSettings\"\x05\n\x03\x41\x63k\"\x17\n\x04Info\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x16\n\x05\x45rror\x12\r\n\x05\x65rror\x18\x01 \x01(\t\"\x15\n\x05\x44\x65\x62ug\x12\x0c\n\x04text\x18\x01 \x01(\t\"p\n\x0eSystemSettings\x12&\n\x1e\x63urrent_signal_selection_state\x18\x01 \x01(\x08\x12\x14\n\x0c\x61\x63tion_state\x18\x02 \x01(\r\x12 \n\x18sample_streaming_enabled\x18\x03 \x01(\x08\"B\n\x0cSensorSample\x12\x11\n\tsensor_id\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\x02\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\"\x84\x01\n\x07ToEsp32\x12\x0b\n\x03seq\x18\x01 \x01(\r\x12\x15\n\x04ping\x18\n \x01(\x0b\x32\x05.PingH\x00\x12$\n\x0cget_settings\x18\x0b \x01(\x0b\x32\x0c.GetSettingsH\x00\x12$\n\x0cset_settings\x18\x0c \x01(\x0b\x32\x0c.SetSettingsH\x00\x42\t\n\x07\x63ommand\"\xdb\x01\n\tFromEsp32\x12\x0b\n\x03seq\x18\x01 \x01(\r\x12\x11\n\ttimestamp\x18\x02 \x01(\r\x12\x13\n\x03\x61\x63k\x18\n \x01(\x0b\x32\x04.AckH\x00\x12\x15\n\x04info\x18\x0b \x01(\x0b\x32\x05.InfoH\x00\x12\x17\n\x05\x65rror\x18\x0c \x01(\x0b\x32\x06.ErrorH\x00\x12\x17\n\x05\x64\x65\x62ug\x18\r \x01(\x0b\x32\x06.DebugH\x00\x12#\n\x08settings\x18\x0e \x01(\x0b\x32\x0f.SystemSettingsH\x00\x12\x1f\n\x06sample\x18\x0f \x01(\x0b\x32\r.SensorSampleH\x00\x42\n\n\x08responseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,20 +27,20 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_GETSETTINGS']._serialized_end=39
   _globals['_SETSETTINGS']._serialized_start=41
   _globals['_SETSETTINGS']._serialized_end=89
-  _globals['_TOESP32']._serialized_start=92
-  _globals['_TOESP32']._serialized_end=224
-  _globals['_ACK']._serialized_start=226
-  _globals['_ACK']._serialized_end=231
-  _globals['_INFO']._serialized_start=233
-  _globals['_INFO']._serialized_end=256
-  _globals['_ERROR']._serialized_start=258
-  _globals['_ERROR']._serialized_end=280
-  _globals['_DEBUG']._serialized_start=282
-  _globals['_DEBUG']._serialized_end=303
-  _globals['_SYSTEMSETTINGS']._serialized_start=305
-  _globals['_SYSTEMSETTINGS']._serialized_end=383
-  _globals['_SENSORSAMPLE']._serialized_start=385
-  _globals['_SENSORSAMPLE']._serialized_end=451
-  _globals['_FROMESP32']._serialized_start=454
-  _globals['_FROMESP32']._serialized_end=673
+  _globals['_ACK']._serialized_start=91
+  _globals['_ACK']._serialized_end=96
+  _globals['_INFO']._serialized_start=98
+  _globals['_INFO']._serialized_end=121
+  _globals['_ERROR']._serialized_start=123
+  _globals['_ERROR']._serialized_end=145
+  _globals['_DEBUG']._serialized_start=147
+  _globals['_DEBUG']._serialized_end=168
+  _globals['_SYSTEMSETTINGS']._serialized_start=170
+  _globals['_SYSTEMSETTINGS']._serialized_end=282
+  _globals['_SENSORSAMPLE']._serialized_start=284
+  _globals['_SENSORSAMPLE']._serialized_end=350
+  _globals['_TOESP32']._serialized_start=353
+  _globals['_TOESP32']._serialized_end=485
+  _globals['_FROMESP32']._serialized_start=488
+  _globals['_FROMESP32']._serialized_end=707
 # @@protoc_insertion_point(module_scope)

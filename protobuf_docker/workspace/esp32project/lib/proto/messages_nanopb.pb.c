@@ -15,9 +15,6 @@ PB_BIND(GetSettings, GetSettings, AUTO)
 PB_BIND(SetSettings, SetSettings, AUTO)
 
 
-PB_BIND(ToEsp32, ToEsp32, AUTO)
-
-
 PB_BIND(Ack, Ack, AUTO)
 
 
@@ -34,6 +31,9 @@ PB_BIND(SystemSettings, SystemSettings, AUTO)
 
 
 PB_BIND(SensorSample, SensorSample, AUTO)
+
+
+PB_BIND(ToEsp32, ToEsp32, AUTO)
 
 
 PB_BIND(FromEsp32, FromEsp32, AUTO)

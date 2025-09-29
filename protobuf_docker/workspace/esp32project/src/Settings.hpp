@@ -1,13 +1,13 @@
-
 #pragma once
-
 #include <Arduino.h>
-#include "messages_nanopb.pb.h"  // for SystemSettings
-#include <stdint.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/semphr.h"
+#include "messages_nanopb.pb.h"
 
 struct Settings {
-  bool     current_signal_selection_state = false;
-  uint32_t action_state = 0; // 0..3
+  bool     current_signal_selection_state = false; // vorher vorhanden
+  uint32_t action_state = 0;                   // vorher vorhanden
+  bool     sample_streaming_enabled = true;       // NEU: true = Streaming dauerhaft aktiv
 };
 
 class SettingsManager {
@@ -17,26 +17,21 @@ public:
   Settings get();
   void set(const Settings& s);
 
-  // Load from NVS (Preferences)
   void load();
-
-  // Request a debounced save (actual write happens in tick())
   void saveDebounced();
-
-  // Must be called periodically (e.g., each loop iteration or task cycle)
   void tick();
 
-  // Mapping between internal Settings and protobuf struct
+  // Mapping zu/von Protobuf (Nanopb)
   void toProto(SystemSettings& out);
   void fromProto(const SystemSettings& in);
 
 private:
   SettingsManager();
-  void requestSave();
+  void requestSave(); // intern für Debounce
 
-  Settings settings_;
   SemaphoreHandle_t mtx_;
+  Settings          settings_;
 
   uint32_t last_save_request_us_;
-  bool pending_save_;
+  bool     pending_save_;
 };

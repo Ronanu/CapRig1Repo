@@ -3,6 +3,7 @@ import serial
 import struct
 import time
 from messages_pb2 import ToEsp32, FromEsp32, SystemSettings
+from log import logger
 
 class ProtoSerialClient:
     def __init__(self, port, baudrate=115200, seq_start=1):
@@ -12,6 +13,7 @@ class ProtoSerialClient:
         self.ser = serial.Serial(port, baudrate, timeout=0.1)
         self.running = False
         self.listener_thread = threading.Thread(target=self.listen, daemon=True)
+        logger.info(f"Serial port {port} opened at {baudrate} baud.")
 
     def _next_seq(self):
         s = self._seq
@@ -32,7 +34,7 @@ class ProtoSerialClient:
     def _write_framed(self, payload: bytes):
         length = len(payload)
         if length > 128:
-            raise ValueError("Message too long (>128 bytes)")
+            logger.error("Message too long (>128 bytes)")
         header = struct.pack(">H", length)
         self.ser.write(header + payload)
 
@@ -68,30 +70,30 @@ class ProtoSerialClient:
                 if msg:
                     self.handle_message(msg)
             except Exception as e:
-                print(f"  ❌ ERROR: {e}")
+                logger.error(f"Listener error: {e}")
             time.sleep(0.01)
 
     def handle_message(self, msg: FromEsp32):
-        #print(f"  🧾 seq: {msg.seq}  🕒 timestamp: {msg.timestamp}")
-        if msg.HasField("debug"):
-            pass
-            print(f"  🐞 Debug: {msg.debug.text}")
-        elif msg.HasField("ack"):
-            pass
+        if msg.HasField("ack"):
+            logger.info(f"ACK")
+        elif msg.HasField("debug"):
+            logger.debug(f"Debug: {msg.debug.text}")
+        elif msg.HasField("info"):
+            logger.info(f"Info: {msg.info.text}")
         elif msg.HasField("error"):
             err = msg.error.error
             if err == "tx_queue_full":
-                print("  ❌ ERROR: tx_queue_full (ESP32 TX-Queue ausgelastet)")
+                logger.warning("ERROR: tx_queue_full")
             else:
-                print(f"  ❌ ERROR: {err}")
+                logger.error(f"ERROR: {err}")
         elif msg.HasField("settings"):
             s = msg.settings
-            print(f"  ⚙️ Settings → current_signal_selection_state={s.current_signal_selection_state}, action_state={s.action_state}")
+            logger.info(f"Settings → current_signal_selection_state={s.current_signal_selection_state}, action_state={s.action_state}, timestamp={msg.timestamp}")
         elif msg.HasField("sample"):
             smp = msg.sample
-            print(f"  📊 Sample → sensor_id={smp.sensor_id}, value={smp.value:.3f}, checksum=0x{smp.checksum:08X}, timestamp={msg.timestamp}")
+            logger.debug(f"Sample → sensor_id={smp.sensor_id}, value={smp.value:.3f}, checksum=0x{smp.checksum:08X}, timestamp={msg.timestamp}")
         else:
-            print("  ❓ Unbekannte Antwort")
+            print("Unbekannte Antwort")
 
     # ---------- convenience commands ----------
     def send_ping(self, seq=None):
@@ -121,11 +123,11 @@ class ProtoSerialClient:
         self.send_message(msg)
 
     def send_ping_1000x(self):
-        print("🚀 Starte 1000x ping Test...")
+        logger.info("Starte 1000x ping Test...")
         start = time.time()
         for i in range(1000):
             self.send_ping(seq=i+1)
             time.sleep(0.0005)
         dt = time.time() - start
         time.sleep(3)  # Warte auf ausstehende Antworten
-        print(f"✅ 1000 Nachrichten in {dt:.3f}s → {(1000/dt):.2f} Hz")
+        logger.info(f"1000 Nachrichten in {dt:.3f}s → {(1000/dt):.2f} Hz")

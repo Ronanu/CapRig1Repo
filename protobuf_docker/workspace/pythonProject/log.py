@@ -5,7 +5,7 @@ from logger_config import get_logger
 from logging.handlers import RotatingFileHandler
 
 # 🔧 Einheitlicher Projekt-Logger
-logger = get_logger(name="CapSystem", level=logging.DEBUG)
+logger = get_logger(name="CapSystem", level=logging.INFO)
 
 # 📁 Optional: Logfile mit Rotation (max 1 MB, 3 Backups)
 file_handler = RotatingFileHandler("system.log", maxBytes=1_000_000, backupCount=3)
