@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start micro-ROS agent (HOST, Windows/COM4)",
+      "type": "shell",
+      "command": "start_agent_windows_host.bat",
+      "problemMatcher": []
+    },
+    {
+      "label": "Start micro-ROS agent (Linux serial example)",
+      "type": "shell",
+      "command": "micro-ros-agent serial --dev /dev/ttyUSB0 -v6",
+      "problemMatcher": []
+    },
+    {
+      "label": "Start micro-ROS agent (UDP: 8888)",
+      "type": "shell",
+      "command": "micro-ros-agent udp4 --port 8888 -v6",
+      "problemMatcher": []
+    }
+  ]
+}

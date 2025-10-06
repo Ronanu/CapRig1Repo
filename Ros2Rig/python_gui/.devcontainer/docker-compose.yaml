@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  ros2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    volumes:
+      - ../..:/workspace:cached
+    # NOTE (Windows): direct COM port mapping is not supported by Docker-in-WSL reliably.
+    # Start the micro-ROS agent on the HOST (COM4) using the provided .bat helper instead,
+    # or use UDP transport for the ESP. The GUI runs inside this container.
+    tty: true
+    stdin_open: true

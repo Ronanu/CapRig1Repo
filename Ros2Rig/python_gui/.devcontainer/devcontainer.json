@@ -1,0 +1,13 @@
+{
+  "name": "Ros2Rig GUI",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "ros2",
+  "workspaceFolder": "/workspace/ros2_ws",
+  "postCreateCommand": "pip3 install -e src/gui_pkg",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python","ms-python.vscode-pylance"],
+      "settings": { "python.analysis.typeCheckingMode": "off" }
+    }
+  }
+}
