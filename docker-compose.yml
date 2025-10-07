@@ -1,0 +1,25 @@
+
+services:
+  caprig_ros:
+    container_name: caprig_ros
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ROS_DOMAIN_ID=0
+    tty: true
+    stdin_open: true
+    command: >
+      bash -lc "start_ros_stack.sh"
+    depends_on:
+      - uros_agent
+
+  uros_agent:
+    container_name: uros_agent
+    image: microros/micro-ros-agent:humble
+    command: udp4 --port 8888
+    ports:
+      - "8888:8888/udp"   # expose to ESP32
+    environment:
+      - ROS_DOMAIN_ID=0
+    restart: unless-stopped

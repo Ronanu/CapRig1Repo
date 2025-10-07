@@ -14,9 +14,5 @@ setup(
     maintainer_email='you@example.com',
     description='Minimal ROS 2 bridge for CapRig ESP32 example',
     license='MIT',
-    entry_points={
-        'console_scripts': [
-            'ros_side = esp_bridge.ros_side:main',
-        ],
-    },
+    entry_points={'console_scripts': ['ros_side = esp_bridge.ros_side:main']},
 )
