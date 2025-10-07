@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 
 IMG_NAME="caprig_ros:humble"
 CTR_NAME="caprig_ros"

@@ -5,7 +5,14 @@
   <description>Minimal ROS 2 bridge for CapRig ESP32 example</description>
   <maintainer email="you@example.com">You</maintainer>
   <license>MIT</license>
+
+  <!-- Python build type -->
   <buildtool_depend>ament_python</buildtool_depend>
+
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
 </package>
