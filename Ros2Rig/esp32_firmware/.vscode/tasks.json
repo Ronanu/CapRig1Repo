@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PIO Build (Git Bash)",
+      "type": "shell",
+      "command": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "args": [
+        "-lc",
+        "platformio run --target clean_microros && platformio run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$platformio"]
+    }
+  ]
+}

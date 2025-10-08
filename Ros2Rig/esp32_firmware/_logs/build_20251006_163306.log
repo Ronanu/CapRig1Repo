@@ -1,0 +1,86 @@
+=== Mon Oct  6 16:33:06     2025 ===
+WD: /c/Users/rodi9/Dropbox/InstitutGR/HESS4MRA/Testing/CapRig1Repo/Ros2Rig/esp32_firmware
+PlatformIO Core, version 6.1.18
+
+>>> Deep-Clean der dev-Repos
+>>> Deep-Clean: .pio/libdeps/esp32dev/micro_ros_platformio/build/dev/src
+ -> prüfe: .pio/libdeps/esp32dev/micro_ros_platformio/build/dev/src/ament_cmake
+HEAD is now at 2cae26a 1.3.12
+ -> prüfe: .pio/libdeps/esp32dev/micro_ros_platformio/build/dev/src/ament_cmake_ros
+HEAD is now at 60572fa 0.10.0
+ -> prüfe: .pio/libdeps/esp32dev/micro_ros_platformio/build/dev/src/ament_index
+HEAD is now at f019d6c 1.4.0
+ -> prüfe: .pio/libdeps/esp32dev/micro_ros_platformio/build/dev/src/ament_lint
+HEAD is now at d8ae34c fix setuptools deprecation (backport #551) (#560)
+ -> prüfe: .pio/libdeps/esp32dev/micro_ros_platformio/build/dev/src/ament_package
+HEAD is now at 5e94933 fix setuptools deprecations (#156) (#160)
+ -> prüfe: .pio/libdeps/esp32dev/micro_ros_platformio/build/dev/src/googletest
+HEAD is now at 083afd68 1.10.9006
+ -> entferne komplette dev/src
+rm: cannot remove '.pio/libdeps/esp32dev/micro_ros_platformio/build/dev/src/ament_cmake': Device or resource busy
+
+>>> clean_microros (PIO)
+Processing esp32dev (platform: espressif32; board: esp32dev; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32dev.html
+PLATFORM: Espressif 32 (6.12.0) > Espressif ESP32 Dev Module
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b 
+ - tool-esptoolpy @ 2.40900.250804 (4.9.0) 
+ - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 34 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- micro_ros_platformio @ 0.0.1+sha.cfee17f
+Building in release mode
+clean_microros_callback(["clean_microros"], [])
+micro-ROS library cleaned!
+========================= [SUCCESS] Took 1.33 seconds =========================
+
+>>> Build
+Processing esp32dev (platform: espressif32; board: esp32dev; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32dev.html
+PLATFORM: Espressif 32 (6.12.0) > Espressif ESP32 Dev Module
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - framework-arduinoespressif32 @ 3.20017.241212+sha.dcc1105b 
+ - tool-esptoolpy @ 2.40900.250804 (4.9.0) 
+ - toolchain-xtensa-esp32 @ 8.4.0+2021r2-patch5
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Installing importlib-resources with pip at PlatformIO environment
+C:\Users\rodi9\.platformio\penv\Scripts\python.exe -m pip install importlib-resources
+Requirement already satisfied: importlib-resources in c:\users\rodi9\.platformio\penv\lib\site-packages (6.5.2)
+Installing pyyaml with pip at PlatformIO environment
+C:\Users\rodi9\.platformio\penv\Scripts\python.exe -m pip install pyyaml
+Requirement already satisfied: pyyaml in c:\users\rodi9\.platformio\penv\lib\site-packages (6.0.3)
+Installing markupsafe==2.0.1 with pip at PlatformIO environment
+C:\Users\rodi9\.platformio\penv\Scripts\python.exe -m pip install markupsafe==2.0.1
+Requirement already satisfied: markupsafe==2.0.1 in c:\users\rodi9\.platformio\penv\lib\site-packages (2.0.1)
+Installing empy==3.3.4 with pip at PlatformIO environment
+C:\Users\rodi9\.platformio\penv\Scripts\python.exe -m pip install empy==3.3.4
+Requirement already satisfied: empy==3.3.4 in c:\users\rodi9\.platformio\penv\lib\site-packages (3.3.4)
+Configuring esp32dev with transport serial
+Downloading micro-ROS dev dependencies
+	 - Downloaded ament_cmake
+	 - Downloaded ament_lint
+	 - Downloaded ament_package
+	 - Downloaded googletest
+	 - Downloaded ament_cmake_ros
+	 - Downloaded ament_index
+Building micro-ROS dev dependencies
+Build dev micro-ROS environment failed: 
+ Der Befehl "." ist entweder falsch geschrieben oder
+
+konnte nicht gefunden werden.
+
+
+========================= [FAILED] Took 16.27 seconds =========================
