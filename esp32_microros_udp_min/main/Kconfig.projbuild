@@ -1,0 +1,22 @@
+menu "App configuration"
+
+config WIFI_SSID
+    string "Wi-Fi SSID"
+    default "HochbuerglInet"
+    help
+        SSID of the Wi-Fi network to connect to.
+
+config WIFI_PASSWORD
+    string "Wi-Fi password"
+    default "08150815"
+    help
+        Password of the Wi-Fi network.
+
+config PUB_PERIOD_MS
+    int "Heartbeat publish period (ms)"
+    default 500
+    range 50 60000
+    help
+        Period in milliseconds for the Int32 heartbeat publisher.
+
+endmenu
