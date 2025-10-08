@@ -1,17 +1,18 @@
-# immer vom Projektroot (eine Ebene über /scripts) aus laufen
-Push-Location (Resolve-Path (Join-Path $PSScriptRoot '..'))
-
+#Requires -Version 5.1
 param(
   [int]$Port = 8888,
   [string]$Tag = 'jazzy',
   [switch]$NoPause = $false
 )
 $ErrorActionPreference = 'Stop'
+
+# run from project root for convenience
+Push-Location (Resolve-Path (Join-Path $PSScriptRoot '..'))
 try {
-  $args = @('run','-it','--rm','-p',"$Port:$Port/udp",'--name','microros-agent',"microros/micro-ros-agent:$Tag",'udp4','--port',"$Port",'-v6')
+  $args = @('run','-it','--rm','-p',"$($Port):$($Port)/udp",'--name','microros-agent',"microros/micro-ros-agent:$Tag",'udp4','--port',"$Port",'-v6')
   Write-Host ("docker " + ($args -join ' ')) -ForegroundColor DarkGray
-  $p = Start-Process -FilePath 'docker' -ArgumentList $args -Wait -PassThru
-  if ($p.ExitCode -ne 0) { throw "docker agent exited with code $($p.ExitCode)." }
+  & docker @args
+  if ($LASTEXITCODE -ne 0) { throw "docker agent exited with code $LASTEXITCODE." }
 }
 catch {
   Write-Host "`nERROR:" -ForegroundColor Red

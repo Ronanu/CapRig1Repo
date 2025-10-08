@@ -1,22 +1,22 @@
-# immer vom Projektroot (eine Ebene über /scripts) aus laufen
-Push-Location (Resolve-Path (Join-Path $PSScriptRoot '..'))
-
-
+#Requires -Version 5.1
 param(
   [Parameter(Mandatory=$true)][string]$Port,
   [int]$Baud = 921600,
   [switch]$NoPause = $false
 )
 $ErrorActionPreference = 'Stop'
+
+# always run from project root (one level above /scripts)
+Push-Location (Resolve-Path (Join-Path $PSScriptRoot '..'))
 try {
   $req = @(
-    "build/bootloader/bootloader.bin",
-    "build/partition_table/partition-table.bin",
-    "build/esp32_microros_udp_min.bin"
+    "dist/bootloader.bin",
+    "dist/partition-table.bin",
+    "dist/esp32_microros_udp_min.bin"
   )
   $missing = $req | Where-Object { -not (Test-Path -LiteralPath $_) }
   if ($missing) {
-    throw "Missing build artifacts:`n$($missing -join "`n")`nRun the build first."
+    throw "Missing artifacts:`n$($missing -join "`n")`nRun build_docker first."
   }
 
   python -m pip show esptool | Out-Null
@@ -26,12 +26,12 @@ try {
 
   Write-Host "Flashing to $Port at $Baud baud..." -ForegroundColor Cyan
   $args = @('esptool','--chip','esp32','--port', $Port,'--baud', $Baud,'write_flash','-z',
-    '0x1000','build/bootloader/bootloader.bin',
-    '0x8000','build/partition_table/partition-table.bin',
-    '0x10000','build/esp32_microros_udp_min.bin')
+    '0x1000','dist/bootloader.bin',
+    '0x8000','dist/partition-table.bin',
+    '0x10000','dist/esp32_microros_udp_min.bin')
   Write-Host ("python -m " + ($args -join ' ')) -ForegroundColor DarkGray
-  $p = Start-Process -FilePath 'python' -ArgumentList @('-m') + $args -NoNewWindow -Wait -PassThru
-  if ($p.ExitCode -ne 0) { throw "esptool exited with code $($p.ExitCode)." }
+  & python -m @args
+  if ($LASTEXITCODE -ne 0) { throw "esptool exited with code $LASTEXITCODE." }
 
   Write-Host "`nOpening serial monitor at 115200 (Ctrl+] to exit)..." -ForegroundColor Cyan
   Start-Process -FilePath 'python' -ArgumentList '-m','serial.tools.miniterm', $Port, '115200' -NoNewWindow
