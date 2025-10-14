@@ -1,14 +1,14 @@
 services:
   ros2_agent:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: microros/micro-ros-agent:humble
     env_file:
-      - ../.env
+      - .env
     environment:
       - ROS_DOMAIN_ID=${ROS_DOMAIN_ID}
       - SERIAL_DEV=${SERIAL_DEV}
       - AGENT_VERBOSITY=${AGENT_VERBOSITY}
+    command: >
+      micro-ros-agent serial --dev ${SERIAL_DEV} -v${AGENT_VERBOSITY}
     devices:
       - "${SERIAL_DEV}:${SERIAL_DEV}"
     group_add:
