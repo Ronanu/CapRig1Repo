@@ -11,6 +11,9 @@ services:
       - SERIAL_DEV=${SERIAL_DEV}
       - SERIAL_GLOB=${SERIAL_GLOB}
     privileged: true
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+
     volumes:
       - ../ws:/ws
     restart: unless-stopped
