@@ -36,7 +36,7 @@ if (Get-Command usbipd -ErrorAction SilentlyContinue) {
 
     Write-Host ("  -> Attaching BUSID {0} to 'docker-desktop'..." -f $BUSID)
     try {
-        usbipd attach --wsl --distribution docker-desktop --busid $BUSID
+        usbipd attach --wsl docker-desktop --busid $BUSID
     } catch {
         Write-Warning "attach failed or already attached."
     }

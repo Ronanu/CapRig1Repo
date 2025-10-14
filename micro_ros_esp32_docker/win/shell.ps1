@@ -1,4 +1,4 @@
-# shell.ps1
+# shell.ps1  .\win\shell.ps1
 # Open an interactive shell in the running container with ROS 2 sourced.
 # Window stays open at the end.
 

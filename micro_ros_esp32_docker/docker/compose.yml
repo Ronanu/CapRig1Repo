@@ -7,12 +7,15 @@ services:
       - ROS_DOMAIN_ID=${ROS_DOMAIN_ID}
       - SERIAL_DEV=${SERIAL_DEV}
       - AGENT_VERBOSITY=${AGENT_VERBOSITY}
+    # statt devices: mappe gesamten /dev und gib Privilegien (Docker Desktop kann das)
+    privileged: true
+    volumes:
+      - /dev:/dev
     command: >
-      micro-ros-agent serial --dev ${SERIAL_DEV} -v${AGENT_VERBOSITY}
-    devices:
-      - "${SERIAL_DEV}:${SERIAL_DEV}"
-    group_add:
-      - dialout
+      bash -lc 'echo "Waiting for ${SERIAL_DEV}..." ;
+                until [ -e "${SERIAL_DEV}" ]; do sleep 1; done ;
+                ls -l "${SERIAL_DEV}" ;
+                exec micro-ros-agent serial --dev "${SERIAL_DEV}" -v${AGENT_VERBOSITY}'
     network_mode: host
     restart: unless-stopped
     tty: true
