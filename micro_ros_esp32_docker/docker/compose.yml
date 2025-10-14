@@ -1,22 +1,18 @@
 services:
   ros2_agent:
-    image: microros/micro-ros-agent:humble
+    build:
+      context: ..                 # Projektroot
+      dockerfile: docker/Dockerfile
     env_file:
-      - .env
+      - ../.env
     environment:
       - ROS_DOMAIN_ID=${ROS_DOMAIN_ID}
-      - SERIAL_DEV=${SERIAL_DEV}
       - AGENT_VERBOSITY=${AGENT_VERBOSITY}
-    # statt devices: mappe gesamten /dev und gib Privilegien (Docker Desktop kann das)
+      - SERIAL_DEV=${SERIAL_DEV}
+      - SERIAL_GLOB=${SERIAL_GLOB}
     privileged: true
     volumes:
-      - /dev:/dev
-    command: >
-      bash -lc 'echo "Waiting for ${SERIAL_DEV}..." ;
-                until [ -e "${SERIAL_DEV}" ]; do sleep 1; done ;
-                ls -l "${SERIAL_DEV}" ;
-                exec micro-ros-agent serial --dev "${SERIAL_DEV}" -v${AGENT_VERBOSITY}'
-    network_mode: host
+      - ../ws:/ws
     restart: unless-stopped
     tty: true
     stdin_open: true
