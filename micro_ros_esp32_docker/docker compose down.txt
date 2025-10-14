@@ -1,0 +1,16 @@
+docker compose down
+docker compose up -d
+docker compose logs -f
+
+
+
+
+usbipd detach --busid 1-7
+usbipd bind   --busid 1-7
+usbipd attach --wsl docker-desktop --busid 1-7 --auto-attach
+# danach:
+wsl -d docker-desktop sh -lc 'ls -l /dev/ttyUSB* /dev/ttyACM* 2>/dev/null || true'
+
+
+
+
