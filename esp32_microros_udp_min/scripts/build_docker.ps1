@@ -3,7 +3,7 @@ param(
     [switch]$Clean = $false,
     [string]$IdfImage = 'espressif/idf:release-v5.2',
     [string]$Dns = '8.8.8.8',
-    [string]$BuildVolume = 'esp32_microros_build',
+    [string]$WorkVolume = 'esp32_microros_work',
     [switch]$NoPause = $false
 )
 $ErrorActionPreference = 'Stop'
@@ -14,42 +14,71 @@ try {
     if (-not (Test-Path -LiteralPath ".\CMakeLists.txt")) {
         throw "Run this from the project root (where CMakeLists.txt is)."
     }
+    if ($Clean -and (Test-Path -LiteralPath ".\dist")) { Remove-Item -Recurse -Force .\dist }
 
-    if ($Clean) {
-        if (Test-Path -LiteralPath ".\dist") { Remove-Item -Recurse -Force .\dist }
-    }
-
-    # Compose a bash script that builds into a Docker volume (/build_vol) and copies artifacts back to host ./dist
+    # 1) Write the Bash build script to scripts/_docker_build.sh (host side)
+    $bashPath = Join-Path $PSScriptRoot "_docker_build.sh"
     $bash = @'
+#!/usr/bin/env bash
 set -euo pipefail
+
+# 0) fresh workspace in volume
+rm -rf /work/project /work/build
+mkdir -p /work/project
+
+# 1) copy sources from /host -> /work/project, excluding build/dist/.git (no tar -> no Dropbox races)
+shopt -s dotglob
+for p in /host/* /host/.[!.]*; do
+  name="$(basename "$p")"
+  case "$name" in
+    build|dist|.git) continue ;;
+  esac
+  cp -a "$p" /work/project/ 2>/dev/null || true
+done
+
+# 2) deps for micro_ros_espidf_component colcon stage
 python -m pip install -U pip
 python -m pip install -U colcon-common-extensions catkin_pkg lark-parser empy vcstool
-git -C components/micro_ros_espidf_component rev-parse --is-inside-work-tree 2>/dev/null || (cd components/micro_ros_espidf_component && git clone https://github.com/micro-ROS/micro_ros_espidf_component.git .)
-idf.py set-target esp32
-idf.py -B /build_vol reconfigure build
-mkdir -p /project/dist
-cp -v /build_vol/bootloader/bootloader*.bin /project/dist/bootloader.bin
-cp -v /build_vol/partition_table/partition-table.bin /project/dist/partition-table.bin
-cp -v /build_vol/esp32_microros_udp_min.bin /project/dist/esp32_microros_udp_min.bin
-'@
 
-    # Docker args (note the $() to avoid ":” parsing issues, and use $PWD.Path for a clean string path)
+# Ensure the micro-ROS component is an actual repo (not only the placeholder)
+if [ ! -d /work/project/components/micro_ros_espidf_component/.git ]; then
+  mkdir -p /work/project/components/micro_ros_espidf_component
+  git clone https://github.com/micro-ROS/micro_ros_espidf_component.git /work/project/components/micro_ros_espidf_component
+fi
+
+# 3) clean build dir and build with an out-of-tree path in the volume
+cd /work/project
+idf.py -B /work/build fullclean
+idf.py -B /work/build set-target esp32
+idf.py -B /work/build build
+
+# 4) copy artifacts back to host
+mkdir -p /host/dist
+cp -v /work/build/bootloader/bootloader*.bin             /host/dist/bootloader.bin
+cp -v /work/build/partition_table/partition-table.bin    /host/dist/partition-table.bin
+cp -v /work/build/esp32_microros_udp_min.bin             /host/dist/esp32_microros_udp_min.bin
+'@
+    # Write as ASCII to avoid UTF-8 BOM issues with #!/bin/bash
+    Set-Content -LiteralPath $bashPath -Value $bash -Encoding Ascii -NoNewline
+
+    # 2) Run it in Docker (host repo read-only at /host, clean work in volume /work)
     $dockerArgs = @(
         'run','--rm','-it',
         '--dns', $Dns,
         '-e','IDF_COMPONENT_MANAGER=0',
-        '-v', "$($PWD.Path):/project",
-        '-v', "$BuildVolume:/build_vol",
-        '-w','/project',
+        '--mount', "type=bind,source=$($PWD.Path),target=/host,readonly",
+        '--mount', "type=volume,source=$WorkVolume,target=/work",
+        '-w','/work',
         $IdfImage,
-        '/bin/bash','-lc', $bash
+        '/bin/bash','-lc', "bash /host/scripts/_docker_build.sh"
+
     )
 
-    Write-Host "Running Docker build..." -ForegroundColor Cyan
+    Write-Host "Running Docker build (volume: $WorkVolume)..." -ForegroundColor Cyan
     & docker @dockerArgs
     if ($LASTEXITCODE -ne 0) { throw "Docker build exited with code $LASTEXITCODE." }
 
-    Write-Host "`nArtifacts copied to ./dist :" -ForegroundColor Green
+    Write-Host "`nArtifacts in ./dist:" -ForegroundColor Green
     Get-ChildItem .\dist | Format-Table -AutoSize | Out-Host
 }
 catch {
