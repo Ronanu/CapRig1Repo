@@ -1,21 +1,11 @@
+version: "3.8"
 services:
-  ros2_agent:
+  microros-agent:
     build:
-      context: ..                 # Projektroot
+      context: ..
       dockerfile: docker/Dockerfile
     env_file:
       - ../.env
-    environment:
-      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID}
-      - AGENT_VERBOSITY=${AGENT_VERBOSITY}
-      - SERIAL_DEV=${SERIAL_DEV}
-      - SERIAL_GLOB=${SERIAL_GLOB}
-    privileged: true
-    devices:
-      - /dev/ttyUSB0:/dev/ttyUSB0
-
-    volumes:
-      - ../ws:/ws
+    ports:
+      - "${AGENT_PORT:-8888}:${AGENT_PORT:-8888}/udp"
     restart: unless-stopped
-    tty: true
-    stdin_open: true
