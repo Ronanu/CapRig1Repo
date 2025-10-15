@@ -3,6 +3,8 @@ set -e
 
 # Source ROS 2 Humble (fixed path in image)
 source /opt/ros/humble/setup.bash
+source "/uros_ws/install/setup.bash"
+
 
 # Read env or use defaults
 PORT="${AGENT_PORT:-8888}"

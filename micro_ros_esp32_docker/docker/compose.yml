@@ -1,4 +1,4 @@
-version: "3.8"
+
 services:
   microros-agent:
     build:
@@ -9,3 +9,6 @@ services:
     ports:
       - "${AGENT_PORT:-8888}:${AGENT_PORT:-8888}/udp"
     restart: unless-stopped
+    privileged: true
+    tty: true
+    stdin_open: true
