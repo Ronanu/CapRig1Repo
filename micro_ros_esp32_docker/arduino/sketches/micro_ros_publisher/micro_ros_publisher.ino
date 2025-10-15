@@ -39,6 +39,7 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time)
 }
 
 void setup() {
+  Serial.begin(921600);
   set_microros_transports();
   
   pinMode(LED_PIN, OUTPUT);
@@ -62,7 +63,7 @@ void setup() {
     "micro_ros_arduino_node_publisher"));
 
   // create timer,
-  const unsigned int timer_timeout = 1000;
+  const unsigned int timer_timeout = 20;
   RCCHECK(rclc_timer_init_default(
     &timer,
     &support,
@@ -77,6 +78,6 @@ void setup() {
 }
 
 void loop() {
-  delay(100);
-  RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100)));
+  //delay(100);
+  RCSOFTCHECK(rclc_executor_spin_some(&executor, RCL_MS_TO_NS(10)));
 }

@@ -23,5 +23,5 @@ if [[ -z "${DEV}" || ! -e "${DEV}" ]]; then
   exit 0
 fi
 
-echo "$(ts) [agent] exec: ros2 run micro_ros_agent micro_ros_agent serial --dev ${DEV} -v${VERB}"
-exec ros2 run micro_ros_agent micro_ros_agent serial --dev "${DEV}" -v"${VERB}"
+echo "$(ts) [agent] exec: ros2 run micro_ros_agent micro_ros_agent serial --dev ${DEV} -v${VERB} -b 921600"
+exec ros2 run micro_ros_agent micro_ros_agent serial --dev "${DEV}" -v"${VERB}" -b 921600
