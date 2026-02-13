@@ -1,6 +1,7 @@
 
 services:
   microros-agent:
+    container_name: microros-agent
     build:
       context: ..
       dockerfile: docker/Dockerfile

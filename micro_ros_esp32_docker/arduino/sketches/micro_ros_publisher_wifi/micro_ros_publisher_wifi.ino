@@ -18,7 +18,7 @@ rclc_support_t support;
 rcl_allocator_t allocator;
 rcl_node_t node;
 
-#define LED_PIN 13
+#define LED_PIN 27
 
 #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
 #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
@@ -41,7 +41,7 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time)
 }
 
 void setup() {
-  set_microros_wifi_transports("Magenta-770707", "6e632mgakgu9", "192.168.0.128", 8888);
+  set_microros_wifi_transports("HochbuerglInet", "08150815", "192.168.1.2", 8888);
 
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, HIGH);
